@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ReservationSystem.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "ReservationSystem.Common": "1.0.0"
+        },
+        "runtime": {
+          "ReservationSystem.Web.ViewModels.dll": {}
+        }
+      },
+      "ReservationSystem.Common/1.0.0": {
+        "runtime": {
+          "ReservationSystem.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ReservationSystem.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReservationSystem.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

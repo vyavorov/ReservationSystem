@@ -1,0 +1,12 @@
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\bin\Debug\net6.0\ReservationSystem.Common.deps.json
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\bin\Debug\net6.0\ReservationSystem.Common.dll
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\bin\Debug\net6.0\ReservationSystem.Common.pdb
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\ReservationSystem.Common.csproj.AssemblyReference.cache
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\ReservationSystem.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\ReservationSystem.Common.AssemblyInfoInputs.cache
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\ReservationSystem.Common.AssemblyInfo.cs
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\ReservationSystem.Common.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\ReservationSystem.Common.dll
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\refint\ReservationSystem.Common.dll
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\ReservationSystem.Common.pdb
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Common\obj\Debug\net6.0\ref\ReservationSystem.Common.dll
