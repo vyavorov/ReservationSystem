@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using ReservationSystem.Data;
 using ReservationSystem.Data.Models;
+using ReservationSystem.Services;
+using ReservationSystem.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +33,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     .AddEntityFrameworkStores<ReservationDbContext>();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ILocationService, LocationService>();
 
 var app = builder.Build();
 

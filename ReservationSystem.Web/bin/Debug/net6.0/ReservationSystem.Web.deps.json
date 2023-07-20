@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.15",
           "ReservationSystem.Common": "1.0.0",
           "ReservationSystem.Data": "1.0.0",
+          "ReservationSystem.Services": "1.0.0",
           "ReservationSystem.Web.ViewModels": "1.0.0"
         },
         "runtime": {
@@ -571,6 +572,17 @@
           "ReservationSystem.Data.Models.dll": {}
         }
       },
+      "ReservationSystem.Services/1.0.0": {
+        "dependencies": {
+          "ReservationSystem.Common": "1.0.0",
+          "ReservationSystem.Data": "1.0.0",
+          "ReservationSystem.Data.Models": "1.0.0",
+          "ReservationSystem.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "ReservationSystem.Services.dll": {}
+        }
+      },
       "ReservationSystem.Web.ViewModels/1.0.0": {
         "dependencies": {
           "ReservationSystem.Common": "1.0.0"
@@ -962,6 +974,11 @@
       "sha512": ""
     },
     "ReservationSystem.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ReservationSystem.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -84,3 +84,5 @@ C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CoursePr
 C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\bin\Debug\net6.0\ReservationSystem.Data.Models.dll
 C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\bin\Debug\net6.0\ReservationSystem.Data.Models.pdb
 C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\bin\Debug\net6.0\appsettings.Production.json
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\bin\Debug\net6.0\ReservationSystem.Services.dll
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\bin\Debug\net6.0\ReservationSystem.Services.pdb

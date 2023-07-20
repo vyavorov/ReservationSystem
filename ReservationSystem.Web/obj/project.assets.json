@@ -992,6 +992,22 @@
           "bin/placeholder/ReservationSystem.Data.Models.dll": {}
         }
       },
+      "ReservationSystem.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ReservationSystem.Common": "1.0.0",
+          "ReservationSystem.Data": "1.0.0",
+          "ReservationSystem.Data.Models": "1.0.0",
+          "ReservationSystem.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ReservationSystem.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReservationSystem.Services.dll": {}
+        }
+      },
       "ReservationSystem.Web.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2511,6 +2527,11 @@
       "path": "../ReservationSystem.Data.Models/ReservationSystem.Data.Models.csproj",
       "msbuildProject": "../ReservationSystem.Data.Models/ReservationSystem.Data.Models.csproj"
     },
+    "ReservationSystem.Services/1.0.0": {
+      "type": "project",
+      "path": "../ReservationSystem.Services/ReservationSystem.Services.csproj",
+      "msbuildProject": "../ReservationSystem.Services/ReservationSystem.Services.csproj"
+    },
     "ReservationSystem.Web.ViewModels/1.0.0": {
       "type": "project",
       "path": "../ReservationSystem.Web.ViewModels/ReservationSystem.Web.ViewModels.csproj",
@@ -2526,6 +2547,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.15",
       "ReservationSystem.Common >= 1.0.0",
       "ReservationSystem.Data >= 1.0.0",
+      "ReservationSystem.Services >= 1.0.0",
       "ReservationSystem.Web.ViewModels >= 1.0.0"
     ]
   },
@@ -2561,6 +2583,9 @@
             },
             "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Data\\ReservationSystem.Data.csproj": {
               "projectPath": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Data\\ReservationSystem.Data.csproj"
+            },
+            "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Services\\ReservationSystem.Services.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Services\\ReservationSystem.Services.csproj"
             },
             "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Web.ViewModels\\ReservationSystem.Web.ViewModels.csproj": {
               "projectPath": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Web.ViewModels\\ReservationSystem.Web.ViewModels.csproj"

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReservationSystem.Common\ReservationSystem.Common.csproj" />
+    <ProjectReference Include="..\ReservationSystem.Data.Models\ReservationSystem.Data.Models.csproj" />
+    <ProjectReference Include="..\ReservationSystem.Data\ReservationSystem.Data.csproj" />
+    <ProjectReference Include="..\ReservationSystem.Web.ViewModels\ReservationSystem.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

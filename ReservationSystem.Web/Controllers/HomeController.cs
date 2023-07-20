@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ReservationSystem.Services;
+using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Home;
 using System.Diagnostics;
 
@@ -6,13 +8,17 @@ namespace ReservationSystem.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController()
+        private readonly ILocationService locationService;
+        public HomeController(ILocationService locationService)
         {
+            this.locationService = locationService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<IndexViewModel> locations = await locationService.GetAllLocationsAsync();
+
+            return View(locations);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
