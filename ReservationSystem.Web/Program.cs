@@ -1,10 +1,9 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using ReservationSystem.Data;
 using ReservationSystem.Data.Models;
 using ReservationSystem.Services;
 using ReservationSystem.Services.Interfaces;
+using ReservationSystem.Web.Infrastructure.ModelBinders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +31,11 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     })
     .AddEntityFrameworkStores<ReservationDbContext>();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddMvcOptions(options =>
+    {
+        options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+    });
 builder.Services.AddScoped<ILocationService, LocationService>();
 
 var app = builder.Build();

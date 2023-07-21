@@ -1,0 +1,12 @@
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\bin\Debug\net6.0\ReservationSystem.Web.Infrastructure.deps.json
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\bin\Debug\net6.0\ReservationSystem.Web.Infrastructure.dll
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\bin\Debug\net6.0\ReservationSystem.Web.Infrastructure.pdb
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\ReservationSystem.Web.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\ReservationSystem.Web.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\ReservationSystem.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\ReservationSystem.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\ReservationSystem.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\ReservationSystem.Web.Infrastructure.dll
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\refint\ReservationSystem.Web.Infrastructure.dll
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\ReservationSystem.Web.Infrastructure.pdb
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web.Infrastructure\obj\Debug\net6.0\ref\ReservationSystem.Web.Infrastructure.dll
