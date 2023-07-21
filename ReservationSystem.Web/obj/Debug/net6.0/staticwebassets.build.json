@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JvRSgTRMTfdjIFOhYONtqf27Y2o6N60Al+07pqVrLMA=",
+  "Hash": "VcKyItD2lpEUIZI4Zxb6KAkoyhlzNyXcAozNUPeNLtg=",
   "Source": "ReservationSystem.Web",
   "BasePath": "_content/ReservationSystem.Web",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Web\\wwwroot\\js\\jquery-override.js",
+      "SourceId": "ReservationSystem.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Web\\wwwroot\\",
+      "BasePath": "_content/ReservationSystem.Web",
+      "RelativePath": "js/jquery-override.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery-override.js"
     },
     {
       "Identity": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Web\\wwwroot\\js\\site.js",

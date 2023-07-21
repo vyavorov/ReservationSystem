@@ -17,6 +17,7 @@ public class LocationService : ILocationService
     {
         IEnumerable<IndexViewModel> locations = await context
             .Locations
+            .AsNoTracking()
             .Select(l => new IndexViewModel
             {
                 Id = l.Id,
