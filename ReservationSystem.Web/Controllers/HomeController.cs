@@ -3,6 +3,7 @@ using ReservationSystem.Services;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Home;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace ReservationSystem.Web.Controllers
 {
@@ -13,7 +14,7 @@ namespace ReservationSystem.Web.Controllers
         {
             this.locationService = locationService;
         }
-
+        
         public async Task<IActionResult> Index()
         {
             IEnumerable<IndexViewModel> locations = await locationService.GetAllLocationsAsync();

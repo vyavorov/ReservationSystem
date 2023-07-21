@@ -4,9 +4,8 @@ namespace ReservationSystem.Web.Controllers
 {
     public class LocationController : Controller
     {
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> Add()
         {
-
             return View();
         }
     }
