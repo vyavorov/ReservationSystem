@@ -12,6 +12,9 @@ public static class EntityValidationConstants
 
         public const string LocationPricePerDayMinValue = "30";
         public const string LocationPricePerDayMaxValue = "90";
+
+        public const int LocationDescriptionMinLength = 10;
+        public const int LocationDescriptionMaxLength = 300;
     }
 
     public static class Reservation

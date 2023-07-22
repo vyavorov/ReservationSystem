@@ -15,6 +15,10 @@ public class LocationFormModel
     public string Address { get; set; } = null!;
 
     [Required]
+    [StringLength(LocationDescriptionMaxLength,MinimumLength = LocationDescriptionMinLength)]
+    public string Description { get; set; } = null!;
+
+    [Required]
     public int Capacity { get; set; }
 
     [Required]

@@ -18,12 +18,13 @@ public class LocationEntityConfiguration : IEntityTypeConfiguration<Location>
         Location location;
         location = new Location()
         {
-            Id = 1,
+            Id = -1,
             Name = "Perla",
             Address = "Perla Beach, Primorsko",
             Capacity = 40,
             PricePerDay = 35,
-            ImageUrl = "https://bashhub.bg/wp-content/uploads/2021/10/DSCF9982.png"
+            ImageUrl = "https://bashhub.bg/wp-content/uploads/2021/10/DSCF9982.png",
+            Description = "Bas#Hub Perla is a first of a kind coworking space in Bulgaria. Right between the fresh forest and beautiful beach, we've placed over 30 fixed desks, which are waiting for you"
         };
         locations.Add(location);
 

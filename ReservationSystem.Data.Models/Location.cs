@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using static ReservationSystem.Common.EntityValidationConstants.Location;
 namespace ReservationSystem.Data.Models;
 
@@ -19,6 +20,10 @@ public class Location
     [Required]
     [MaxLength(LocationAddressMaxLength)]
     public string Address { get; set; } = null!;
+
+    [Required]
+    [MaxLength(LocationDescriptionMaxLength)]
+    public string Description { get; set; } = null!;
 
     [Required]
     public int Capacity { get; set; }
