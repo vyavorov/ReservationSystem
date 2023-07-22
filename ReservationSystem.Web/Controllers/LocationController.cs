@@ -38,5 +38,34 @@ namespace ReservationSystem.Web.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int Id)
+        {
+            LocationDetailsViewModel model = await locationService.GetLocationDetailsAsync(Id);
+
+            if (model != null)
+            {
+                return View(model);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            LocationFormModel locationFormModel = await locationService.EditFormByIdAsync(id);
+            return View(locationFormModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, LocationFormModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                await locationService.EditLocationByIdAsync(id, model);
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

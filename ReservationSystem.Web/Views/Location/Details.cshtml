@@ -1,0 +1,45 @@
+﻿@model LocationDetailsViewModel
+@{
+    ViewBag.Title = "Location Details";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+<div class="container" style="display:inline">
+    <div class="row">
+        <div class="col-4">
+            <img class="card-img-top" style="width: 20rem;"
+                 src="@Model.ImageUrl" alt="Location Image">
+        </div>
+        <div class="card col-8 border-0">
+            <p style="font-size:25px;"><u>@Model.Name</u></p>
+            <p>Located in: <b>@Model.Address</b></p>
+            <p>
+                Price Per Month:
+                <b>@String.Format("{0:f2}", Model.PricePerDay) BGN</b>
+            </p>
+            <p>@Model.Description</p>
+            <p>Capacity: <b>@Model.Capacity</b></p>
+            <div class="form-inline">
+                @*TODO: THE BELOW SHOULD BE AVAILABLE FOR ADMINS ONLY*@
+                @if (this.User.Identity.IsAuthenticated)
+                {
+                    <a class="btn btn-warning" asp-controller="Location" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    <a class="ml-2 btn btn-danger" asp-controller="Location" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                    @*TODO: THE BELOW SHOULD BE GET OR POST??*@
+                    @*TODO: REMOVE INLINE STYLE*@
+                    <form class="ml-2" asp-controller="Location" asp-action="Book" asp-route-id="@Model.Id" method="post" style="display: inline-block;">
+                        <input class="btn btn-primary" type="submit" value="Book" />
+                    </form>
+                }
+            </div>
+            <p></p>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Agent Info</h5>
+                    <p class="card-text">Email: info@@bashhub.bg</p>
+                    <p class="card-text">Phone Number: +359 888 88 88 88</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

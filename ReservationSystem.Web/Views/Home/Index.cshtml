@@ -13,16 +13,15 @@
                         <b>@String.Format("{0:f2}", location.PricePerDay) BGN</b>
                     </h6>
                     <br />
-                    <a asp-controller="House" asp-action="Details" asp-route-id="@location.Id" class="btn btn-success">Details</a>
+                    <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id" class="btn btn-success">Details</a>
                     @*TODO: THE BELOW SHOULD BE AVAILABLE FOR ADMINS ONLY*@
                     @if (this.User.Identity.IsAuthenticated)
                     {
-                        <a asp-controller="House" asp-action="Edit" asp-route-id="@location.Id"
+                        <a asp-controller="Location" asp-action="Edit" asp-route-id="@location.Id"
                            class="btn btn-warning">Edit</a>
-                        <a asp-controller="House" asp-action="Delete" asp-routeid="@location.Id"
-                           class="btn btn-danger">Delete</a>
+                        <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-danger">Delete</a>
                         <p></p>
-                        <form class="input-group-sm" asp-controller="House" asp-action="Book" asp-route-id="@location.Id" method="post">
+                        <form class="input-group-sm" asp-controller="Location" asp-action="Book" asp-route-id="@location.Id" method="post">
                             <input class="btn btn-primary" type="submit" value="Book now" />
                         </form>
                     }

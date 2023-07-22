@@ -19,13 +19,10 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="All">All locations</a>
-                        </li>
                         @if (this.User.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="mine">My reservations</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Mine">My reservations</a>
                             </li>
                         }
                         @*TODO: THE BELOW SHOULD BE AVAILABLE FOR ADMINS ONLY*@

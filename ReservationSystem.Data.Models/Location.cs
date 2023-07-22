@@ -8,6 +8,7 @@ public class Location
     public Location()
     {
         this.Reservations = new HashSet<Reservation>();
+        this.IsActive = true;
     }
 
     [Key]
@@ -36,5 +37,7 @@ public class Location
 
     [Required]
     public ICollection<Reservation> Reservations { get; set; } = null!;
+
+    public bool IsActive { get; set; }
 
 }
