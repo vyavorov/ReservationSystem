@@ -9,6 +9,7 @@ public interface ILocationService
     Task AddLocationAsync(LocationFormModel model);
     Task<LocationDetailsViewModel> GetLocationDetailsAsync(int id);
     Task<LocationFormModel> EditFormByIdAsync(int id);
-
     Task EditLocationByIdAsync(int id,  LocationFormModel model);
+    Task<LocationDeleteViewModel> DeleteFormByIdAsync(int id);
+    Task DeleteLocationByIdAsync(int id, LocationDeleteViewModel model);
 }

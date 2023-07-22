@@ -34,6 +34,7 @@ public class LocationService : ILocationService
     {
         IEnumerable<IndexViewModel> locations = await context
             .Locations
+            .Where(l => l.IsActive)
             .AsNoTracking()
             .Select(l => new IndexViewModel
             {
@@ -71,7 +72,7 @@ public class LocationService : ILocationService
     {
         Location? location = await context.Locations.FirstOrDefaultAsync(l => l.Id == id);
         LocationDetailsViewModel? locationDetailsViewModel = null;
-        if (location != null)
+        if (location != null && location.IsActive)
         {
             locationDetailsViewModel = new LocationDetailsViewModel()
             {
@@ -99,6 +100,32 @@ public class LocationService : ILocationService
             location.PricePerDay = model.PricePerDay;
             location.Description = model.Description;
             location.Name = model.Name;
+            await context.SaveChangesAsync();
+        }
+    }
+
+    public async Task<LocationDeleteViewModel> DeleteFormByIdAsync(int id)
+    {
+        Location? location = await context.Locations.Where(l => l.IsActive).FirstOrDefaultAsync(l => l.Id ==id);
+        LocationDeleteViewModel? locationDeleteViewModel = null;
+        if (location != null)
+        {
+            locationDeleteViewModel = new LocationDeleteViewModel()
+            {
+                Address = location.Address,
+                ImageUrl = location.ImageUrl,
+                Name = location.Name
+            };
+        }
+        return locationDeleteViewModel;
+    }
+
+    public async Task DeleteLocationByIdAsync(int id, LocationDeleteViewModel model)
+    {
+        Location? location = await context.Locations.Where(l => l.IsActive).FirstOrDefaultAsync(l => l.Id == id);
+        if (location != null)
+        {
+            location.IsActive = false;
             await context.SaveChangesAsync();
         }
     }

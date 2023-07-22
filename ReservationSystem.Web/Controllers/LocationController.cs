@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Location;
 
@@ -66,6 +67,32 @@ namespace ReservationSystem.Web.Controllers
                 await locationService.EditLocationByIdAsync(id, model);
             }
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            LocationDeleteViewModel locationDeleteViewModel = await locationService.DeleteFormByIdAsync(id);
+            if (locationDeleteViewModel != null)
+            {
+                return View(locationDeleteViewModel);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+        //TODO: MANIPULATE TRY/CATCH EVERYWHERE
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id, LocationDeleteViewModel locationDeleteViewModel)
+        {
+            try
+            {
+                await locationService.DeleteLocationByIdAsync(id, locationDeleteViewModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return RedirectToAction("Index","Home");
         }
     }
 }
