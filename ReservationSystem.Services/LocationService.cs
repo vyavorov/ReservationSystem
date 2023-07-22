@@ -39,6 +39,8 @@ public class LocationService : ILocationService
                 Id = l.Id,
                 Name = l.Name,
                 ImageUrl = l.ImageUrl,
+                PricePerDay = l.PricePerDay,
+                Address = l.Address,
             })
             .ToArrayAsync();
 
