@@ -37,6 +37,7 @@ builder.Services.AddControllersWithViews()
         options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
     });
 builder.Services.AddScoped<ILocationService, LocationService>();
+builder.Services.AddScoped<IReservationService, ReservationService>();
 
 var app = builder.Build();
 

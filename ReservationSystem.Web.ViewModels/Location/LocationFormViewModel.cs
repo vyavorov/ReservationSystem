@@ -3,7 +3,7 @@ using static ReservationSystem.Common.EntityValidationConstants.Location;
 
 namespace ReservationSystem.Web.ViewModels.Location;
 
-public class LocationFormModel
+public class LocationFormViewModel
 {
 
     [Required]

@@ -864,7 +864,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "ReservationSystem.Common": "1.0.0"
+          "ReservationSystem.Common": "1.0.0",
+          "ReservationSystem.Data.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ReservationSystem.Web.ViewModels.dll": {}

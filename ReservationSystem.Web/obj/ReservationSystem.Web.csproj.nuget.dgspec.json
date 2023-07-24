@@ -357,6 +357,9 @@
             "projectReferences": {
               "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Common\\ReservationSystem.Common.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Common\\ReservationSystem.Common.csproj"
+              },
+              "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Data.Models\\ReservationSystem.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Data.Models\\ReservationSystem.Data.Models.csproj"
               }
             }
           }

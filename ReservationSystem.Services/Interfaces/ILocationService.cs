@@ -6,10 +6,10 @@ namespace ReservationSystem.Services.Interfaces;
 public interface ILocationService
 {
     Task<IEnumerable<IndexViewModel>> GetAllLocationsAsync();
-    Task AddLocationAsync(LocationFormModel model);
+    Task AddLocationAsync(LocationFormViewModel model);
     Task<LocationDetailsViewModel> GetLocationDetailsAsync(int id);
-    Task<LocationFormModel> EditFormByIdAsync(int id);
-    Task EditLocationByIdAsync(int id,  LocationFormModel model);
+    Task<LocationFormViewModel> EditFormByIdAsync(int id);
+    Task EditLocationByIdAsync(int id,  LocationFormViewModel model);
     Task<LocationDeleteViewModel> DeleteFormByIdAsync(int id);
     Task DeleteLocationByIdAsync(int id, LocationDeleteViewModel model);
 }

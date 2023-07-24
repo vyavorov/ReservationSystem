@@ -15,7 +15,7 @@ public class LocationService : ILocationService
         this.context = context;
     }
 
-    public async Task AddLocationAsync(LocationFormModel model)
+    public async Task AddLocationAsync(LocationFormViewModel model)
     {
         Location location = new Location()
         {
@@ -49,13 +49,13 @@ public class LocationService : ILocationService
         return locations;
     }
 
-    public async Task<LocationFormModel> EditFormByIdAsync(int id)
+    public async Task<LocationFormViewModel> EditFormByIdAsync(int id)
     {
         Location? location = await context.Locations.FirstOrDefaultAsync(l => l.Id == id);
-        LocationFormModel? locationFormModel = null;
+        LocationFormViewModel? locationFormModel = null;
         if (location != null)
         {
-            locationFormModel = new LocationFormModel()
+            locationFormModel = new LocationFormViewModel()
             {
                 Address = location.Address,
                 Capacity = location.Capacity,
@@ -88,7 +88,7 @@ public class LocationService : ILocationService
         return locationDetailsViewModel;
     }
 
-    public async Task EditLocationByIdAsync(int id, LocationFormModel model)
+    public async Task EditLocationByIdAsync(int id, LocationFormViewModel model)
     {
         Location? location = await context.Locations.FirstOrDefaultAsync(l => l.Id == id);
         if (location != null)

@@ -1,18 +1,34 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.date-form-group {
+    display: inline-block;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.right-form-group {
+    float: right;
+}
+
+.equipment-label {
+    display: inline-block;
 }

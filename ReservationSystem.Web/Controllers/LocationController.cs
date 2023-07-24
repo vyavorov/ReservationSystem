@@ -22,7 +22,7 @@ namespace ReservationSystem.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(LocationFormModel model)
+        public async Task<IActionResult> Add(LocationFormViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -55,12 +55,12 @@ namespace ReservationSystem.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            LocationFormModel locationFormModel = await locationService.EditFormByIdAsync(id);
+            LocationFormViewModel locationFormModel = await locationService.EditFormByIdAsync(id);
             return View(locationFormModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, LocationFormModel model)
+        public async Task<IActionResult> Edit(int id, LocationFormViewModel model)
         {
             if (ModelState.IsValid)
             {
