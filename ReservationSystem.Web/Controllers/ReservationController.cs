@@ -13,16 +13,28 @@ namespace ReservationSystem.Web.Controllers
         {
             this.reservationService = reservationService;
         }
+
+        [HttpGet]
         public async Task<IActionResult> Book(int locationId)
         {
             ReservationFormViewModel viewModel = new ReservationFormViewModel()
             {
+                From = DateTime.Today,
+                To = DateTime.Today,
                 Equipments = await this.reservationService
-                    .GetAllEquipmentsAsync()
-                    
+                    .GetAllEquipmentsAsync(),
+                LocationId = locationId
             };
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Book(int Id, ReservationFormViewModel model)
+        {
+            model.LocationId = Id;
+
+            return RedirectToAction("Index","Home");
         }
     }
 }

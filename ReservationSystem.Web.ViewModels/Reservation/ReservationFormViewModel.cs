@@ -28,4 +28,8 @@ public class ReservationFormViewModel
     public string? PromoCode { get; set; }
 
     public ICollection<EquipmentViewModel> Equipments { get; set; }
+
+    public int LocationId { get; set; }
+
+    public Guid UserId { get; set; }
 }

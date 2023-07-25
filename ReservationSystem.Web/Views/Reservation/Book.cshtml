@@ -1,7 +1,8 @@
-﻿@model ReservationFormViewModel
+﻿@using System.Security.Claims;
+@model ReservationFormViewModel
 <div class="row">
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
-        <form method="post">
+@*        <form method="post">
             <div class="form-group date-form-group">
                 <label asp-for="From"></label>
                 <input asp-for="From" class="form-control" placeholder="From...">
@@ -31,14 +32,54 @@
             @foreach (var equipment in Model.Equipments)
             {
                 <div class="form-group">
-                    <label asp-for="Equipments" class="equipment-label">@equipment.Name</label>
-                    <input asp-for="@equipment" class="form-control" placeholder="@equipment.Name">
-                    <span asp-validation-for="Equipments" class="small text-danger"></span>
+                    <label asp-for="@Model.EquipmentId" class="equipment-label">@equipment.Name</label>
+                    <input asp-for="@equipment.Quantity" class="form-control" placeholder="@equipment.Name">
+                    <span asp-validation-for="@Model.EquipmentId" class="small text-danger"></span>
                 </div>
             }
             <div class="text-center">
                 <input class="btn btn-primary mt-3" type="submit" value="Save" />
             </div>
+        </form>*@
+        <form asp-controller="Reservation" asp-action="Book" method="post">
+            <input type="hidden" asp-for="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+            <input type="hidden" asp-for="LocationId" value="@Model.LocationId" />
+            <div class="form-group date-form-group">
+                <label asp-for="From"></label>
+                <input asp-for="From" class="form-control" placeholder="From..." type="date">
+                <span asp-validation-for="From" class="small text-danger"></span>
+            </div>
+            <div class="form-group date-form-group right-form-group">
+                <label asp-for="To"></label>
+                <input asp-for="To" class="form-control" placeholder="To..." type="date">
+                <span asp-validation-for="To" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomersCount"></label>
+                <input asp-for="CustomersCount" rows="4" class="form-control" placeholder="CustomersCount" type="number">
+                <span asp-validation-for="CustomersCount" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdditionalInformation"></label>
+                <input asp-for="AdditionalInformation" class="form-control" placeholder="Your additional information here..." type="text">
+                <span asp-validation-for="AdditionalInformation" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PromoCode"></label>
+                <input asp-for="PromoCode" class="form-control" placeholder="Promo code..." type=>
+                <span asp-validation-for="PromoCode" class="small text-danger"></span>
+            </div>
+            <p>Do you want any additional equipment? If so, please specify how many of each.</p>
+            @foreach (var equipment in Model.Equipments)
+            {
+                <div class="form-group">
+                    <input type="hidden" name="Equipments.Index" value="@equipment.Id" />
+                    <label class="equipment-label">@equipment.Name</label>
+                    <input type="number" name="Equipments[@equipment.Id].Quantity" value="0" min="0" placeholder="@equipment.Name" class="form-control" />
+                    <span asp-validation-for="@equipment.Quantity" class="small text-danger"></span>
+                </div>
+            }
+            <input class="btn btn-primary mt-3" type="submit" value="Save" />
         </form>
     </div>
 </div>

@@ -21,8 +21,7 @@
                            class="btn btn-warning">Edit</a>
                         <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-danger">Delete</a>
                         <p></p>
-                        @*TODO: THE BELOW SHOULD BE GET OR POST?*@
-                        <form class="input-group-sm" asp-controller="Reservation" asp-action="Book" asp-route-id="@location.Id" method="post">
+                        <form class="input-group-sm" asp-controller="Reservation" asp-action="Book" asp-route-id="@location.Id" method="get">
                             <input class="btn btn-primary" type="submit" value="Book now" />
                         </form>
                     }
