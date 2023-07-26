@@ -39,6 +39,7 @@ namespace ReservationSystem.Web.Controllers
             }
             catch (ArgumentException ex)
             {
+                model.Equipments = await reservationService.GetAllEquipmentsAsync();
                 ModelState.AddModelError(string.Empty, ex.Message);
                 return View(model);
             }

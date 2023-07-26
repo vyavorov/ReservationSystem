@@ -26,7 +26,10 @@ public class ReservationService : IReservationService
         {
             throw new ArgumentException("Chosen location cannot be found. Please try again");
         }
-
+        if (model.CustomersCount == null || model.CustomersCount <= 0 || model.CustomersCount > chosenLocation.Capacity)
+        {
+            throw new ArgumentException("Please share valid desks count needed");
+        }
         Reservation reservation = new Reservation()
         {
             From = model.From,
