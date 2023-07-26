@@ -32,3 +32,17 @@ body {
 .equipment-label {
     display: inline-block;
 }
+
+.form-left-container {
+    display: inline-block;
+    width: 40%;
+}
+
+.form-right-container {
+    float: right;
+    margin-top: 60px;
+}
+
+.validation-summary-errors {
+    color: red;
+}

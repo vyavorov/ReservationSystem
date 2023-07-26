@@ -50,4 +50,7 @@ public class Reservation
 
     [Required]
     public Guid UserId { get; set; }
+
+    [Required]
+    public string PhoneNumber { get; set; } = null!;
 }

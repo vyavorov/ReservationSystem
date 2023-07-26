@@ -33,6 +33,15 @@ namespace ReservationSystem.Web.Controllers
         public async Task<IActionResult> Book(int Id, ReservationFormViewModel model)
         {
             model.LocationId = Id;
+            try
+            {
+                await reservationService.CreateReservationAsync(model);
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View(model);
+            }
 
             return RedirectToAction("Index","Home");
         }

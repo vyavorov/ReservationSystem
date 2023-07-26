@@ -1,9 +1,15 @@
-﻿using ReservationSystem.Web.ViewModels.Reservation;
+﻿using ReservationSystem.Data.Models;
+using ReservationSystem.Web.ViewModels.Reservation;
 
 namespace ReservationSystem.Services.Interfaces;
 
 public interface IReservationService
 {
-    public Task<ICollection<EquipmentViewModel>> GetAllEquipmentsAsync();
+    public Task<List<EquipmentViewModel>> GetAllEquipmentsAsync();
+    public Task CreateReservationAsync(ReservationFormViewModel model);
+
+    public bool AreDatesValid(Reservation reservation);
+
+    public int GetReservationDays(Reservation reservation);
 }
 
