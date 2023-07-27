@@ -46,3 +46,8 @@ body {
 .validation-summary-errors {
     color: red;
 }
+
+.price-btn-wrapper {
+    text-align: right;
+    margin-top: 65px;
+}

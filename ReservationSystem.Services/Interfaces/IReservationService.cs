@@ -14,5 +14,7 @@ public interface IReservationService
     public int GetReservationDays(Reservation reservation);
 
     public void AddEquipmentsToReservation(ReservationFormViewModel model, Reservation reservation, ReservationDbContext context, Location location);
+
+    public Task<decimal> GetPricePerDayByLocation(int locationId);
 }
 

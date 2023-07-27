@@ -15,7 +15,7 @@ namespace ReservationSystem.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Book(int locationId)
+        public async Task<IActionResult> Book(int Id)
         {
             ReservationFormViewModel viewModel = new ReservationFormViewModel()
             {
@@ -23,7 +23,8 @@ namespace ReservationSystem.Web.Controllers
                 To = DateTime.Today,
                 Equipments = await this.reservationService
                     .GetAllEquipmentsAsync(),
-                LocationId = locationId
+                LocationId = Id,
+                PricePerDay = await reservationService.GetPricePerDayByLocation(Id)
             };
 
             return View(viewModel);

@@ -58,7 +58,7 @@ public class ReservationService : IReservationService
     {
         foreach (var eachEquipmet in model.Equipments)
         {
-            if (eachEquipmet.Quantity >= 0 && eachEquipmet.Quantity <= location.Capacity)
+            if (eachEquipmet.Quantity >= 0 && eachEquipmet.Quantity <= model.CustomersCount)
             {
                 EquipmentReservations equipmentReservations = new EquipmentReservations()
                 {
@@ -77,7 +77,7 @@ public class ReservationService : IReservationService
 
     public int GetReservationDays(Reservation reservation)
     {
-        return (reservation.To - reservation.From).Days;
+        return (reservation.To - reservation.From).Days + 1;
     }
 
     public bool AreDatesValid(Reservation reservation)
@@ -96,5 +96,11 @@ public class ReservationService : IReservationService
                                 Name = c.Name
                             }).ToListAsync();
         return allEquipments;
+    }
+
+    public async Task<decimal> GetPricePerDayByLocation(int locationId)
+    {
+        Location? location = await context.Locations.FirstOrDefaultAsync(l => l.Id == locationId);
+        return location.PricePerDay;
     }
 }
