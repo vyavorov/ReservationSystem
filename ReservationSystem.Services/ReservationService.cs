@@ -43,7 +43,7 @@ public class ReservationService : IReservationService
             LocationId = model.LocationId,
             PhoneNumber = model.PhoneNumber,
             UserId = model.UserId,
-            Discount = promoCode?.Discount == null ? 1 : promoCode!.Discount
+            Discount = promoCode?.Discount == null ? 0 : promoCode!.Discount
         };
         if (!AreDatesValid(reservation))
         {
@@ -51,7 +51,8 @@ public class ReservationService : IReservationService
         }
         //TODO: FIX TOTAL PRICE TO REFLECT DISCOUNT
         int reservationDays = GetReservationDays(reservation);
-        reservation.TotalPrice = (decimal)model.CustomersCount * chosenLocation.PricePerDay * reservationDays;
+        decimal discountToApply = reservation.Discount == 0 ? 1 : (decimal)reservation.Discount / 100;
+        reservation.TotalPrice = ((decimal)model.CustomersCount * chosenLocation.PricePerDay * reservationDays) * discountToApply;
 
         AddEquipmentsToReservation(model, reservation, context, chosenLocation);
 
