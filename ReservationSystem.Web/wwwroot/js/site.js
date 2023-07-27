@@ -1,4 +1,5 @@
-﻿let pricePerDayElement = document.getElementById('pricePerDay');
+﻿// Total price dynamic implementation start
+let pricePerDayElement = document.getElementById('pricePerDay');
 let customersCountElement = document.getElementById('customersCount');
 let startDateElement = document.getElementById('From');
 let endDateElement = document.getElementById('To');
@@ -30,3 +31,16 @@ pricePerDayElement.addEventListener('input', calculateTotalPrice);
 customersCountElement.addEventListener('input', calculateTotalPrice);
 startDateElement.addEventListener('input', calculateTotalPrice);
 endDateElement.addEventListener('input', calculateTotalPrice);
+// Total price dynamic implementation end
+
+
+
+//Promocode dynamic message implementation start
+document.getElementById('promocode').addEventListener('input', function () {
+    if (this.value) {
+        document.getElementById('message').style.display = 'block';
+    } else {
+        document.getElementById('message').style.display = 'none';
+    }
+});
+//Promocode dynamic message implementation end

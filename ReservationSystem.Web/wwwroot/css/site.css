@@ -51,3 +51,8 @@ body {
     text-align: right;
     margin-top: 65px;
 }
+
+#message {
+    display: none;
+    color: #0066cc;
+}

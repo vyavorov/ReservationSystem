@@ -31,8 +31,9 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="PromoCode"></label>
-                    <input asp-for="PromoCode" class="form-control" placeholder="Promo code..." type="text">
+                    <input asp-for="PromoCode" class="form-control" placeholder="Promo code..." type="text" id="promocode">
                     <span asp-validation-for="PromoCode" class="small text-danger"></span>
+                    <p id="message">The price will be re-calculated once you press submit</p>
                 </div>
                 <div class="form-group">
                     <label asp-for="PhoneNumber"></label>

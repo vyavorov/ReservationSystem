@@ -22,6 +22,10 @@ public class ReservationService : IReservationService
         //TODO: IMPLEMENT ISACTIVE FOR PROMOCODE
         PromoCode? promoCode = await context.PromoCodes.FirstOrDefaultAsync(pc => pc.Name == model.PromoCode);
         Location? chosenLocation = await context.Locations.Where(l => l.IsActive).FirstOrDefaultAsync(l => l.Id == model.LocationId);
+        if (model.PromoCode != null && promoCode == null)
+        {
+            throw new ArgumentException("Promocode does not exist");
+        }
         if (chosenLocation == null)
         {
             throw new ArgumentException("Chosen location cannot be found. Please try again");
@@ -39,14 +43,15 @@ public class ReservationService : IReservationService
             LocationId = model.LocationId,
             PhoneNumber = model.PhoneNumber,
             UserId = model.UserId,
-            Discount = promoCode?.Discount == null ? 0 : promoCode!.Discount
+            Discount = promoCode?.Discount == null ? 1 : promoCode!.Discount
         };
         if (!AreDatesValid(reservation))
         {
             throw new ArgumentException("'To' date must be greater than 'From' date");
         }
+        //TODO: FIX TOTAL PRICE TO REFLECT DISCOUNT
         int reservationDays = GetReservationDays(reservation);
-        reservation.TotalPrice = (decimal)((model.CustomersCount * chosenLocation.PricePerDay * reservationDays) - reservation.Discount);
+        reservation.TotalPrice = (decimal)model.CustomersCount * chosenLocation.PricePerDay * reservationDays;
 
         AddEquipmentsToReservation(model, reservation, context, chosenLocation);
 
