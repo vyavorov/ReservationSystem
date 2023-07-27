@@ -25,9 +25,8 @@
                 {
                     <a class="btn btn-warning" asp-controller="Location" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
                     <a class="ml-2 btn btn-danger" asp-controller="Location" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
-                    @*TODO: THE BELOW SHOULD BE GET OR POST??*@
                     @*TODO: REMOVE INLINE STYLE*@
-                    <form class="ml-2" asp-controller="Location" asp-action="Book" asp-route-id="@Model.Id" method="post" style="display: inline-block;">
+                    <form class="ml-2" asp-controller="Reservation" asp-action="Book" asp-route-id="@Model.Id" method="get" style="display: inline-block;">
                         <input class="btn btn-primary" type="submit" value="Book" />
                     </form>
                 }

@@ -43,22 +43,22 @@ public class ReservationService : IReservationService
         };
         if (!AreDatesValid(reservation))
         {
-            throw new ArgumentException("To date must be greater than From date");
+            throw new ArgumentException("'To' date must be greater than 'From' date");
         }
         int reservationDays = GetReservationDays(reservation);
         reservation.TotalPrice = (decimal)((model.CustomersCount * chosenLocation.PricePerDay * reservationDays) - reservation.Discount);
 
-        AddEquipmentsToReservation(model, reservation, context);
+        AddEquipmentsToReservation(model, reservation, context, chosenLocation);
 
         await context.Reservations.AddAsync(reservation);
         await context.SaveChangesAsync();
     }
 
-    public void AddEquipmentsToReservation(ReservationFormViewModel model, Reservation reservation, ReservationDbContext context)
+    public void AddEquipmentsToReservation(ReservationFormViewModel model, Reservation reservation, ReservationDbContext context, Location location)
     {
         foreach (var eachEquipmet in model.Equipments)
         {
-            if (eachEquipmet.Quantity > 0)
+            if (eachEquipmet.Quantity >= 0 && eachEquipmet.Quantity <= location.Capacity)
             {
                 EquipmentReservations equipmentReservations = new EquipmentReservations()
                 {
@@ -66,6 +66,10 @@ public class ReservationService : IReservationService
                     ReservationId = reservation.Id
                 };
                 reservation.EquipmentNeeded.Add(equipmentReservations);
+            }
+            else
+            {
+                throw new ArgumentException("Please share valid equipment counts");
             }
         }
 
