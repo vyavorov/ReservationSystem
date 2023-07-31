@@ -17,4 +17,7 @@ public class EquipmentReservations
 
     [Required]
     public Reservation Reservation { get; set; } = null!;
+
+    [Required]
+    public int Quantity { get; set; }
 }

@@ -15,6 +15,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.15",
           "ReservationSystem.Common": "1.0.0",
           "ReservationSystem.Data": "1.0.0",
+          "ReservationSystem.Data.Models": "1.0.0",
           "ReservationSystem.Services": "1.0.0",
           "ReservationSystem.Web.Infrastructure": "1.0.0",
           "ReservationSystem.Web.ViewModels": "1.0.0"

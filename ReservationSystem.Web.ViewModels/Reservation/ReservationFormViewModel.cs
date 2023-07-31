@@ -31,6 +31,8 @@ public class ReservationFormViewModel
 
     public int LocationId { get; set; }
 
+    public Data.Models.Location Location { get; set; }
+
     public Guid UserId { get; set; }
 
     [Required(ErrorMessage = "You must provide a phone number")]

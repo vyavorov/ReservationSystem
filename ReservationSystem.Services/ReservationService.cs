@@ -70,21 +70,19 @@ public class ReservationService : IReservationService
         {
             if (eachEquipmet.Quantity > 0)
             {
-                for (int i = 0; i < eachEquipmet.Quantity; i++)
+                if (eachEquipmet.Quantity <= model.CustomersCount)
                 {
-                    if (eachEquipmet.Quantity <= model.CustomersCount)
+                    EquipmentReservations equipmentReservations = new EquipmentReservations()
                     {
-                        EquipmentReservations equipmentReservations = new EquipmentReservations()
-                        {
-                            EquipmentId = eachEquipmet.Id,
-                            ReservationId = reservation.Id
-                        };
-                        context.EquipmentsReservations.Add(equipmentReservations);
-                    }
-                    else
-                    {
-                        throw new ArgumentException("Please share valid equipment counts");
-                    }
+                        EquipmentId = eachEquipmet.Id,
+                        ReservationId = reservation.Id,
+                        Quantity = eachEquipmet.Quantity,
+                    };
+                    context.EquipmentsReservations.Add(equipmentReservations);
+                }
+                else
+                {
+                    throw new ArgumentException("Please share valid equipment counts");
                 }
             }
         }
@@ -127,6 +125,7 @@ public class ReservationService : IReservationService
                 .Where(r => r.UserId.ToString() == userId)
                 .Select(r => new ReservationFormViewModel()
                 {
+                    Location = r.Location,
                     UserId = r.UserId,
                     AdditionalInformation = r.AdditionalInformation,
                     CustomersCount = r.CustomersCount,

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReservationSystem.Data;
 
@@ -11,9 +12,10 @@ using ReservationSystem.Data;
 namespace ReservationSystem.Data.Migrations
 {
     [DbContext(typeof(ReservationDbContext))]
-    partial class ReservationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230731091740_Equipment relations fix")]
+    partial class Equipmentrelationsfix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -260,16 +262,19 @@ namespace ReservationSystem.Data.Migrations
 
             modelBuilder.Entity("ReservationSystem.Data.Models.EquipmentReservations", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("EquipmentId")
                         .HasColumnType("int");
 
                     b.Property<Guid>("ReservationId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.HasKey("EquipmentId", "ReservationId");
+                    b.HasIndex("EquipmentId");
 
                     b.HasIndex("ReservationId");
 
@@ -351,7 +356,7 @@ namespace ReservationSystem.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9daf95e1-66de-4948-9a5f-801d2410933b"),
+                            Id = new Guid("ff4b4f44-4cd7-4864-8753-e0b859e2dab4"),
                             Discount = 50,
                             Name = "internal"
                         });

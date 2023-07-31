@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ReservationSystem.Common\ReservationSystem.Common.csproj" />
+    <ProjectReference Include="..\ReservationSystem.Data.Models\ReservationSystem.Data.Models.csproj" />
     <ProjectReference Include="..\ReservationSystem.Data\ReservationSystem.Data.csproj" />
     <ProjectReference Include="..\ReservationSystem.Services\ReservationSystem.Services.csproj" />
     <ProjectReference Include="..\ReservationSystem.Web.Infrastructure\ReservationSystem.Web.Infrastructure.csproj" />
