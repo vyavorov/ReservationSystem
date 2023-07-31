@@ -19,7 +19,10 @@
                 <p>Promo code: <b>@reservation.PromoCode</b></p>
                 <p>Phone Number: <b>@reservation.PhoneNumber</b></p>
 
-                <p>Equipment: <b>@string.Join(", ", reservation.Equipments.Select(e => e.Name))</b></p>
+                @foreach (var equipment in reservation.Equipments)
+                {
+                    <p>Equipment: @equipment.Name, @equipment.Quantity</p>
+                }
 
                 <p>
                     Total price:

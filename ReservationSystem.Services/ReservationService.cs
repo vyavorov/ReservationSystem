@@ -55,9 +55,12 @@ public class ReservationService : IReservationService
         decimal discountToApply = reservation.Discount == 0 ? 1 : (decimal)reservation.Discount / 100;
         reservation.TotalPrice = ((decimal)model.CustomersCount * chosenLocation.PricePerDay * reservationDays) * discountToApply;
 
-        AddEquipmentsToReservation(model, reservation, context, chosenLocation);
 
         await context.Reservations.AddAsync(reservation);
+        await context.SaveChangesAsync();
+
+        AddEquipmentsToReservation(model, reservation, context, chosenLocation);
+
         await context.SaveChangesAsync();
     }
 
@@ -67,18 +70,21 @@ public class ReservationService : IReservationService
         {
             if (eachEquipmet.Quantity > 0)
             {
-                if (eachEquipmet.Quantity <= model.CustomersCount)
+                for (int i = 0; i < eachEquipmet.Quantity; i++)
                 {
-                    EquipmentReservations equipmentReservations = new EquipmentReservations()
+                    if (eachEquipmet.Quantity <= model.CustomersCount)
                     {
-                        EquipmentId = eachEquipmet.Id,
-                        ReservationId = reservation.Id
-                    };
-                    reservation.EquipmentNeeded.Add(equipmentReservations);
-                }
-                else
-                {
-                    throw new ArgumentException("Please share valid equipment counts");
+                        EquipmentReservations equipmentReservations = new EquipmentReservations()
+                        {
+                            EquipmentId = eachEquipmet.Id,
+                            ReservationId = reservation.Id
+                        };
+                        context.EquipmentsReservations.Add(equipmentReservations);
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Please share valid equipment counts");
+                    }
                 }
             }
         }
