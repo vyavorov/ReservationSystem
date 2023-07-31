@@ -137,6 +137,7 @@ public class ReservationService : IReservationService
                     LocationId = r.LocationId,
                     PromoCode = r.PromoCode.Name,
                     TotalPrice = r.TotalPrice,
+                    Discount = r.Discount,
                     Equipments = r.EquipmentNeeded.Select(en => new EquipmentViewModel()
                     {
                         Id = en.EquipmentId,

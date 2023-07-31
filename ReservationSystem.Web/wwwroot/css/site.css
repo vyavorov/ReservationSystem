@@ -56,3 +56,7 @@ body {
     display: none;
     color: #0066cc;
 }
+
+.card {
+    margin-right: 5px;
+}

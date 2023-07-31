@@ -4,50 +4,82 @@
 }
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
-<div class="container" style="display:inline">
-    <div class="row">
+<div class="container mt-4">
+    <div class="row justify-content-center">
 
         @foreach (var reservation in Model)
         {
-            <div class="card col-8 border-0">
-                @*<p style="font-size:25px;"><u>@Model.Name</u></p>*@
-                <p>Location: @reservation.Location.Name</p>
-                <p>Fom: <b>@reservation.From.ToString("d")</b></p>
-                <p>To: <b>@reservation.To.ToString("d")</b></p>
-
-                <p>Customers count: @reservation.CustomersCount</p>
-                <p>Additional information: <b>@reservation.AdditionalInformation</b></p>
-                <p>Promo code: <b>@reservation.PromoCode</b></p>
-                <p>Phone Number: <b>@reservation.PhoneNumber</b></p>
-                <p>Requested equipment:</p>
-                @foreach (var equipment in reservation.Equipments)
-                {
-                    <p>&emsp;@equipment.Name, @equipment.Quantity</p>
-                }
-
-                <p>
-                    Total price: <b>@String.Format("{0:f2}", @reservation.TotalPrice) BGN</b>
-                </p>
-
-
-                <div class="form-inline">
-                    @*TODO: THE BELOW SHOULD BE AVAILABLE FOR ADMINS ONLY*@
+            <div class="card col-lg-6 col-md-8 mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3"><b>Reservation for: </b>@reservation.Location.Name</h5>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Field</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Date</td>
+                                <td>@reservation.From.ToString("d") - @reservation.To.ToString("d")</td>
+                            </tr>
+                            <tr>
+                                <td>Customers count</td>
+                                <td>@reservation.CustomersCount</td>
+                            </tr>
+                            <tr>
+                                <td>Additional information</td>
+                                <td>@reservation.AdditionalInformation</td>
+                            </tr>
+                            @if (reservation.PromoCode != null)
+                            {
+                                <tr>
+                                    <td>Promo code</td>
+                                    <td>@reservation.PromoCode</td>
+                                </tr>
+                                <tr>
+                                    <td>Discount</td>
+                                    <td>@reservation.Discount %</td>
+                                </tr>
+                            }
+                            <tr>
+                                <td>Phone Number</td>
+                                <td>@reservation.PhoneNumber</td>
+                            </tr>
+                            @if (reservation.Equipments.Count > 0)
+                            {
+                                <tr>
+                                    <td>Requested equipment</td>
+                                    <td>
+                                        @foreach (var equipment in reservation.Equipments)
+                                        {
+                                            <p class="m-0">&bull; @equipment.Name, @equipment.Quantity</p>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                            <tr>
+                                <td>Total price</td>
+                                <td>@String.Format("{0:f2}", @reservation.TotalPrice) BGN</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     @if (this.User.Identity.IsAuthenticated)
                     {
-                        @*<a class="btn btn-warning" asp-controller="Reservation" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>*@
-                        @*<a class="ml-2 btn btn-danger" asp-controller="Reservation" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>*@
+                        <div class="mt-3">
+                            @*<a class="btn btn-warning" asp-controller="Reservation" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>*@
+                            @*<a class="ml-2 btn btn-danger" asp-controller="Reservation" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>*@
+                        </div>
                     }
                 </div>
-                <p></p>
             </div>
-            <hr />
-
         }
-        <div class="card" style="width: 18rem;">
+        <div class="card col-lg-6 col-md-8 shadow-sm">
             <div class="card-body">
-                <h5 class="card-title">Agent Info</h5>
-                <p class="card-text">Email: info@@bashhub.bg</p>
-                <p class="card-text">Phone Number: +359 888 88 88 88</p>
+                <h5 class="card-title">Contacts</h5>
+                <p class="card-text"><b>Email:</b> info@@bashhub.bg</p>
+                <p class="card-text"><b>Phone Number:</b> +359 888 88 88 88</p>
             </div>
         </div>
     </div>

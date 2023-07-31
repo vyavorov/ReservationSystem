@@ -46,4 +46,6 @@ public class ReservationFormViewModel
     public decimal PricePerDay { get; set; }
 
     public decimal TotalPrice { get; set; }
+
+    public int? Discount { get; set; }
 }
