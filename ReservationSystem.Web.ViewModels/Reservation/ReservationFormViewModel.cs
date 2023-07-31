@@ -18,6 +18,8 @@ public class ReservationFormViewModel
     [DataType(DataType.Date)]
     public DateTime To { get; set; }
 
+    public DateTime CreatedOn { get; set; }
+
     [Required(ErrorMessage = "Customer count is required.")]
     public int? CustomersCount { get; set; }
 

@@ -131,6 +131,7 @@ public class ReservationService : IReservationService
                     CustomersCount = r.CustomersCount,
                     From = r.From,
                     To = r.To,
+                    CreatedOn = r.CreatedOn,
                     PhoneNumber = r.PhoneNumber,
                     PricePerDay = r.Location.PricePerDay,
                     LocationId = r.LocationId,
@@ -142,7 +143,9 @@ public class ReservationService : IReservationService
                         Name = en.Equipment.Name,
                         Quantity = en.Quantity
                     }).ToList()
-                }).ToListAsync();
+                })
+                .OrderByDescending(r => r.CreatedOn)
+                .ToListAsync();
 
         return reservations;
     }

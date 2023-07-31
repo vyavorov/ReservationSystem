@@ -46,7 +46,7 @@ namespace ReservationSystem.Web.Controllers
                 return View(model);
             }
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Mine","Reservation");
         }
 
         [HttpGet]

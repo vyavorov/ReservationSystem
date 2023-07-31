@@ -22,6 +22,9 @@ public class Reservation
     public DateTime To { get; set; }
 
     [Required]
+    public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+
+    [Required]
     public int CustomersCount { get; set; }
 
     public string? AdditionalInformation { get; set; }
