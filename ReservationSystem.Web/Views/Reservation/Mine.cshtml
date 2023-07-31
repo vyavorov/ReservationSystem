@@ -19,15 +19,14 @@
                 <p>Additional information: <b>@reservation.AdditionalInformation</b></p>
                 <p>Promo code: <b>@reservation.PromoCode</b></p>
                 <p>Phone Number: <b>@reservation.PhoneNumber</b></p>
-
+                <p>Requested equipment:</p>
                 @foreach (var equipment in reservation.Equipments)
                 {
-                    <p>Equipment: @equipment.Name, @equipment.Quantity</p>
+                    <p>&emsp;@equipment.Name, @equipment.Quantity</p>
                 }
 
                 <p>
-                    Total price:
-                    @*<b>@String.Format("{0:f2}", Model.) BGN</b>*@
+                    Total price: <b>@String.Format("{0:f2}", @reservation.TotalPrice) BGN</b>
                 </p>
 
 

@@ -42,4 +42,6 @@ public class ReservationFormViewModel
     public string PhoneNumber { get; set; } = null!;
 
     public decimal PricePerDay { get; set; }
+
+    public decimal TotalPrice { get; set; }
 }

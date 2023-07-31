@@ -135,10 +135,12 @@ public class ReservationService : IReservationService
                     PricePerDay = r.Location.PricePerDay,
                     LocationId = r.LocationId,
                     PromoCode = r.PromoCode.Name,
+                    TotalPrice = r.TotalPrice,
                     Equipments = r.EquipmentNeeded.Select(en => new EquipmentViewModel()
                     {
+                        Id = en.EquipmentId,
                         Name = en.Equipment.Name,
-                        Quantity = r.EquipmentNeeded.Count
+                        Quantity = en.Quantity
                     }).ToList()
                 }).ToListAsync();
 
