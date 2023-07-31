@@ -57,5 +57,12 @@ namespace ReservationSystem.Web.Controllers
                 .GetAllReservationsForUserASync(userId);
             return View(reservations);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(string Id)
+        {
+            ReservationFormViewModel reservation = await reservationService.GetReservationModelToEditAsync(Id);
+            return View(reservation);
+        }
     }
 }

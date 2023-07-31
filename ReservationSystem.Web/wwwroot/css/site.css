@@ -60,3 +60,7 @@ body {
 .card {
     margin-right: 5px;
 }
+
+.delete-reservation-btn {
+    float: right;
+}

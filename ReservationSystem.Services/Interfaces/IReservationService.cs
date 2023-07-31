@@ -18,5 +18,7 @@ public interface IReservationService
     public Task<decimal> GetPricePerDayByLocation(int locationId);
 
     public Task<List<ReservationFormViewModel>> GetAllReservationsForUserASync(string userId);
+
+    public Task<ReservationFormViewModel> GetReservationModelToEditAsync(string Id);
 }
 

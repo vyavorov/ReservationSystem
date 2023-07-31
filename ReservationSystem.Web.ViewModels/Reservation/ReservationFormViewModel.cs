@@ -10,6 +10,8 @@ public class ReservationFormViewModel
         this.Equipments = new List<EquipmentViewModel>();
     }
 
+    public Guid Id { get; set; }
+
     [DataType(DataType.Date)]
     [Required]
     public DateTime From { get; set; }
