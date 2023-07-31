@@ -43,7 +43,8 @@ public class ReservationService : IReservationService
             LocationId = model.LocationId,
             PhoneNumber = model.PhoneNumber,
             UserId = model.UserId,
-            Discount = promoCode?.Discount == null ? 0 : promoCode!.Discount
+            Discount = promoCode?.Discount == null ? 0 : promoCode!.Discount,
+            PromoCodeId = promoCode?.Id,
         };
         if (!AreDatesValid(reservation))
         {
@@ -64,21 +65,23 @@ public class ReservationService : IReservationService
     {
         foreach (var eachEquipmet in model.Equipments)
         {
-            if (eachEquipmet.Quantity >= 0 && eachEquipmet.Quantity <= model.CustomersCount)
+            if (eachEquipmet.Quantity > 0)
             {
-                EquipmentReservations equipmentReservations = new EquipmentReservations()
+                if (eachEquipmet.Quantity <= model.CustomersCount)
                 {
-                    EquipmentId = eachEquipmet.Id,
-                    ReservationId = reservation.Id
-                };
-                reservation.EquipmentNeeded.Add(equipmentReservations);
-            }
-            else
-            {
-                throw new ArgumentException("Please share valid equipment counts");
+                    EquipmentReservations equipmentReservations = new EquipmentReservations()
+                    {
+                        EquipmentId = eachEquipmet.Id,
+                        ReservationId = reservation.Id
+                    };
+                    reservation.EquipmentNeeded.Add(equipmentReservations);
+                }
+                else
+                {
+                    throw new ArgumentException("Please share valid equipment counts");
+                }
             }
         }
-
     }
 
     public int GetReservationDays(Reservation reservation)
@@ -108,5 +111,32 @@ public class ReservationService : IReservationService
     {
         Location? location = await context.Locations.FirstOrDefaultAsync(l => l.Id == locationId);
         return location.PricePerDay;
+    }
+
+    public async Task<List<ReservationFormViewModel>> GetAllReservationsForUserASync(string userId)
+    {
+        //TODO: implement isactive
+        List<ReservationFormViewModel> reservations = await context.Reservations
+                .Include(r => r.PromoCode)
+                .Where(r => r.UserId.ToString() == userId)
+                .Select(r => new ReservationFormViewModel()
+                {
+                    UserId = r.UserId,
+                    AdditionalInformation = r.AdditionalInformation,
+                    CustomersCount = r.CustomersCount,
+                    From = r.From,
+                    To = r.To,
+                    PhoneNumber = r.PhoneNumber,
+                    PricePerDay = r.Location.PricePerDay,
+                    LocationId = r.LocationId,
+                    PromoCode = r.PromoCode.Name,
+                    Equipments = r.EquipmentNeeded.Select(en => new EquipmentViewModel()
+                    {
+                        Name = en.Equipment.Name,
+                        Quantity = r.EquipmentNeeded.Count
+                    }).ToList()
+                }).ToListAsync();
+
+        return reservations;
     }
 }

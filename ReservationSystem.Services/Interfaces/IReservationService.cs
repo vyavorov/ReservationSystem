@@ -16,5 +16,7 @@ public interface IReservationService
     public void AddEquipmentsToReservation(ReservationFormViewModel model, Reservation reservation, ReservationDbContext context, Location location);
 
     public Task<decimal> GetPricePerDayByLocation(int locationId);
+
+    public Task<List<ReservationFormViewModel>> GetAllReservationsForUserASync(string userId);
 }
 

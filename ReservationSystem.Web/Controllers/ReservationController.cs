@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Reservation;
+using System.Security.Claims;
 
 namespace ReservationSystem.Web.Controllers
 {
@@ -46,6 +47,15 @@ namespace ReservationSystem.Web.Controllers
             }
 
             return RedirectToAction("Index","Home");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Mine()
+        {
+            string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ICollection<ReservationFormViewModel> reservations = await reservationService
+                .GetAllReservationsForUserASync(userId);
+            return View(reservations);
         }
     }
 }
