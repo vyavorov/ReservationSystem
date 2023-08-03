@@ -1,4 +1,4 @@
-﻿@model List<ReservationFormViewModel>
+﻿@model AllReservationsWithLocationsViewModel
 @{
     ViewBag.Title = "Location Details";
 }
@@ -6,11 +6,14 @@
 <hr />
 <div class="container mt-4">
     <div class="row justify-content-center">
-        @if (!Model.Any())
-        {
-            <p>You have no reservations yet.</p>
-        }
-        @foreach (var reservation in Model)
+        <p class="mt-4 h4">Which reservation location you like to see?</p>
+        <div class="mb-4">
+            @foreach (var location in Model.Locations)
+            {
+                <a href="@Url.Action("All", "Reservation", new { locationId = location.Id })" class="btn btn-primary m-1">@location.Name</a>
+            }
+        </div>
+        @foreach (var reservation in Model.Reservations)
         {
             <div class="card col-lg-6 col-md-8 mb-4 shadow-sm">
                 <div class="card-body">

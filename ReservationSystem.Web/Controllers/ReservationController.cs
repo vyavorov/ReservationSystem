@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ReservationSystem.Data.Models;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Reservation;
 using System.Collections.Specialized;
@@ -124,9 +125,14 @@ public class ReservationController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> All()
+    public async Task<IActionResult> All(int? locationId = null)
     {
-        ICollection<ReservationFormViewModel> reservations = await reservationService.GetAllReservationsASync();
-        return View(reservations);
+        ICollection<Location> locations = await reservationService.GetAllLocationsAsync();
+        ICollection<AllReservationsViewModel> reservations = await reservationService.GetAllReservationsASync(locationId);
+        return View(new AllReservationsWithLocationsViewModel
+        {
+            Reservations = reservations,
+            Locations = locations
+        });
     }
 }

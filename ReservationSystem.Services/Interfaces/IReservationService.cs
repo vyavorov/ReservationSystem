@@ -27,8 +27,9 @@ public interface IReservationService
 
     public Task DeleteReservationAsync(string Id, ReservationFormViewModel model);
 
-    public Task<List<ReservationFormViewModel>> GetAllReservationsASync();
+    public Task<ICollection<AllReservationsViewModel>> GetAllReservationsASync(int? locationId);
 
+    public Task<ICollection<Location>> GetAllLocationsAsync();
 
 }
 

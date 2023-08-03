@@ -310,12 +310,19 @@ public class ReservationService : IReservationService
         return location.PricePerDay;
     }
 
-    public async Task<List<ReservationFormViewModel>> GetAllReservationsASync()
+    public async Task<ICollection<AllReservationsViewModel>> GetAllReservationsASync(int? locationId = null)
     {
-        List<ReservationFormViewModel> reservations = await context.Reservations
-                .Include(r => r.PromoCode)
-                .Where(r => r.IsActive)
-                .Select(r => new ReservationFormViewModel()
+        IQueryable<Reservation> query = context.Reservations
+            .Include(r => r.PromoCode)
+            .Where(r => r.IsActive);
+
+        if (locationId.HasValue)
+        {
+            query = query.Where(r => r.LocationId == locationId.Value);
+        }
+        ICollection<Location> locations = await context.Locations.Where(l => l.IsActive).ToListAsync();
+        ICollection<AllReservationsViewModel> reservations = await query
+                .Select(r => new AllReservationsViewModel()
                 {
                     Id = r.Id,
                     Location = r.Location,
@@ -331,6 +338,7 @@ public class ReservationService : IReservationService
                     PromoCode = r.PromoCode.Name,
                     TotalPrice = r.TotalPrice,
                     Discount = r.Discount,
+                    Locations = locations,
                     Equipments = r.EquipmentNeeded
                         .Where(e => e.Equipment.IsActive)
                         .Select(en => new EquipmentViewModel()
@@ -344,6 +352,12 @@ public class ReservationService : IReservationService
                 .ToListAsync();
 
         return reservations;
+    }
+
+    public async Task<ICollection<Location>> GetAllLocationsAsync()
+    {
+        ICollection<Location> locations = await context.Locations.Where(l => l.IsActive).ToListAsync();
+        return locations;
     }
 }
 
