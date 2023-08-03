@@ -5,6 +5,11 @@
     <a class="btn btn-primary" asp-action="Create" asp-controller="PromoCode">New PromoCode</a>
 </div>
 
+@if (!Model.Any())
+{
+    <p>You have no promocodes yet.</p>
+}
+
 <!-- Container for promo code boxes -->
 <div class="row">
     @foreach (var promoCode in Model)

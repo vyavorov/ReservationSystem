@@ -50,7 +50,6 @@ public class ReservationService : IReservationService
 
     public async Task<List<ReservationFormViewModel>> GetAllReservationsForUserASync(string userId)
     {
-        //TODO: implement isactive
         List<ReservationFormViewModel> reservations = await context.Reservations
                 .Include(r => r.PromoCode)
                 .Where(r => r.UserId.ToString() == userId && r.IsActive)
@@ -70,12 +69,14 @@ public class ReservationService : IReservationService
                     PromoCode = r.PromoCode.Name,
                     TotalPrice = r.TotalPrice,
                     Discount = r.Discount,
-                    Equipments = r.EquipmentNeeded.Select(en => new EquipmentViewModel()
-                    {
-                        Id = en.EquipmentId,
-                        Name = en.Equipment.Name,
-                        Quantity = en.Quantity
-                    }).ToList()
+                    Equipments = r.EquipmentNeeded
+                        .Where(e => e.Equipment.IsActive)
+                        .Select(en => new EquipmentViewModel()
+                        {
+                            Id = en.EquipmentId,
+                            Name = en.Equipment.Name,
+                            Quantity = en.Quantity
+                        }).ToList()
                 })
                 .OrderByDescending(r => r.CreatedOn)
                 .ToListAsync();
@@ -114,13 +115,15 @@ public class ReservationService : IReservationService
                 TotalPrice = reservation.TotalPrice,
                 Discount = reservation.Discount,
                 //Equipments = await this.GetAllEquipmentsAsync()
-                Equipments = allEquipments.Select(en => new EquipmentViewModel()
-                {
-                    Id = en.Id,
-                    Name = en.Name,
-                    Quantity = reservation.EquipmentNeeded.Any(er => er.EquipmentId == en.Id)
-                        ? reservation.EquipmentNeeded.First(er => er.EquipmentId == en.Id).Quantity : 0
-                }).ToList()
+                Equipments = allEquipments
+                    .Where(e => e.IsActive)
+                    .Select(en => new EquipmentViewModel()
+                    {
+                        Id = en.Id,
+                        Name = en.Name,
+                        Quantity = reservation.EquipmentNeeded.Any(er => er.EquipmentId == en.Id)
+                            ? reservation.EquipmentNeeded.First(er => er.EquipmentId == en.Id).Quantity : 0
+                    }).ToList()
             };
             return reservationFormViewModel;
         }
@@ -162,7 +165,12 @@ public class ReservationService : IReservationService
             reservationToEdit.Discount = promoCode?.Discount == null ? 0 : promoCode!.Discount;
 
             int reservationDays = GetReservationDays(reservationToEdit);
-            decimal discountToApply = reservationToEdit.Discount == 0 ? 1 : (decimal)reservationToEdit.Discount / 100;
+
+            decimal discountToApply = reservationToEdit.Discount == 0 ? 1 : 1.00m - (decimal)reservationToEdit.Discount / 100;
+            if (reservationToEdit.Discount == 100)
+            {
+                discountToApply = 0;
+            }
             reservationToEdit.TotalPrice = ((decimal)reservationToEdit.CustomersCount * chosenLocation.PricePerDay * reservationDays) * discountToApply;
 
             AddEquipmentsToReservation(reservation, reservationToEdit, context, reservation.Location);
@@ -285,6 +293,7 @@ public class ReservationService : IReservationService
         List<EquipmentViewModel> allEquipments =
                     await context
                             .Equipments
+                            .Where(e => e.IsActive)
                             .Select(c => new EquipmentViewModel()
                             {
                                 Id = c.Id,
@@ -301,6 +310,40 @@ public class ReservationService : IReservationService
         return location.PricePerDay;
     }
 
+    public async Task<List<ReservationFormViewModel>> GetAllReservationsASync()
+    {
+        List<ReservationFormViewModel> reservations = await context.Reservations
+                .Include(r => r.PromoCode)
+                .Where(r => r.IsActive)
+                .Select(r => new ReservationFormViewModel()
+                {
+                    Id = r.Id,
+                    Location = r.Location,
+                    UserId = r.UserId,
+                    AdditionalInformation = r.AdditionalInformation,
+                    CustomersCount = r.CustomersCount,
+                    From = r.From,
+                    To = r.To,
+                    CreatedOn = r.CreatedOn,
+                    PhoneNumber = r.PhoneNumber,
+                    PricePerDay = r.Location.PricePerDay,
+                    LocationId = r.LocationId,
+                    PromoCode = r.PromoCode.Name,
+                    TotalPrice = r.TotalPrice,
+                    Discount = r.Discount,
+                    Equipments = r.EquipmentNeeded
+                        .Where(e => e.Equipment.IsActive)
+                        .Select(en => new EquipmentViewModel()
+                        {
+                            Id = en.EquipmentId,
+                            Name = en.Equipment.Name,
+                            Quantity = en.Quantity
+                        }).ToList()
+                })
+                .OrderBy(r => r.From)
+                .ToListAsync();
 
+        return reservations;
+    }
 }
 

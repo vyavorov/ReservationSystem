@@ -20,6 +20,18 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/Equipment/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/Equipment/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/Equipment/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/PromoCode/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9Db2RlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/Reservation/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cQWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/Reservation/Book.cshtml]
