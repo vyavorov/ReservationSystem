@@ -19,4 +19,6 @@ public class PromoCode
 
     [Required]
     public int Discount { get; set; }
+
+    public bool IsActive { get; set; } = true;
 }

@@ -18,4 +18,7 @@ public class Equipment
     public string Name { get; set; } = null!;
 
     public ICollection<EquipmentReservations>? EquipmentReservations { get; set; }
+
+    [Required]
+    public bool IsActive { get; set; } = true;
 }

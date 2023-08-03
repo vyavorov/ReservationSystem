@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Reservation;
+using System.Collections.Specialized;
 using System.Net;
 using System.Security.Claims;
 
@@ -65,7 +66,7 @@ namespace ReservationSystem.Web.Controllers
             ReservationFormViewModel reservation;
             try
             {
-                reservation = await reservationService.GetReservationModelToEditAsync(Id);
+                reservation = await reservationService.GetReservationModelToByIdAsync(Id);
             }
             catch (ArgumentException ex)
             {
@@ -88,7 +89,37 @@ namespace ReservationSystem.Web.Controllers
                 ModelState.AddModelError(string.Empty, ex.Message);
                 return View(model);
             }
+            return RedirectToAction("Mine", "Reservation");
+        }
 
+        [HttpGet]
+        public async Task<IActionResult> Delete(string Id)
+        {
+
+            ReservationFormViewModel reservation;
+            try
+            {
+                reservation = await reservationService.GetReservationModelToByIdAsync(Id);
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View();
+            }
+            return View(reservation);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(string Id, ReservationFormViewModel model)
+        {
+            try
+            {
+                await reservationService.DeleteReservationAsync(Id, model);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Mine", "Reservation");
+            }
             return RedirectToAction("Mine", "Reservation");
         }
     }

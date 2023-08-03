@@ -6,7 +6,10 @@
 <hr />
 <div class="container mt-4">
     <div class="row justify-content-center">
-
+        @if (!Model.Any())
+        {
+            <p>You have no reservations yet.</p>
+        }
         @foreach (var reservation in Model)
         {
             <div class="card col-lg-6 col-md-8 mb-4 shadow-sm">

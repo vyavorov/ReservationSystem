@@ -56,4 +56,6 @@ public class Reservation
 
     [Required]
     public string PhoneNumber { get; set; } = null!;
+
+    public bool IsActive { get; set; } = true;
 }

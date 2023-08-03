@@ -16,7 +16,7 @@ namespace ReservationSystem.Web.Controllers
         }
         //TODO: THE BELOW SHOULD BE AVAILABLE FOR ADMINS ONLY
         [HttpGet]
-        public async Task<IActionResult> Add()
+        public IActionResult Add()
         {
             return View();
         }

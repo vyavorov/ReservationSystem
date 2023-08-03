@@ -9,6 +9,12 @@
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Add">Add location</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="PromoCode" asp-action="All">Promo codes</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Equipments" asp-action="All">Equipments</a>
+    </li>
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">

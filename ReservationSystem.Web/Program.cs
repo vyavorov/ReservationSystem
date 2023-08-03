@@ -38,6 +38,7 @@ builder.Services.AddControllersWithViews()
     });
 builder.Services.AddScoped<ILocationService, LocationService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.Services.AddScoped<IPromoCodeService, PromoCodeService>();
 
 var app = builder.Build();
 
