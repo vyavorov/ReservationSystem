@@ -44,3 +44,13 @@ document.getElementById('promocode').addEventListener('input', function () {
     }
 });
 //Promocode dynamic message implementation end
+
+
+//Calendar end date automatically change start
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('From').addEventListener('change', function () {
+        var fromDate = this.value;
+        document.getElementById('To').value = fromDate;
+    });
+});
+//Calendar end date automatically change end
