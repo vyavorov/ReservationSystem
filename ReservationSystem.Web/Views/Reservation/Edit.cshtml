@@ -2,12 +2,12 @@
 @model ReservationFormViewModel
 <div class="row">
     <div class="form-wrapper">
-        <form asp-controller="Reservation" asp-action="Book" method="post">
+        <form asp-controller="Reservation" asp-action="Edit" method="post" asp-route-id="@Model.Id">
             @Html.ValidationSummary(true)
             <div class="form-left-container">
 
                 <input type="hidden" asp-for="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
-                @*<input type="hidden" asp-for="LocationId" value="@Model.LocationId" />*@
+                <input type="hidden" asp-for="LocationId" value="@Model.LocationId" />
                 <input type="hidden" asp-for="PricePerDay" value="@Model.PricePerDay" id="pricePerDay" />
                 <div class="form-group date-form-group">
                     <label asp-for="From"></label>
@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <input type="hidden" asp-for="@Model.Equipments[i].Id" />
                         <label class="equipment-label">@Model.Equipments[i].Name</label>
-                        <input type="number" asp-for="@Model.Equipments[i].Quantity" class="form-control" value="0" min="0" class="form-control" />
+                        <input type="number" asp-for="@Model.Equipments[i].Quantity" class="form-control" min="0" class="form-control" />
                         <span asp-validation-for="@Model.Equipments[i].Quantity" class="small text-danger"></span>
                     </div>
                 }

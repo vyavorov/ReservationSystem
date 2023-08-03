@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Reservation;
+using System.Net;
 using System.Security.Claims;
 
 namespace ReservationSystem.Web.Controllers
@@ -46,7 +47,7 @@ namespace ReservationSystem.Web.Controllers
                 return View(model);
             }
 
-            return RedirectToAction("Mine","Reservation");
+            return RedirectToAction("Mine", "Reservation");
         }
 
         [HttpGet]
@@ -61,8 +62,34 @@ namespace ReservationSystem.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(string Id)
         {
-            ReservationFormViewModel reservation = await reservationService.GetReservationModelToEditAsync(Id);
+            ReservationFormViewModel reservation;
+            try
+            {
+                reservation = await reservationService.GetReservationModelToEditAsync(Id);
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View();
+            }
             return View(reservation);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(string Id, ReservationFormViewModel model)
+        {
+            try
+            {
+                await reservationService.EditReservationAsync(Id, model);
+            }
+            catch (ArgumentException ex)
+            {
+                model.Equipments = await reservationService.GetAllEquipmentsAsync();
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View(model);
+            }
+
+            return RedirectToAction("Mine", "Reservation");
         }
     }
 }

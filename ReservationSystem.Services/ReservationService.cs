@@ -22,33 +22,8 @@ public class ReservationService : IReservationService
         //TODO: IMPLEMENT ISACTIVE FOR PROMOCODE
         PromoCode? promoCode = await context.PromoCodes.FirstOrDefaultAsync(pc => pc.Name == model.PromoCode);
         Location? chosenLocation = await context.Locations.Where(l => l.IsActive).FirstOrDefaultAsync(l => l.Id == model.LocationId);
-        //check if promocode is valid
-        if (model.PromoCode != null && promoCode == null)
-        {
-            throw new ArgumentException("Promocode does not exist");
-        }
-        //check if the location is valid
-        if (chosenLocation == null)
-        {
-            throw new ArgumentException("Chosen location cannot be found. Please try again");
-        }
-        //check if customers count is a valid number
-        if (model.CustomersCount == null || model.CustomersCount <= 0 || model.CustomersCount > chosenLocation.Capacity)
-        {
-            throw new ArgumentException("Please share valid desks count needed");
-        }
-        //check if the location is available for the dates chosen
-        var existingReservations = await context.Reservations
-            .Where(r => r.LocationId == model.LocationId
-                && r.From.Date <= model.To.Date
-                && r.To.Date >= model.From.Date)
-            .ToListAsync();
 
-        var totalExistingCustomers = existingReservations.Sum(r => r.CustomersCount);
-        if (totalExistingCustomers + model.CustomersCount > chosenLocation.Capacity)
-        {
-            throw new ArgumentException("The chosen location does not have enough capacity for the requested reservation.");
-        }
+        await this.ValidateReservation(model, promoCode, chosenLocation);
         //reservation creation below
         Reservation reservation = new Reservation()
         {
@@ -62,14 +37,9 @@ public class ReservationService : IReservationService
             Discount = promoCode?.Discount == null ? 0 : promoCode!.Discount,
             PromoCodeId = promoCode?.Id,
         };
-        if (!AreDatesValid(reservation))
-        {
-            throw new ArgumentException("'To' date must be greater than 'From' date");
-        }
         int reservationDays = GetReservationDays(reservation);
         decimal discountToApply = reservation.Discount == 0 ? 1 : (decimal)reservation.Discount / 100;
         reservation.TotalPrice = ((decimal)model.CustomersCount * chosenLocation.PricePerDay * reservationDays) * discountToApply;
-
 
         await context.Reservations.AddAsync(reservation);
         await context.SaveChangesAsync();
@@ -78,27 +48,45 @@ public class ReservationService : IReservationService
 
         await context.SaveChangesAsync();
     }
-
     public void AddEquipmentsToReservation(ReservationFormViewModel model, Reservation reservation, ReservationDbContext context, Location location)
     {
-        foreach (var eachEquipmet in model.Equipments)
+        // Get all existing equipment reservations for this reservation
+        var existingEquipmentReservations = context.EquipmentsReservations.Where(er => er.ReservationId == reservation.Id).ToList();
+
+        foreach (var eachEquipment in model.Equipments)
         {
-            if (eachEquipmet.Quantity > 0)
+            var existingEquipmentReservation = existingEquipmentReservations.FirstOrDefault(er => er.EquipmentId == eachEquipment.Id);
+
+            if (eachEquipment.Quantity > 0)
             {
-                if (eachEquipmet.Quantity <= model.CustomersCount)
+                if (eachEquipment.Quantity <= model.CustomersCount)
                 {
-                    EquipmentReservations equipmentReservations = new EquipmentReservations()
+                    if (existingEquipmentReservation == null)
                     {
-                        EquipmentId = eachEquipmet.Id,
-                        ReservationId = reservation.Id,
-                        Quantity = eachEquipmet.Quantity,
-                    };
-                    context.EquipmentsReservations.Add(equipmentReservations);
+                        // If no existing reservation, add new one
+                        EquipmentReservations equipmentReservations = new EquipmentReservations()
+                        {
+                            EquipmentId = eachEquipment.Id,
+                            ReservationId = reservation.Id,
+                            Quantity = eachEquipment.Quantity,
+                        };
+                        context.EquipmentsReservations.Add(equipmentReservations);
+                    }
+                    else
+                    {
+                        // If existing reservation, update quantity
+                        existingEquipmentReservation.Quantity = eachEquipment.Quantity;
+                    }
                 }
                 else
                 {
                     throw new ArgumentException("Please share valid equipment counts");
                 }
+            }
+            else if (existingEquipmentReservation != null)
+            {
+                // If quantity is 0 and there's an existing reservation, remove it
+                context.EquipmentsReservations.Remove(existingEquipmentReservation);
             }
         }
     }
@@ -108,9 +96,9 @@ public class ReservationService : IReservationService
         return (reservation.To - reservation.From).Days + 1;
     }
 
-    public bool AreDatesValid(Reservation reservation)
+    public bool AreDatesValid(ReservationFormViewModel model)
     {
-        return reservation.To >= reservation.From;
+        return model.To >= model.From;
     }
 
     public async Task<List<EquipmentViewModel>> GetAllEquipmentsAsync()
@@ -176,6 +164,8 @@ public class ReservationService : IReservationService
             .Include(r => r.Location)
             .Include(r => r.PromoCode)
             .FirstOrDefaultAsync(r => r.Id.ToString() == Id);
+
+        var allEquipments = await this.context.Equipments.ToListAsync();
         if (reservation != null)
         {
             ReservationFormViewModel reservationFormViewModel = new ReservationFormViewModel()
@@ -194,15 +184,96 @@ public class ReservationService : IReservationService
                 PromoCode = reservation.PromoCode?.Name,
                 TotalPrice = reservation.TotalPrice,
                 Discount = reservation.Discount,
-                Equipments = reservation.EquipmentNeeded.Select(en => new EquipmentViewModel()
+                //Equipments = await this.GetAllEquipmentsAsync()
+                Equipments = allEquipments.Select(en => new EquipmentViewModel()
                 {
-                    Id = en.EquipmentId,
-                    Name = en.Equipment.Name,
-                    Quantity = en.Quantity
+                    Id = en.Id,
+                    Name = en.Name,
+                    Quantity = reservation.EquipmentNeeded.Any(er => er.EquipmentId == en.Id) 
+                        ? reservation.EquipmentNeeded.First(er => er.EquipmentId == en.Id).Quantity : 0
                 }).ToList()
             };
             return reservationFormViewModel;
         }
-        return null;
+        throw new ArgumentException("Reservation does not exist");
+    }
+
+    public async Task EditReservationAsync(string Id, ReservationFormViewModel reservation)
+    {
+        Reservation? reservationToEdit = await context.Reservations
+            .Include(r => r.EquipmentNeeded)
+            .ThenInclude(er => er.Equipment)
+            .FirstOrDefaultAsync(r => r.Id.ToString() == Id);
+
+
+        //TODO: IMPLEMENT ISACTIVE FOR PROMOCODE
+        PromoCode? promoCode = await context.PromoCodes.FirstOrDefaultAsync(pc => pc.Name == reservation.PromoCode);
+        Location? chosenLocation = await context.Locations.Where(l => l.IsActive).FirstOrDefaultAsync(l => l.Id == reservation.LocationId);
+
+        await this.ValidateReservation(reservation, promoCode, chosenLocation);
+
+        if (reservationToEdit != null)
+        {
+            reservationToEdit.PhoneNumber = reservation.PhoneNumber;
+            reservationToEdit.CustomersCount = (int)reservation.CustomersCount!;
+            reservationToEdit.AdditionalInformation = reservation.AdditionalInformation;
+            reservationToEdit.From = reservation.From;
+            reservationToEdit.To = reservation.To;
+            if (promoCode != null)
+            {
+                reservationToEdit.PromoCode = await context.PromoCodes.FirstOrDefaultAsync(pc => pc.Id.ToString() == promoCode.Id.ToString());
+            }
+            else
+            {
+                reservationToEdit.PromoCodeId = null;
+            }
+            reservationToEdit.Discount = promoCode?.Discount == null ? 0 : promoCode!.Discount;
+
+            int reservationDays = GetReservationDays(reservationToEdit);
+            decimal discountToApply = reservationToEdit.Discount == 0 ? 1 : (decimal)reservationToEdit.Discount / 100;
+            reservationToEdit.TotalPrice = ((decimal)reservationToEdit.CustomersCount * chosenLocation.PricePerDay * reservationDays) * discountToApply;
+
+            AddEquipmentsToReservation(reservation, reservationToEdit, context, reservation.Location);
+
+            await context.SaveChangesAsync();
+        }
+    }
+
+    public async Task ValidateReservation(ReservationFormViewModel model, PromoCode? promoCode, Location? chosenLocation)
+    {
+
+        //check if promocode is valid
+        if (model.PromoCode != null && promoCode == null)
+        {
+            throw new ArgumentException("Promocode does not exist");
+        }
+        //check if the location is valid
+        if (chosenLocation == null)
+        {
+            throw new ArgumentException("Chosen location cannot be found. Please try again");
+        }
+        //check if customers count is a valid number
+        if (model.CustomersCount == null || model.CustomersCount <= 0 || model.CustomersCount > chosenLocation.Capacity)
+        {
+            throw new ArgumentException("Please share valid desks count needed");
+        }
+        //check if the location is available for the dates chosen
+        var existingReservations = await context.Reservations
+            .Where(r => r.LocationId == model.LocationId
+                && r.From.Date <= model.To.Date
+                && r.To.Date >= model.From.Date)
+            .ToListAsync();
+
+        //check if the location has the capacity
+        var totalExistingCustomers = existingReservations.Sum(r => r.CustomersCount);
+        if (totalExistingCustomers + model.CustomersCount > chosenLocation.Capacity)
+        {
+            throw new ArgumentException("The chosen location does not have enough capacity for the requested reservation.");
+        }
+        //check if dates are valid
+        if (!AreDatesValid(model))
+        {
+            throw new ArgumentException("'To' date must be greater than 'From' date");
+        }
     }
 }
