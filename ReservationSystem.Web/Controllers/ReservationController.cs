@@ -72,7 +72,7 @@ public class ReservationController : Controller
         catch (ArgumentException ex)
         {
             ModelState.AddModelError(string.Empty, ex.Message);
-            return View();
+            return RedirectToAction("Mine", "Reservation");
         }
         return View(reservation);
     }

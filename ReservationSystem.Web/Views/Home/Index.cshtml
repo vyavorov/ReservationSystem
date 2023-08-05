@@ -1,32 +1,135 @@
 ﻿@model IndexViewModel[]
-<div class="row">
-    @foreach (var location in Model)
-    {
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <img class="card-img-top" src="@location.ImageUrl" alt="House Image">
-                <div class="card-body text-center">
-                    <h4>@location.Name</h4>
-                    <h6>Address: <b>@location.Address</b></h6>
-                    <h6>
-                        Price Per Day:
-                        <b>@String.Format("{0:f2}", location.PricePerDay) BGN</b>
-                    </h6>
-                    <br />
-                    <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id" class="btn btn-success">Details</a>
-                    @*TODO: THE BELOW SHOULD BE AVAILABLE FOR ADMINS ONLY*@
-                    @if (this.User.Identity.IsAuthenticated)
-                    {
-                        <a asp-controller="Location" asp-action="Edit" asp-route-id="@location.Id"
-                           class="btn btn-warning">Edit</a>
-                        <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-danger">Delete</a>
-                        <p></p>
-                        <form class="input-group-sm" asp-controller="Reservation" asp-action="Book" asp-route-id="@location.Id" method="get">
-                            <input class="btn btn-primary" type="submit" value="Book now" />
-                        </form>
-                    }
+
+<!-- Hero Section -->
+<section class="hero bg-primary text-white text-center py-5" >
+    <div class="container">
+        <h1 class="fw-light">Welcome to BashHub</h1>
+        <p class="lead">Boost your productivity in our modern coworking spaces, located in serene seaside and peaceful forest settings.</p>
+        <p class="mt-4">Join a community of innovative professionals and enjoy our state-of-the-art facilities. With BashHub, you get more than just a workspace. You get a nurturing environment for your ideas to thrive.</p>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="statistics py-5">
+    <div class="container text-center">
+        <h2 class="fw-light">Why Choose BashHub?</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h3>85%</h3>
+                        <p>Of our members reported an increase in productivity after switching to a coworking environment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h3>90%</h3>
+                        <p>Of members feel more confident when working from our coworking spaces.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h3>70%</h3>
+                        <p>Of our members have expanded their professional networks since joining BashHub.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    }
-</div>
+    </div>
+</section>
+
+<!-- Locations Section -->
+<section class="locations py-3 bg-light">
+    <div class="container">
+        <h2 class="fw-light text-center">Our Locations</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var location in Model)
+            {
+                <div class="col">
+                    <div class="card shadow h-100">
+                        <img class="card-img-top" src="@location.ImageUrl" alt="Location Image">
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title text-center">@location.Name</h4>
+                            <p class="card-text text-center"><b>Address:</b> @location.Address</p>
+                            <p class="card-text text-center mb-3">
+                                <b>Price Per Day:</b> @String.Format("{0:f2}", location.PricePerDay) BGN
+                            </p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id" class="btn btn-outline-primary flex-fill me-2">Details</a>
+                                    @if (this.User.Identity.IsAuthenticated)
+                                    {
+                                        <a asp-controller="Location" asp-action="Edit" asp-route-id="@location.Id"
+                                           class="btn btn-outline-warning flex-fill mx-2">Edit</a>
+                                        <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-outline-danger flex-fill ms-2">Delete</a>
+                                    }
+                                </div>
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <form asp-controller="Reservation" asp-action="Book" asp-route-id="@location.Id" method="get">
+                                        <input class="btn btn-primary btn-block" type="submit" value="Book now" />
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features py-5 bg-light">
+    <div class="container">
+        <h2 class="fw-light text-center mb-4">What We Offer</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <i class="fas fa-laptop fa-2x mb-3"></i>
+                <h3>Modern Spaces</h3>
+                <p>Our coworking spaces are designed with modern aesthetics to promote creativity and productivity.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-users fa-2x mb-3"></i>
+                <h3>Community Events</h3>
+                <p>We host regular events to build a strong community among our members.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-clock fa-2x mb-3"></i>
+                <h3>24/7 Access</h3>
+                <p>We understand work schedules can vary. Our spaces are open 24/7 to accommodate your needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="text-uppercase text-white mb-4">About BashHub</h5>
+                <p class="mb-0">BashHub provides modern, innovative coworking spaces where your creativity and productivity can flourish. Explore our locations and become a part of our vibrant community.</p>
+            </div>
+            <div class="col-md-6">
+                <h5 class="text-uppercase text-white mb-4">Connect with us</h5>
+                <p>Stay in touch and keep up-to-date with all our latest news, events and career opportunities via social media.</p>
+                <div class="d-flex">
+                    <a href="https://www.facebook.com/bashhub.bg" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="https://www.instagram.com/bashhub/" target="_blank" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.linkedin.com/company/bashhub" target="_blank" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-top my-3"></div>
+        <div class="row">
+            <div class="col text-center">
+                <p class="text-muted mb-0">&copy; 2023 BashHub. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>

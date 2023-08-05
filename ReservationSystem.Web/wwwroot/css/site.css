@@ -102,3 +102,18 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url('https://bashhub.bg/wp-content/uploads/2022/06/smallest_image.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+}
+
+.statistics {
+    background-color: #f8f9fa;
+}
+
+.locations {
+    background-color: #e9ecef;
+}

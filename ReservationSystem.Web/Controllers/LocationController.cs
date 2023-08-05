@@ -46,11 +46,11 @@ public class LocationController : Controller
     {
         string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
         LocationDetailsViewModel model = await locationService.GetLocationDetailsAsync(Id, userId);
-        model.ReviewForm = new ReviewFormViewModel { LocationId = Id };
-        IEnumerable<ReviewViewModel> reviews = await locationService.GetReviewsForLocationAsync(Id);
 
         if (model != null)
         {
+            model.ReviewForm = new ReviewFormViewModel { LocationId = Id };
+            IEnumerable<ReviewViewModel> reviews = await locationService.GetReviewsForLocationAsync(Id);
             ViewBag.Reviews = reviews; // Pass reviews to the view
             return View(model);
         }
@@ -61,7 +61,11 @@ public class LocationController : Controller
     public async Task<IActionResult> Edit(int id)
     {
         LocationFormViewModel locationFormModel = await locationService.EditFormByIdAsync(id);
-        return View(locationFormModel);
+        if (locationFormModel != null)
+        {
+            return View(locationFormModel);
+        }
+        return RedirectToAction("Index", "Home");
     }
 
     [HttpPost]

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReservationSystem.Data;
 using ReservationSystem.Data.Models;
@@ -35,6 +36,7 @@ builder.Services.AddControllersWithViews()
     .AddMvcOptions(options =>
     {
         options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+        options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
     });
 builder.Services.AddScoped<ILocationService, LocationService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
