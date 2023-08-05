@@ -8,6 +8,9 @@ public class ApplicationUser:IdentityUser<Guid>
     public ApplicationUser()
     {
         this.UserReservations = new HashSet<Reservation>();
+        this.UserReviews = new HashSet<Review>();
     }
     public ICollection<Reservation>? UserReservations { get; set; }
+
+    public ICollection<Review>? UserReviews { get; set; }
 }

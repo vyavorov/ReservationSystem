@@ -37,4 +37,10 @@ public static class EntityValidationConstants
         public const int EquipmentNameMinLength = 5;
         public const int EquipmentNameMaxLength = 30;
     }
+
+    public static class Review
+    {
+        public const int ReviewCommentMinLength = 5;
+        public const int ReviewCommentMaxLength = 500;
+    }
 }

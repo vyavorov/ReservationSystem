@@ -4,6 +4,7 @@ using ReservationSystem.Data.Models;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Home;
 using ReservationSystem.Web.ViewModels.Location;
+using System.Security.Claims;
 
 namespace ReservationSystem.Services;
 
@@ -68,7 +69,7 @@ public class LocationService : ILocationService
         return locationFormModel;
     }
 
-    public async Task<LocationDetailsViewModel> GetLocationDetailsAsync(int id)
+    public async Task<LocationDetailsViewModel> GetLocationDetailsAsync(int id, string userId)
     {
         Location? location = await context.Locations.FirstOrDefaultAsync(l => l.Id == id);
         LocationDetailsViewModel? locationDetailsViewModel = null;
@@ -82,7 +83,8 @@ public class LocationService : ILocationService
                 ImageUrl = location.ImageUrl,
                 PricePerDay = location.PricePerDay,
                 Description = location.Description,
-                Name = location.Name
+                Name = location.Name,
+                HasUserReviewed = await context.Reviews.AnyAsync(r => r.LocationId == id && r.UserId.ToString() == userId)
             };
         }
         return locationDetailsViewModel;
@@ -128,5 +130,32 @@ public class LocationService : ILocationService
             location.IsActive = false;
             await context.SaveChangesAsync();
         }
+    }
+
+    public async Task AddReviewAsync(ReviewFormViewModel model, string userId)
+    {
+        Review review = new Review
+        {
+            Comment = model.Comment,
+            LocationId = model.LocationId,
+            UserId = Guid.Parse(userId)
+        };
+        await context.Reviews.AddAsync(review);
+        await context.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<ReviewViewModel>> GetReviewsForLocationAsync(int locationId)
+    {
+        var reviews = await context.Reviews
+            .Where(r => r.LocationId == locationId)
+            .Select(r => new ReviewViewModel { Comment = r.Comment, Username = r.User.UserName })
+            .ToListAsync();
+
+        return reviews;
+    }
+
+    public async Task<bool> UserHasReviewedLocationAsync(string userId, int locationId)
+    {
+        return await context.Reviews.AnyAsync(r => r.UserId.ToString() == userId && r.LocationId == locationId);
     }
 }

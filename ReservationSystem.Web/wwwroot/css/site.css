@@ -64,3 +64,41 @@ body {
 .delete-reservation-btn {
     float: right;
 }
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-inner .carousel-item {
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.carousel .carousel-item .review-slide {
+    width: 50%;
+    margin: auto;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* ensure full height */
+}
+
+.card.review-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

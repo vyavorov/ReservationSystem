@@ -14,4 +14,8 @@ public class LocationDetailsViewModel
     public string ImageUrl { get; set; } = null!;
 
     public int Capacity { get; set; }
+
+    public ReviewFormViewModel ReviewForm { get; set; } = null!;
+
+    public bool HasUserReviewed { get; set; }
 }

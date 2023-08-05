@@ -360,7 +360,7 @@ namespace ReservationSystem.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9f000d1b-a931-4b91-acfe-c13aa969d28b"),
+                            Id = new Guid("930789ba-a81e-4ba6-8977-78028b4f1056"),
                             Discount = 50,
                             IsActive = true,
                             Name = "internal"
@@ -419,6 +419,33 @@ namespace ReservationSystem.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("ReservationSystem.Data.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -516,9 +543,30 @@ namespace ReservationSystem.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("ReservationSystem.Data.Models.Review", b =>
+                {
+                    b.HasOne("ReservationSystem.Data.Models.Location", "Location")
+                        .WithMany("Reviews")
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ReservationSystem.Data.Models.ApplicationUser", "User")
+                        .WithMany("UserReviews")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ReservationSystem.Data.Models.ApplicationUser", b =>
                 {
                     b.Navigation("UserReservations");
+
+                    b.Navigation("UserReviews");
                 });
 
             modelBuilder.Entity("ReservationSystem.Data.Models.Equipment", b =>
@@ -529,6 +577,8 @@ namespace ReservationSystem.Data.Migrations
             modelBuilder.Entity("ReservationSystem.Data.Models.Location", b =>
                 {
                     b.Navigation("Reservations");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("ReservationSystem.Data.Models.Reservation", b =>

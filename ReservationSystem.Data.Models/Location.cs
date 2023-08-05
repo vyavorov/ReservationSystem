@@ -8,6 +8,7 @@ public class Location
     public Location()
     {
         this.Reservations = new HashSet<Reservation>();
+        this.Reviews = new HashSet<Review>();
         this.IsActive = true;
     }
 
@@ -39,5 +40,8 @@ public class Location
     public ICollection<Reservation> Reservations { get; set; } = null!;
 
     public bool IsActive { get; set; }
+
+    [Required]
+    public ICollection<Review> Reviews { get; set; }
 
 }

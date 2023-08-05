@@ -53,4 +53,7 @@ public class AllReservationsViewModel
     public int? Discount { get; set; }
 
     public ICollection<Data.Models.Location> Locations { get; set; }
+
+    [Required]
+    public string UserEmail { get; set; } = null!;
 }

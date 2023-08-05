@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Location;
+using System.Security.Claims;
 
 namespace ReservationSystem.Web.Controllers;
 
@@ -43,10 +44,14 @@ public class LocationController : Controller
     [HttpGet]
     public async Task<IActionResult> Details(int Id)
     {
-        LocationDetailsViewModel model = await locationService.GetLocationDetailsAsync(Id);
+        string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        LocationDetailsViewModel model = await locationService.GetLocationDetailsAsync(Id, userId);
+        model.ReviewForm = new ReviewFormViewModel { LocationId = Id };
+        IEnumerable<ReviewViewModel> reviews = await locationService.GetReviewsForLocationAsync(Id);
 
         if (model != null)
         {
+            ViewBag.Reviews = reviews; // Pass reviews to the view
             return View(model);
         }
         return RedirectToAction("Index", "Home");
@@ -93,5 +98,48 @@ public class LocationController : Controller
         }
 
         return RedirectToAction("Index","Home");
+    }
+
+    [HttpGet]
+    public IActionResult AddReview(int locationId)
+    {
+        var model = new ReviewFormViewModel
+        {
+            LocationId = locationId
+        };
+
+        return View(model);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddReview(ReviewFormViewModel model)
+    {
+        string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        // Check if a review already exists for this user and location
+        if (await locationService.UserHasReviewedLocationAsync(userId, model.LocationId))
+        {
+            // Clear all model-level errors
+            foreach (var key in ModelState.Keys)
+            {
+                ModelState[key].Errors.Clear();
+            }
+            ModelState.AddModelError(string.Empty, "You have already reviewed this location.");
+        }
+        else if (ModelState.IsValid)
+        {
+            await locationService.AddReviewAsync(model, userId);
+
+            return RedirectToAction("Details", new { id = model.LocationId });
+        }
+
+        // Load the details model including existing reviews
+        LocationDetailsViewModel detailsModel = await locationService.GetLocationDetailsAsync(model.LocationId, userId);
+        detailsModel.ReviewForm = model; // Attach the invalid form model back
+
+        // Load existing reviews
+        ViewBag.Reviews = await locationService.GetReviewsForLocationAsync(model.LocationId);
+
+        return View("Details", detailsModel); // Here it returns to 'Details' view
     }
 }

@@ -339,6 +339,7 @@ public class ReservationService : IReservationService
                     TotalPrice = r.TotalPrice,
                     Discount = r.Discount,
                     Locations = locations,
+                    UserEmail = r.User.Email,
                     Equipments = r.EquipmentNeeded
                         .Where(e => e.Equipment.IsActive)
                         .Select(en => new EquipmentViewModel()

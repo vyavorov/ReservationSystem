@@ -13,77 +13,68 @@
                 <a href="@Url.Action("All", "Reservation", new { locationId = location.Id })" class="btn btn-primary m-1">@location.Name</a>
             }
         </div>
-        @foreach (var reservation in Model.Reservations)
-        {
-            <div class="card col-lg-6 col-md-8 mb-4 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title mb-3"><b>Reservation for: </b>@reservation.Location.Name</h5>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Field</th>
-                                <th scope="col">Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Date</td>
-                                <td>@reservation.From.ToString("d") - @reservation.To.ToString("d")</td>
-                            </tr>
-                            <tr>
-                                <td>Customers count</td>
-                                <td>@reservation.CustomersCount</td>
-                            </tr>
-                            @if (reservation.AdditionalInformation != null)
-                            {
-                                <tr>
-                                    <td>Additional information</td>
-                                    <td>@reservation.AdditionalInformation</td>
-                                </tr>
-                            }
-                            @if (reservation.PromoCode != null)
-                            {
-                                <tr>
-                                    <td>Promo code</td>
-                                    <td>@reservation.PromoCode</td>
-                                </tr>
-                                <tr>
-                                    <td>Discount</td>
-                                    <td>@reservation.Discount %</td>
-                                </tr>
-                            }
-                            <tr>
-                                <td>Phone Number</td>
-                                <td>@reservation.PhoneNumber</td>
-                            </tr>
-                            @if (reservation.Equipments.Count > 0)
-                            {
-                                <tr>
-                                    <td>Requested equipment</td>
-                                    <td>
-                                        @foreach (var equipment in reservation.Equipments)
-                                        {
-                                            <p class="m-0">&bull; @equipment.Name, @equipment.Quantity</p>
-                                        }
-                                    </td>
-                                </tr>
-                            }
-                            <tr>
-                                <td>Total price</td>
-                                <td>@String.Format("{0:f2}", @reservation.TotalPrice) BGN</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    @if (this.User.Identity.IsAuthenticated)
+        <div class="table-responsive">
+            <table class="table table-striped">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Customers Count</th>
+                        <!-- Add other columns here -->
+                        <th scope="col">Additional Information</th>
+                        <th scope="col">Promo code</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Requested Equipment</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col">User Email</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var reservation in Model.Reservations)
                     {
-                        <div class="mt-3">
-                            <a class="btn btn-warning" asp-controller="Reservation" asp-action="Edit" asp-route-id="@reservation.Id">Edit</a>
-                            <a class="ml-2 btn btn-danger delete-reservation-btn" asp-controller="Reservation" asp-action="Delete" asp-route-id="@reservation.Id">Delete</a>
-                        </div>
+                        <tr>
+                            <td>@reservation.From.ToString("d") - @reservation.To.ToString("d")</td>
+                            <td>@reservation.CustomersCount</td>
+                            <!-- Add other cells here -->
+                            <td>@(reservation.AdditionalInformation ?? "-")</td>
+                            <td>@(reservation.PromoCode ?? "-")</td>
+                            <td>@(reservation.PromoCode != null ? $"{reservation.Discount} %" : "-")</td>
+                            <td>@reservation.PhoneNumber</td>
+                            <td>
+                                @if (reservation.Equipments.Count > 0)
+                                {
+                                    @foreach (var equipment in reservation.Equipments)
+                                    {
+                                        <p class="m-0">@equipment.Name, @equipment.Quantity</p>
+                                    }
+                                }
+                                else
+                                {
+                                    <p class="m-0">-</p>
+                                }
+                            </td>
+                            <td>@String.Format("{0:f2}", @reservation.TotalPrice) BGN</td>
+                            <td>@reservation.UserEmail</td>
+                            <td>
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <div class="d-flex flex-column">
+                                        <div class="mb-1">
+                                            <a class="btn btn-warning" asp-controller="Reservation" asp-action="Edit" asp-route-id="@reservation.Id">Edit</a>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-danger delete-reservation-btn" asp-controller="Reservation" asp-action="Delete" asp-route-id="@reservation.Id">Delete</a>
+                                        </div>
+                                    </div>
+                                }
+                            </td>
+                        </tr>
                     }
-                </div>
-            </div>
-        }
+                </tbody>
+            </table>
+        </div>
         <div class="card col-lg-6 col-md-8 shadow-sm">
             <div class="card-body">
                 <h5 class="card-title">Contacts</h5>

@@ -1,0 +1,13 @@
+﻿@model ReviewFormViewModel
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="AddReview" asp-controller="Location" method="post">
+    <input type="hidden" asp-for="LocationId" />
+
+    <div class="form-group">
+        <textarea asp-for="Comment" class="form-control" placeholder="Leave a review..."></textarea>
+        <span asp-validation-for="Comment" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-1">Submit review</button>
+</form>
