@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReservationSystem.Data;
 
@@ -11,9 +12,10 @@ using ReservationSystem.Data;
 namespace ReservationSystem.Data.Migrations
 {
     [DbContext(typeof(ReservationDbContext))]
-    partial class ReservationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230806142406_Names added to the User")]
+    partial class NamesaddedtotheUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -179,10 +181,8 @@ namespace ReservationSystem.Data.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .ValueGeneratedOnAdd()
                         .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)")
-                        .HasDefaultValue("Test");
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -221,8 +221,10 @@ namespace ReservationSystem.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("nvarchar(256)")
+                        .HasDefaultValue("Test");
 
                     b.HasKey("Id");
 
@@ -374,7 +376,7 @@ namespace ReservationSystem.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a39f5c7e-d5a2-43c9-86c8-cf584a4f8278"),
+                            Id = new Guid("535d8919-100a-4898-a2bc-045653d917ce"),
                             Discount = 50,
                             IsActive = true,
                             Name = "internal"
