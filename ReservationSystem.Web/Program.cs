@@ -43,6 +43,12 @@ builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<IPromoCodeService, PromoCodeService>();
 builder.Services.AddScoped<IEquipmentService, EquipmentService>();
 
+
+//builder.Services.ConfigureApplicationCookie(opt =>
+//{
+//    opt.Cookie.SameSite = SameSiteMode.None;
+//});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
