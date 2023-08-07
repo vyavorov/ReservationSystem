@@ -43,6 +43,7 @@ builder.Services.AddScoped<ILocationService, LocationService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<IPromoCodeService, PromoCodeService>();
 builder.Services.AddScoped<IEquipmentService, EquipmentService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 
 builder.Services.ConfigureApplicationCookie(opt =>
