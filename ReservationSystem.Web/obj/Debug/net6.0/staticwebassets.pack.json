@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ReservationSystem.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Web\\wwwroot\\bashhub-logo.png",
+      "PackagePath": "staticwebassets\\bashhub-logo.png"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

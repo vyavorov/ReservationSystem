@@ -117,3 +117,11 @@ body {
 .locations {
     background-color: #e9ecef;
 }
+
+.nav-logo {
+    width:50px;
+}
+
+.container-fluid {
+    padding-left: 100px;
+}

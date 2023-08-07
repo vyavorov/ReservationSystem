@@ -17,7 +17,7 @@ namespace ReservationSystem.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.15")
+                .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -374,7 +374,7 @@ namespace ReservationSystem.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a39f5c7e-d5a2-43c9-86c8-cf584a4f8278"),
+                            Id = new Guid("c6153451-3af6-48be-8577-d2b1bc66117d"),
                             Discount = 50,
                             IsActive = true,
                             Name = "internal"

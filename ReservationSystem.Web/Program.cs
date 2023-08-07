@@ -5,6 +5,7 @@ using ReservationSystem.Data.Models;
 using ReservationSystem.Services;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.Infrastructure.ModelBinders;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,10 +45,11 @@ builder.Services.AddScoped<IPromoCodeService, PromoCodeService>();
 builder.Services.AddScoped<IEquipmentService, EquipmentService>();
 
 
-//builder.Services.ConfigureApplicationCookie(opt =>
-//{
-//    opt.Cookie.SameSite = SameSiteMode.None;
-//});
+builder.Services.ConfigureApplicationCookie(opt =>
+{
+    //opt.Cookie.SameSite = SameSiteMode.None;
+    opt.LoginPath = "/User/Login";
+});
 
 var app = builder.Build();
 

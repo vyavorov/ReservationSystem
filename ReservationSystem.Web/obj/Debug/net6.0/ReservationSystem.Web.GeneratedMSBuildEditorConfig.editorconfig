@@ -16,10 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/Equipment/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50XEFsbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -102,6 +98,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Dropbox/Softuni/WEB/assignment/project/CSharpWebAdvanced-CourseProject/ReservationSystem.Web/Views/_ViewImports.cshtml]
