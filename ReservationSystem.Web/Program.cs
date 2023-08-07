@@ -6,6 +6,8 @@ using ReservationSystem.Services;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.Infrastructure.ModelBinders;
 using Microsoft.AspNetCore.Identity;
+using ReservationSystem.Web.Infrastructure.Extensions;
+using static ReservationSystem.Common.GeneralApplicationConstants;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +33,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
         options.Password.RequireLowercase =
             builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
     })
+    .AddRoles<IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ReservationDbContext>();
 
 builder.Services.AddControllersWithViews()
@@ -75,6 +78,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.SeedAdministrator(DevelopmentAdminEmail);
 
 app.MapDefaultControllerRoute();
 app.MapRazorPages();

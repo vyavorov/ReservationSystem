@@ -293,7 +293,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Data.Models\\ReservationSystem.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Dropbox\\Softuni\\WEB\\assignment\\project\\CSharpWebAdvanced-CourseProject\\ReservationSystem.Data.Models\\ReservationSystem.Data.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -306,6 +310,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.20, )"
+            },
             "Microsoft.AspNetCore.Mvc": {
               "target": "Package",
               "version": "[2.2.0, )"
