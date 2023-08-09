@@ -1,0 +1,25 @@
+﻿@model ReservationSystem.Data.Models.PromoCode
+
+<div class="admin-content-box">
+    <h2>Create New PromoCode</h2>
+
+    <form asp-action="Create" asp-controller="PromoCode">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Discount"></label>
+            <input asp-for="Discount" class="form-control" type="number" min="0" max="100" />
+            <span asp-validation-for="Discount" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>

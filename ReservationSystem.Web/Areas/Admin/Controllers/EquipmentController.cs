@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Data.Models;
 using ReservationSystem.Services.Interfaces;
+using static ReservationSystem.Common.GeneralApplicationConstants;
 
-namespace ReservationSystem.Web.Controllers;
+namespace ReservationSystem.Web.Areas.Admin.Controllers;
 
-public class EquipmentController : Controller
+public class EquipmentController : BaseAdminController
 {
     private readonly IEquipmentService service;
 
@@ -31,7 +32,7 @@ public class EquipmentController : Controller
     {
         await service.CreateEquipmentAsync(equipment);
 
-        return RedirectToAction("All", "Equipment");
+        return RedirectToAction("All", "Equipment", new { Area = AdminAreaName });
     }
 
     [HttpGet]
@@ -50,6 +51,6 @@ public class EquipmentController : Controller
     {
         await service.DeleteEquipmentAsync(id, equipment);
 
-        return RedirectToAction("All", "Equipment");
+        return RedirectToAction("All", "Equipment", new { Area = AdminAreaName });
     }
 }

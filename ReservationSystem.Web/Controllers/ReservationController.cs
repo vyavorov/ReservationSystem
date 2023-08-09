@@ -3,9 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Data.Models;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Reservation;
-using System.Collections.Specialized;
-using System.Net;
 using System.Security.Claims;
+using static ReservationSystem.Common.GeneralApplicationConstants;
 
 namespace ReservationSystem.Web.Controllers;
 
@@ -122,17 +121,5 @@ public class ReservationController : Controller
             return RedirectToAction("Mine", "Reservation");
         }
         return RedirectToAction("Mine", "Reservation");
-    }
-
-    [HttpGet]
-    public async Task<IActionResult> All(int? locationId = null)
-    {
-        ICollection<Location> locations = await reservationService.GetAllLocationsAsync();
-        ICollection<AllReservationsViewModel> reservations = await reservationService.GetAllReservationsASync(locationId);
-        return View(new AllReservationsWithLocationsViewModel
-        {
-            Reservations = reservations,
-            Locations = locations
-        });
     }
 }

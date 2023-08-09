@@ -2,17 +2,21 @@
 @{
     ViewBag.Title = "Location Details";
 }
-<h2 class="text-center">@ViewBag.Title</h2>
-<hr />
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <p class="mt-4 h4">Which location would you like to see?</p>
+
+<div class="admin-content-box">
+    <h2 class="text-center">@ViewBag.Title</h2>
+    <hr />
+
+    <div class="mt-4">
+        <p class="h4">Which location would you like to see?</p>
         <div class="mb-4">
+            <a href="@Url.Action("All", "Reservation")" class="btn btn-primary m-1">All</a>
             @foreach (var location in Model.Locations)
             {
                 <a href="@Url.Action("All", "Reservation", new { locationId = location.Id })" class="btn btn-primary m-1">@location.Name</a>
             }
         </div>
+
         <div class="table-responsive">
             <table class="table table-striped">
 
@@ -75,7 +79,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="card col-lg-6 col-md-8 shadow-sm">
+
+        <div class="card col-lg-6 col-md-8 shadow-sm mt-4">
             <div class="card-body">
                 <h5 class="card-title">Contacts</h5>
                 <p class="card-text"><b>Email:</b> info@@bashhub.bg</p>

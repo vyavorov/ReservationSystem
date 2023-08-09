@@ -81,4 +81,18 @@ public class UserController : Controller
         }
         return this.Redirect(model.ReturnUrl ?? "/Home/Index");
     }
+
+    public async Task<IActionResult> Logout(string returnUrl = null)
+    {
+        await signInManager.SignOutAsync();
+
+        if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+        {
+            return Redirect(returnUrl);
+        }
+        else
+        {
+            return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+    }
 }

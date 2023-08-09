@@ -79,9 +79,18 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.SeedAdministrator(DevelopmentAdminEmail);
+if (app.Environment.IsDevelopment()) {
+    app.SeedAdministrator(DevelopmentAdminEmail);
+}
 
-app.MapDefaultControllerRoute();
-app.MapRazorPages();
+app.UseEndpoints(config =>
+{
+    //TODO: CHECK IF PARAMETER TAMPERING DEFENSE IS NEEDED
+    config.MapControllerRoute(
+            name: "areas",
+            pattern: "/{area:exists}/{controller=Home}/{action=Index}/{id?}");
+    app.MapDefaultControllerRoute();
+    app.MapRazorPages();
+});
 
 app.Run();

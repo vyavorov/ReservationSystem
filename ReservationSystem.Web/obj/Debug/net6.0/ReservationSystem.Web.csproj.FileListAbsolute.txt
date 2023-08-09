@@ -274,3 +274,4 @@ C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CoursePr
 C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Admin\Dropbox\Softuni\WEB\assignment\project\CSharpWebAdvanced-CourseProject\ReservationSystem.Web\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css

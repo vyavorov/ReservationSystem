@@ -114,7 +114,6 @@ public class ReservationService : IReservationService
                 PromoCode = reservation.PromoCode?.Name,
                 TotalPrice = reservation.TotalPrice,
                 Discount = reservation.Discount,
-                //Equipments = await this.GetAllEquipmentsAsync()
                 Equipments = allEquipments
                     .Where(e => e.IsActive)
                     .Select(en => new EquipmentViewModel()
@@ -139,7 +138,6 @@ public class ReservationService : IReservationService
             .FirstOrDefaultAsync(r => r.Id.ToString() == Id);
 
 
-        //TODO: IMPLEMENT ISACTIVE FOR PROMOCODE
         PromoCode? promoCode = await context.PromoCodes.Where(pc => pc.IsActive).FirstOrDefaultAsync(pc => pc.Name == reservation.PromoCode);
         Location? chosenLocation = await context.Locations.Where(l => l.IsActive).FirstOrDefaultAsync(l => l.Id == reservation.LocationId);
 

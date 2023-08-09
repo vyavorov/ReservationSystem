@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Data.Models;
 using ReservationSystem.Services.Interfaces;
+using static ReservationSystem.Common.GeneralApplicationConstants;
 
-namespace ReservationSystem.Web.Controllers;
+namespace ReservationSystem.Web.Areas.Admin.Controllers;
 
-public class PromoCodeController : Controller
+public class PromoCodeController : BaseAdminController
 {
     private readonly IPromoCodeService service;
 
@@ -39,7 +40,7 @@ public class PromoCodeController : Controller
             ModelState.AddModelError(string.Empty, ex.Message);
             return View(model);
         }
-        return RedirectToAction("All","PromoCode");
+        return RedirectToAction("All", "PromoCode", new { Area = AdminAreaName });
     }
 
     [HttpGet]
@@ -52,7 +53,7 @@ public class PromoCodeController : Controller
         }
         catch (Exception)
         {
-            return RedirectToAction("All", "PromoCode");
+            return RedirectToAction("All", "PromoCode", new { Area = AdminAreaName });
         }
         return View(promoCode);
     }
@@ -66,9 +67,9 @@ public class PromoCodeController : Controller
         }
         catch (Exception)
         {
-            return RedirectToAction("All", "PromoCode");
+            return RedirectToAction("All", "PromoCode", new { Area = AdminAreaName });
         }
 
-        return RedirectToAction("All", "PromoCode");
+        return RedirectToAction("All", "PromoCode", new { Area = AdminAreaName });
     }
 }

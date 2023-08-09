@@ -1,7 +1,8 @@
 ﻿@model IndexViewModel[]
+@using static ReservationSystem.Web.Infrastructure.Extensions.ClaimsPrincipalExtensions;
 
 <!-- Hero Section -->
-<section class="hero bg-primary text-white text-center py-5" >
+<section class="hero bg-primary text-white text-center py-5">
     <div class="container">
         <h1 class="fw-light">Welcome to BashHub</h1>
         <p class="lead">Boost your productivity in our modern coworking spaces, located in serene seaside and peaceful forest settings.</p>
@@ -60,20 +61,17 @@
                             </p>
                             <div class="mt-auto">
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id" class="btn btn-outline-primary flex-fill me-2">Details</a>
-                                    @if (this.User.Identity.IsAuthenticated)
+                                    <a asp-controller="Location" asp-action="Details" asp-route-id="@location.Id" class="btn btn-outline-primary flex-fill me-2 details-btn">Details</a>
+                                    @if (this.User.IsAdmin())
                                     {
                                         <a asp-controller="Location" asp-action="Edit" asp-route-id="@location.Id"
                                            class="btn btn-outline-warning flex-fill mx-2">Edit</a>
                                         <a asp-controller="Location" asp-action="Delete" asp-route-id="@location.Id" class="btn btn-outline-danger flex-fill ms-2">Delete</a>
                                     }
                                 </div>
-                                @if (this.User.Identity.IsAuthenticated)
-                                {
-                                    <form asp-controller="Reservation" asp-action="Book" asp-route-id="@location.Id" method="get">
-                                        <input class="btn btn-primary btn-block" type="submit" value="Book now" />
-                                    </form>
-                                }
+                                <form asp-controller="Reservation" asp-action="Book" asp-route-id="@location.Id" method="get">
+                                    <input class="btn btn-primary btn-block book-btn" type="submit" value="Book now" />
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using ReservationSystem.Data.Models;
+@using static ReservationSystem.Web.Infrastructure.Extensions.ClaimsPrincipalExtensions;
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @inject ReservationSystem.Services.Interfaces.IUserService userService;
@@ -9,20 +10,6 @@
 }
 
 <ul class="navbar-nav">
-
-    @*TODO: THE BELOW SHOULD BE AVAILABLE FOR ADMINS ONLY*@
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Add">Add location</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="PromoCode" asp-action="All">Promo codes</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Equipment" asp-action="All">Equipments</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="All">All reservations</a>
-    </li>
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">

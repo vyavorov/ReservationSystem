@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Home;
-using System.Diagnostics;
+using static ReservationSystem.Common.GeneralApplicationConstants;
 
 namespace ReservationSystem.Web.Controllers;
 
@@ -12,9 +12,14 @@ public class HomeController : Controller
     {
         this.locationService = locationService;
     }
-    
+
     public async Task<IActionResult> Index()
     {
+        if (this.User.IsInRole(AdminRoleName))
+        {
+            return RedirectToAction("Index", "Home", new { Area = AdminAreaName });
+        }
+
         IEnumerable<IndexViewModel> locations = await locationService.GetAllLocationsAsync();
 
         return View(locations);

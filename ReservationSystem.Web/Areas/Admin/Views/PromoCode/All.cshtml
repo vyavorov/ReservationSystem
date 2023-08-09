@@ -1,0 +1,30 @@
+﻿@model List<ReservationSystem.Data.Models.PromoCode>
+
+<div class="admin-content-box">
+    <div class="mb-3">
+        <a class="btn btn-primary" asp-action="Create" asp-controller="PromoCode">New PromoCode</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <p>You have no promocodes yet.</p>
+    }
+
+    <div class="row">
+        @foreach (var promoCode in Model)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@promoCode.Name</h5>
+                        <p class="card-text">Discount: @promoCode.Discount%</p>
+                        <form asp-action="Delete" asp-controller="PromoCode" method="get">
+                            <input type="hidden" name="id" value="@promoCode.Id" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

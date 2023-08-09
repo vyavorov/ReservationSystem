@@ -1,0 +1,19 @@
+﻿<aside class="admin-sidebar bg-darkblue py-4 d-flex flex-column">
+
+    <h3 class="text-center text-white mb-4">Admin Panel</h3>
+    <ul class="list-unstyled">
+        <li><a asp-controller="Home" asp-action="Index" class="text-white d-block py-2 px-4">Home</a></li>
+        <li><a asp-controller="PromoCode" asp-action="All" class="text-white d-block py-2 px-4">Promo Codes</a></li>
+        <li><a asp-controller="Equipment" asp-action="All" class="text-white d-block py-2 px-4">Equipments</a></li>
+        <li><a asp-controller="Reservation" asp-action="All" class="text-white d-block py-2 px-4">All Reservations</a></li>
+    </ul>
+    <div class="admin-user-controls mt-auto d-flex admin-user-icons">
+        @if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <a class="btn btn-outline-light me-2" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a>
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
+                <button type="submit" class="btn btn-outline-light">Logout</button>
+            </form>
+        }
+    </div>
+</aside>

@@ -17,6 +17,11 @@ body {
     margin-bottom: 60px;
 }
 
+.admin-user {
+    /*overflow-x: auto;*/
+    overflow: hidden;
+}
+
 .date-form-group {
     display: inline-block;
 }
@@ -119,9 +124,63 @@ body {
 }
 
 .nav-logo {
-    width:50px;
+    width: 50px;
 }
 
 .container-fluid {
     padding-left: 100px;
+    padding-right: 100px;
+}
+
+.admin-sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 250px;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.admin-user-controls {
+    margin-top: auto; /* Push it to the bottom */
+}
+
+.main-content, .admin-footer {
+    margin-left: 250px; /* This is the width of your sidebar */
+    flex: 1; /* This allows the content to take up remaining space */
+    padding: 20px;
+    overflow-y: auto; /* This will add scroll only if content exceeds the viewport height */
+}
+
+.admin-sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-darkblue {
+    background-color: #003366; /* This is a sample dark blue color; you can adjust as needed. */
+}
+
+.admin-content-box {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for contrast */
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+}
+
+.admin-user-icons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.admin-container {
+    display: flex;
+    height: 100vh;
+}
+
+.details-btn {
+    margin-right: 0 !important;
+}
+
+.book-btn {
+    width: 100%;
 }

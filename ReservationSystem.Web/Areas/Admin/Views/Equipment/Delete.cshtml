@@ -1,0 +1,17 @@
+﻿@model ReservationSystem.Data.Models.Equipment
+
+<div class="admin-content-box">
+    <h2>Are you sure you want to remove this Equipment?</h2>
+
+    <div class="card my-4">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+        </div>
+    </div>
+
+    <form asp-action="Delete" asp-controller="Equipment" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <a class="btn btn-primary" asp-action="All">No, cancel</a>
+    </form>
+</div>
