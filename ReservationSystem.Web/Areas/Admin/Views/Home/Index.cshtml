@@ -8,12 +8,9 @@
             <h2 class="fw-light text-center">Our Locations</h2>
 
             <!-- Add Location Button -->
-            @if (this.User.IsAdmin())
-            {
-                <div class="mb-3 text-center">
-                    <a asp-controller="Location" asp-action="Add" class="btn btn-primary">Add Location</a>
-                </div>
-            }
+            <div class="mb-3 text-center">
+                <a asp-controller="Location" asp-action="Add" class="btn btn-primary">Add Location</a>
+            </div>
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 @foreach (var location in Model)

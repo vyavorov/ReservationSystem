@@ -36,6 +36,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     .AddRoles<IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ReservationDbContext>();
 
+builder.Services.AddMemoryCache();
+
 builder.Services.AddControllersWithViews()
     .AddMvcOptions(options =>
     {

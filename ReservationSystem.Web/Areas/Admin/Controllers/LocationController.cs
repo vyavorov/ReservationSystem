@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Location;
 using static ReservationSystem.Common.GeneralApplicationConstants;
@@ -10,20 +11,20 @@ namespace ReservationSystem.Web.Areas.Admin.Controllers
     {
 
         private readonly ILocationService locationService;
-        public LocationController(ILocationService locationService)
+        private readonly IMemoryCache memoryCache;
+        public LocationController(ILocationService locationService, IMemoryCache memoryCache)
         {
             this.locationService = locationService;
+            this.memoryCache = memoryCache;
         }
 
         [HttpGet]
-        [Authorize(Roles = AdminRoleName)]
         public IActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
-        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> Add(LocationFormViewModel model)
         {
             if (!ModelState.IsValid)
@@ -34,6 +35,7 @@ namespace ReservationSystem.Web.Areas.Admin.Controllers
             try
             {
                 await this.locationService.AddLocationAsync(model);
+                this.memoryCache.Remove(LocationsCacheKey);
             }
             catch (Exception)
             {
@@ -43,7 +45,6 @@ namespace ReservationSystem.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> Edit(int id)
         {
             LocationFormViewModel locationFormModel = await locationService.EditFormByIdAsync(id);
@@ -55,18 +56,17 @@ namespace ReservationSystem.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> Edit(int id, LocationFormViewModel model)
         {
             if (ModelState.IsValid)
             {
                 await locationService.EditLocationByIdAsync(id, model);
+                this.memoryCache.Remove(LocationsCacheKey);
             }
             return RedirectToAction("Index", "Home", new { Area = AdminAreaName });
         }
 
         [HttpGet]
-        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> Delete(int id)
         {
             LocationDeleteViewModel locationDeleteViewModel = await locationService.DeleteFormByIdAsync(id);
@@ -78,12 +78,12 @@ namespace ReservationSystem.Web.Areas.Admin.Controllers
         }
         //TODO: MANIPULATE TRY/CATCH EVERYWHERE
         [HttpPost]
-        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> Delete(int id, LocationDeleteViewModel locationDeleteViewModel)
         {
             try
             {
                 await locationService.DeleteLocationByIdAsync(id, locationDeleteViewModel);
+                this.memoryCache.Remove(LocationsCacheKey);
             }
             catch (Exception)
             {

@@ -62,30 +62,19 @@
                             <td>@String.Format("{0:f2}", @reservation.TotalPrice) BGN</td>
                             <td>@reservation.UserEmail</td>
                             <td>
-                                @if (this.User.Identity.IsAuthenticated)
-                                {
-                                    <div class="d-flex flex-column">
-                                        <div class="mb-1">
-                                            <a class="btn btn-warning" asp-controller="Reservation" asp-action="Edit" asp-route-id="@reservation.Id">Edit</a>
-                                        </div>
-                                        <div>
-                                            <a class="btn btn-danger delete-reservation-btn" asp-controller="Reservation" asp-action="Delete" asp-route-id="@reservation.Id">Delete</a>
-                                        </div>
+                                <div class="d-flex flex-column">
+                                    <div class="mb-1">
+                                        <a class="btn btn-warning" asp-controller="Reservation" asp-action="Edit" asp-route-id="@reservation.Id">Edit</a>
                                     </div>
-                                }
+                                    <div>
+                                        <a class="btn btn-danger delete-reservation-btn" asp-controller="Reservation" asp-action="Delete" asp-route-id="@reservation.Id">Delete</a>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
-        </div>
-
-        <div class="card col-lg-6 col-md-8 shadow-sm mt-4">
-            <div class="card-body">
-                <h5 class="card-title">Contacts</h5>
-                <p class="card-text"><b>Email:</b> info@@bashhub.bg</p>
-                <p class="card-text"><b>Phone Number:</b> +359 888 88 88 88</p>
-            </div>
         </div>
     </div>
 </div>

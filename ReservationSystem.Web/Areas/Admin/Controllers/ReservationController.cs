@@ -16,7 +16,6 @@ public class ReservationController : BaseAdminController
     }
 
     [HttpGet]
-    [Authorize(Roles = AdminRoleName)]
     public async Task<IActionResult> All(int? locationId = null)
     {
         ICollection<Location> locations = await reservationService.GetAllLocationsAsync();
