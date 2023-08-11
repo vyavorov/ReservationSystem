@@ -59,7 +59,7 @@ namespace ReservationSystem.Services.Tests
         [Test]
         public async Task EditLocationByIdAsync_ShouldUpdateLocationProperties()
         {
-            await DatabaseSeeder.SeedDatabase(dbContext, locationService);
+            await DatabaseSeeder.SeedDatabaseForLocationTests(dbContext, locationService);
             // Arrange
             var originalLocation = await dbContext.Locations.FirstOrDefaultAsync(l => l.Name == "Location1");
             Assert.IsNotNull(originalLocation);  // Ensure the location exists
@@ -87,7 +87,7 @@ namespace ReservationSystem.Services.Tests
         [Test]
         public async Task EditFormByIdAsync_ShouldReturnCorrectFormViewModelForGivenId()
         {
-            await DatabaseSeeder.SeedDatabase(dbContext, locationService);
+            await DatabaseSeeder.SeedDatabaseForLocationTests(dbContext, locationService);
             // Arrange
             var originalLocation = await dbContext.Locations.FirstOrDefaultAsync(l => l.Name == "Location1");
             Assert.IsNotNull(originalLocation);  // Ensure the location exists
@@ -103,7 +103,7 @@ namespace ReservationSystem.Services.Tests
         [Test]
         public async Task DeleteFormByIdAsync_ShouldReturnCorrectDeleteViewModelForGivenId()
         {
-            await DatabaseSeeder.SeedDatabase(dbContext, locationService);
+            await DatabaseSeeder.SeedDatabaseForLocationTests(dbContext, locationService);
             // Arrange
             var originalLocation = await dbContext.Locations.FirstOrDefaultAsync(l => l.Name == "Location1");
             Assert.IsNotNull(originalLocation);  // Ensure the location exists
@@ -119,7 +119,7 @@ namespace ReservationSystem.Services.Tests
         [Test]
         public async Task DeleteLocationByIdAsync_ShouldMarkLocationAsInactive()
         {
-            await DatabaseSeeder.SeedDatabase(dbContext, locationService);
+            await DatabaseSeeder.SeedDatabaseForLocationTests(dbContext, locationService);
             // Arrange
             var originalLocation = await dbContext.Locations.FirstOrDefaultAsync(l => l.Name == "Location1");
             Assert.IsNotNull(originalLocation);  // Ensure the location exists
@@ -136,7 +136,7 @@ namespace ReservationSystem.Services.Tests
         [Test]
         public async Task AddReviewAsync_ShouldAddReviewToDatabase()
         {
-            await DatabaseSeeder.SeedDatabase(dbContext, locationService);
+            await DatabaseSeeder.SeedDatabaseForLocationTests(dbContext, locationService);
             // Arrange
             var knownUser = await dbContext.Users.FirstOrDefaultAsync(u => u.UserName == "testuser");
             Assert.IsNotNull(knownUser, "Known test user should be seeded in the database.");

@@ -32,7 +32,7 @@ public class ReservationController : BaseAdminController
         ReservationFormViewModel reservation;
         try
         {
-            reservation = await reservationService.GetReservationModelToByIdAsync(Id);
+            reservation = await reservationService.GetReservationModelByIdAsync(Id);
         }
         catch (ArgumentException ex)
         {
@@ -65,7 +65,7 @@ public class ReservationController : BaseAdminController
         ReservationFormViewModel reservation;
         try
         {
-            reservation = await reservationService.GetReservationModelToByIdAsync(Id);
+            reservation = await reservationService.GetReservationModelByIdAsync(Id);
         }
         catch (ArgumentException ex)
         {

@@ -5,37 +5,37 @@
       "ReservationSystem.Data.ReservationDbContext": {
         "Microsoft.EntityFrameworkCore.DbSet`1<ReservationSystem.Data.Models.Reservation> ReservationSystem.Data.ReservationDbContext::get_Reservations()": {
           "Lines": {
-            "15": 26
+            "15": 57
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<ReservationSystem.Data.Models.Equipment> ReservationSystem.Data.ReservationDbContext::get_Equipments()": {
           "Lines": {
-            "17": 26
+            "17": 55
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<ReservationSystem.Data.Models.EquipmentReservations> ReservationSystem.Data.ReservationDbContext::get_EquipmentsReservations()": {
           "Lines": {
-            "19": 26
+            "19": 46
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<ReservationSystem.Data.Models.Location> ReservationSystem.Data.ReservationDbContext::get_Locations()": {
           "Lines": {
-            "21": 49
+            "21": 82
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<ReservationSystem.Data.Models.PromoCode> ReservationSystem.Data.ReservationDbContext::get_PromoCodes()": {
           "Lines": {
-            "23": 37
+            "23": 64
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<ReservationSystem.Data.Models.Review> ReservationSystem.Data.ReservationDbContext::get_Reviews()": {
           "Lines": {
-            "25": 28
+            "25": 46
           },
           "Branches": []
         },
@@ -68,9 +68,9 @@
         },
         "System.Void ReservationSystem.Data.ReservationDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<ReservationSystem.Data.ReservationDbContext>)": {
           "Lines": {
-            "12": 13,
-            "13": 13,
-            "14": 13
+            "12": 22,
+            "13": 22,
+            "14": 22
           },
           "Branches": []
         }
@@ -80,6 +80,7 @@
       "ReservationSystem.Data.Migrations.Initial": {
         "System.Void ReservationSystem.Data.Migrations.Initial::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
@@ -93,7 +94,7 @@
             "21": 0,
             "22": 0,
             "23": 0,
-            "24": 0,
+            "25": 0,
             "26": 0,
             "27": 0,
             "28": 0,
@@ -117,7 +118,7 @@
             "46": 0,
             "47": 0,
             "48": 0,
-            "49": 0,
+            "50": 0,
             "51": 0,
             "52": 0,
             "53": 0,
@@ -129,7 +130,7 @@
             "59": 0,
             "60": 0,
             "61": 0,
-            "62": 0,
+            "63": 0,
             "64": 0,
             "65": 0,
             "66": 0,
@@ -145,7 +146,7 @@
             "76": 0,
             "77": 0,
             "78": 0,
-            "79": 0,
+            "80": 0,
             "81": 0,
             "82": 0,
             "83": 0,
@@ -157,7 +158,7 @@
             "89": 0,
             "90": 0,
             "91": 0,
-            "92": 0,
+            "93": 0,
             "94": 0,
             "95": 0,
             "96": 0,
@@ -177,7 +178,7 @@
             "110": 0,
             "111": 0,
             "112": 0,
-            "113": 0,
+            "114": 0,
             "115": 0,
             "116": 0,
             "117": 0,
@@ -197,7 +198,7 @@
             "131": 0,
             "132": 0,
             "133": 0,
-            "134": 0,
+            "135": 0,
             "136": 0,
             "137": 0,
             "138": 0,
@@ -216,7 +217,7 @@
             "151": 0,
             "152": 0,
             "153": 0,
-            "154": 0,
+            "155": 0,
             "156": 0,
             "157": 0,
             "158": 0,
@@ -239,7 +240,7 @@
             "175": 0,
             "176": 0,
             "177": 0,
-            "178": 0,
+            "179": 0,
             "180": 0,
             "181": 0,
             "182": 0,
@@ -258,7 +259,7 @@
             "195": 0,
             "196": 0,
             "197": 0,
-            "198": 0,
+            "199": 0,
             "200": 0,
             "201": 0,
             "202": 0,
@@ -294,7 +295,7 @@
             "232": 0,
             "233": 0,
             "234": 0,
-            "235": 0,
+            "236": 0,
             "237": 0,
             "238": 0,
             "239": 0,
@@ -317,87 +318,86 @@
             "256": 0,
             "257": 0,
             "258": 0,
-            "259": 0,
+            "260": 0,
             "261": 0,
             "262": 0,
             "263": 0,
-            "264": 0,
+            "265": 0,
             "266": 0,
             "267": 0,
             "268": 0,
             "269": 0,
             "270": 0,
-            "271": 0,
+            "272": 0,
             "273": 0,
             "274": 0,
             "275": 0,
-            "276": 0,
+            "277": 0,
             "278": 0,
             "279": 0,
             "280": 0,
-            "281": 0,
+            "282": 0,
             "283": 0,
             "284": 0,
             "285": 0,
-            "286": 0,
+            "287": 0,
             "288": 0,
             "289": 0,
             "290": 0,
-            "291": 0,
+            "292": 0,
             "293": 0,
             "294": 0,
             "295": 0,
             "296": 0,
             "297": 0,
-            "298": 0,
+            "299": 0,
             "300": 0,
             "301": 0,
             "302": 0,
-            "303": 0,
+            "304": 0,
             "305": 0,
             "306": 0,
             "307": 0,
-            "308": 0,
+            "309": 0,
             "310": 0,
             "311": 0,
             "312": 0,
-            "313": 0,
+            "314": 0,
             "315": 0,
             "316": 0,
             "317": 0,
-            "318": 0,
-            "319": 0
+            "318": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.Initial::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "321": 0,
             "322": 0,
             "323": 0,
-            "324": 0,
+            "325": 0,
             "326": 0,
-            "327": 0,
+            "328": 0,
             "329": 0,
-            "330": 0,
+            "331": 0,
             "332": 0,
-            "333": 0,
+            "334": 0,
             "335": 0,
-            "336": 0,
+            "337": 0,
             "338": 0,
-            "339": 0,
+            "340": 0,
             "341": 0,
-            "342": 0,
+            "343": 0,
             "344": 0,
-            "345": 0,
+            "346": 0,
             "347": 0,
-            "348": 0,
+            "349": 0,
             "350": 0,
-            "351": 0,
+            "352": 0,
             "353": 0,
-            "354": 0,
+            "355": 0,
             "356": 0,
-            "357": 0,
-            "358": 0
+            "357": 0
           },
           "Branches": []
         }
@@ -840,6 +840,7 @@
       "ReservationSystem.Data.Migrations.SeedDatabase": {
         "System.Void ReservationSystem.Data.Migrations.SeedDatabase::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
@@ -849,43 +850,42 @@
             "17": 0,
             "18": 0,
             "19": 0,
-            "20": 0,
+            "21": 0,
             "22": 0,
             "23": 0,
             "24": 0,
-            "25": 0,
+            "26": 0,
             "27": 0,
             "28": 0,
             "29": 0,
-            "30": 0,
-            "31": 0
+            "30": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.SeedDatabase::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "33": 0,
             "34": 0,
             "35": 0,
             "36": 0,
             "37": 0,
-            "38": 0,
+            "39": 0,
             "40": 0,
             "41": 0,
             "42": 0,
-            "43": 0,
+            "44": 0,
             "45": 0,
             "46": 0,
             "47": 0,
-            "48": 0,
+            "49": 0,
             "50": 0,
             "51": 0,
             "52": 0,
-            "53": 0,
+            "54": 0,
             "55": 0,
             "56": 0,
             "57": 0,
-            "58": 0,
-            "59": 0
+            "58": 0
           },
           "Branches": []
         }
@@ -1364,57 +1364,57 @@
       "ReservationSystem.Data.Migrations.DescriptionAddedForLocation": {
         "System.Void ReservationSystem.Data.Migrations.DescriptionAddedForLocation::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
-            "20": 0,
+            "21": 0,
             "22": 0,
             "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
             "27": 0,
-            "28": 0,
+            "29": 0,
             "30": 0,
             "31": 0,
             "32": 0,
-            "33": 0,
+            "34": 0,
             "35": 0,
             "36": 0,
             "37": 0,
-            "38": 0,
-            "39": 0
+            "38": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.DescriptionAddedForLocation::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "41": 0,
             "42": 0,
             "43": 0,
             "44": 0,
             "45": 0,
-            "46": 0,
+            "47": 0,
             "48": 0,
             "49": 0,
             "50": 0,
-            "51": 0,
+            "52": 0,
             "53": 0,
             "54": 0,
-            "55": 0,
+            "56": 0,
             "57": 0,
             "58": 0,
             "59": 0,
-            "60": 0,
+            "61": 0,
             "62": 0,
             "63": 0,
             "64": 0,
-            "65": 0,
-            "66": 0
+            "65": 0
           },
           "Branches": []
         }
@@ -1899,46 +1899,46 @@
       "ReservationSystem.Data.Migrations.IsActiveAddedForLocation": {
         "System.Void ReservationSystem.Data.Migrations.IsActiveAddedForLocation::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
             "20": 0,
             "21": 0,
-            "22": 0,
+            "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
             "27": 0,
             "28": 0,
-            "29": 0,
+            "30": 0,
             "31": 0,
             "32": 0,
             "33": 0,
-            "34": 0,
-            "35": 0
+            "34": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.IsActiveAddedForLocation::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "37": 0,
             "38": 0,
             "39": 0,
             "40": 0,
             "41": 0,
-            "42": 0,
+            "43": 0,
             "44": 0,
             "45": 0,
-            "46": 0,
+            "47": 0,
             "48": 0,
             "49": 0,
             "50": 0,
-            "51": 0,
-            "52": 0
+            "51": 0
           },
           "Branches": []
         }
@@ -2427,40 +2427,40 @@
       "ReservationSystem.Data.Migrations.PhoneNumberAddedToReservation": {
         "System.Void ReservationSystem.Data.Migrations.PhoneNumberAddedToReservation::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
             "20": 0,
             "21": 0,
-            "22": 0,
+            "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
-            "27": 0,
-            "28": 0
+            "27": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.PhoneNumberAddedToReservation::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "30": 0,
             "31": 0,
             "32": 0,
             "33": 0,
             "34": 0,
-            "35": 0,
+            "36": 0,
             "37": 0,
             "38": 0,
-            "39": 0,
+            "40": 0,
             "41": 0,
             "42": 0,
             "43": 0,
-            "44": 0,
-            "45": 0
+            "44": 0
           },
           "Branches": []
         }
@@ -2953,31 +2953,31 @@
       "ReservationSystem.Data.Migrations.Equipmentmanytomanyfix": {
         "System.Void ReservationSystem.Data.Migrations.Equipmentmanytomanyfix::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
-            "20": 0,
-            "21": 0
+            "20": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.Equipmentmanytomanyfix::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
             "27": 0,
-            "28": 0,
+            "29": 0,
             "30": 0,
             "31": 0,
             "32": 0,
-            "33": 0,
-            "34": 0
+            "33": 0
           },
           "Branches": []
         }
@@ -3474,61 +3474,61 @@
       "ReservationSystem.Data.Migrations.Equipmentrelationsfix": {
         "System.Void ReservationSystem.Data.Migrations.Equipmentrelationsfix::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
-            "14": 0,
+            "15": 0,
             "16": 0,
             "17": 0,
             "18": 0,
-            "19": 0,
+            "20": 0,
             "21": 0,
             "22": 0,
             "23": 0,
             "24": 0,
             "25": 0,
-            "26": 0,
+            "27": 0,
             "28": 0,
             "29": 0,
             "30": 0,
-            "31": 0,
+            "32": 0,
             "33": 0,
             "34": 0,
             "35": 0,
-            "36": 0,
+            "37": 0,
             "38": 0,
             "39": 0,
             "40": 0,
-            "41": 0,
-            "42": 0
+            "41": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.Equipmentrelationsfix::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "44": 0,
             "45": 0,
             "46": 0,
             "47": 0,
-            "48": 0,
+            "49": 0,
             "50": 0,
             "51": 0,
-            "52": 0,
+            "53": 0,
             "54": 0,
             "55": 0,
             "56": 0,
-            "57": 0,
+            "58": 0,
             "59": 0,
             "60": 0,
-            "61": 0,
+            "62": 0,
             "63": 0,
             "64": 0,
             "65": 0,
-            "66": 0,
+            "67": 0,
             "68": 0,
             "69": 0,
             "70": 0,
-            "71": 0,
-            "72": 0
+            "71": 0
           },
           "Branches": []
         }
@@ -4031,70 +4031,70 @@
       "ReservationSystem.Data.Migrations.Equipmentrelationfix2": {
         "System.Void ReservationSystem.Data.Migrations.Equipmentrelationfix2::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
-            "14": 0,
+            "15": 0,
             "16": 0,
             "17": 0,
-            "18": 0,
+            "19": 0,
             "20": 0,
             "21": 0,
             "22": 0,
-            "23": 0,
+            "24": 0,
             "25": 0,
             "26": 0,
-            "27": 0,
+            "28": 0,
             "29": 0,
             "30": 0,
             "31": 0,
             "32": 0,
             "33": 0,
-            "34": 0,
+            "35": 0,
             "36": 0,
             "37": 0,
             "38": 0,
-            "39": 0,
+            "40": 0,
             "41": 0,
             "42": 0,
             "43": 0,
-            "44": 0,
-            "45": 0
+            "44": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.Equipmentrelationfix2::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "47": 0,
             "48": 0,
             "49": 0,
             "50": 0,
-            "51": 0,
+            "52": 0,
             "53": 0,
             "54": 0,
             "55": 0,
-            "56": 0,
+            "57": 0,
             "58": 0,
             "59": 0,
-            "60": 0,
+            "61": 0,
             "62": 0,
             "63": 0,
             "64": 0,
             "65": 0,
             "66": 0,
-            "67": 0,
+            "68": 0,
             "69": 0,
             "70": 0,
             "71": 0,
-            "72": 0,
+            "73": 0,
             "74": 0,
             "75": 0,
             "76": 0,
-            "77": 0,
+            "78": 0,
             "79": 0,
             "80": 0,
             "81": 0,
-            "82": 0,
-            "83": 0
+            "82": 0
           },
           "Branches": []
         }
@@ -4594,40 +4594,40 @@
       "ReservationSystem.Data.Migrations.CreatedOnaddedforreservation": {
         "System.Void ReservationSystem.Data.Migrations.CreatedOnaddedforreservation::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
             "20": 0,
             "21": 0,
-            "22": 0,
+            "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
-            "27": 0,
-            "28": 0
+            "27": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.CreatedOnaddedforreservation::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "30": 0,
             "31": 0,
             "32": 0,
             "33": 0,
             "34": 0,
-            "35": 0,
+            "36": 0,
             "37": 0,
             "38": 0,
-            "39": 0,
+            "40": 0,
             "41": 0,
             "42": 0,
             "43": 0,
-            "44": 0,
-            "45": 0
+            "44": 0
           },
           "Branches": []
         }
@@ -5130,76 +5130,76 @@
       "ReservationSystem.Data.Migrations.addedisactivecolumntoallentities": {
         "System.Void ReservationSystem.Data.Migrations.addedisactivecolumntoallentities::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
             "20": 0,
             "21": 0,
-            "22": 0,
+            "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
             "27": 0,
             "28": 0,
-            "29": 0,
+            "30": 0,
             "31": 0,
             "32": 0,
             "33": 0,
             "34": 0,
             "35": 0,
-            "36": 0,
+            "37": 0,
             "38": 0,
             "39": 0,
             "40": 0,
             "41": 0,
             "42": 0,
-            "43": 0,
+            "44": 0,
             "45": 0,
             "46": 0,
             "47": 0,
             "48": 0,
             "49": 0,
-            "50": 0,
+            "51": 0,
             "52": 0,
             "53": 0,
             "54": 0,
             "55": 0,
             "56": 0,
-            "57": 0,
+            "58": 0,
             "59": 0,
             "60": 0,
             "61": 0,
-            "62": 0,
-            "63": 0
+            "62": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.addedisactivecolumntoallentities::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "65": 0,
             "66": 0,
             "67": 0,
             "68": 0,
             "69": 0,
-            "70": 0,
+            "71": 0,
             "72": 0,
             "73": 0,
-            "74": 0,
+            "75": 0,
             "76": 0,
             "77": 0,
-            "78": 0,
+            "79": 0,
             "80": 0,
             "81": 0,
-            "82": 0,
+            "83": 0,
             "84": 0,
             "85": 0,
             "86": 0,
-            "87": 0,
-            "88": 0
+            "87": 0
           },
           "Branches": []
         }
@@ -5715,11 +5715,12 @@
       "ReservationSystem.Data.Migrations.Reviewtableadded": {
         "System.Void ReservationSystem.Data.Migrations.Reviewtableadded::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
@@ -5738,33 +5739,32 @@
             "32": 0,
             "33": 0,
             "34": 0,
-            "35": 0,
+            "36": 0,
             "37": 0,
             "38": 0,
             "39": 0,
-            "40": 0,
+            "41": 0,
             "42": 0,
             "43": 0,
             "44": 0,
-            "45": 0,
-            "46": 0
+            "45": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.Reviewtableadded::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "48": 0,
             "49": 0,
             "50": 0,
-            "51": 0,
+            "52": 0,
             "53": 0,
             "54": 0,
             "55": 0,
-            "56": 0,
+            "57": 0,
             "58": 0,
             "59": 0,
             "60": 0,
-            "61": 0,
-            "62": 0
+            "61": 0
           },
           "Branches": []
         }
@@ -6313,57 +6313,57 @@
       "ReservationSystem.Data.Migrations.Reviewsrelationfix": {
         "System.Void ReservationSystem.Data.Migrations.Reviewsrelationfix::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
             "20": 0,
             "21": 0,
-            "22": 0,
+            "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
-            "27": 0,
+            "28": 0,
             "29": 0,
             "30": 0,
             "31": 0,
-            "32": 0,
+            "33": 0,
             "34": 0,
             "35": 0,
             "36": 0,
             "37": 0,
             "38": 0,
             "39": 0,
-            "40": 0,
-            "41": 0
+            "40": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.Reviewsrelationfix::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "43": 0,
             "44": 0,
             "45": 0,
             "46": 0,
-            "47": 0,
+            "48": 0,
             "49": 0,
             "50": 0,
-            "51": 0,
+            "52": 0,
             "53": 0,
             "54": 0,
             "55": 0,
-            "56": 0,
+            "57": 0,
             "58": 0,
             "59": 0,
-            "60": 0,
+            "61": 0,
             "62": 0,
             "63": 0,
             "64": 0,
-            "65": 0,
-            "66": 0
+            "65": 0
           },
           "Branches": []
         }
@@ -6927,107 +6927,107 @@
       "ReservationSystem.Data.Migrations.Reviewsdbsetadded": {
         "System.Void ReservationSystem.Data.Migrations.Reviewsdbsetadded::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
-            "14": 0,
+            "15": 0,
             "16": 0,
             "17": 0,
-            "18": 0,
+            "19": 0,
             "20": 0,
             "21": 0,
-            "22": 0,
+            "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
-            "27": 0,
+            "28": 0,
             "29": 0,
             "30": 0,
-            "31": 0,
+            "32": 0,
             "33": 0,
             "34": 0,
             "35": 0,
-            "36": 0,
+            "37": 0,
             "38": 0,
             "39": 0,
             "40": 0,
-            "41": 0,
+            "42": 0,
             "43": 0,
             "44": 0,
             "45": 0,
-            "46": 0,
+            "47": 0,
             "48": 0,
             "49": 0,
             "50": 0,
-            "51": 0,
+            "52": 0,
             "53": 0,
             "54": 0,
             "55": 0,
             "56": 0,
             "57": 0,
             "58": 0,
-            "59": 0,
+            "60": 0,
             "61": 0,
             "62": 0,
             "63": 0,
             "64": 0,
             "65": 0,
             "66": 0,
-            "67": 0,
-            "68": 0
+            "67": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.Reviewsdbsetadded::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "70": 0,
             "71": 0,
             "72": 0,
             "73": 0,
-            "74": 0,
+            "75": 0,
             "76": 0,
             "77": 0,
-            "78": 0,
+            "79": 0,
             "80": 0,
             "81": 0,
-            "82": 0,
+            "83": 0,
             "84": 0,
             "85": 0,
             "86": 0,
-            "87": 0,
+            "88": 0,
             "89": 0,
             "90": 0,
-            "91": 0,
+            "92": 0,
             "93": 0,
             "94": 0,
             "95": 0,
-            "96": 0,
+            "97": 0,
             "98": 0,
             "99": 0,
             "100": 0,
-            "101": 0,
+            "102": 0,
             "103": 0,
             "104": 0,
             "105": 0,
-            "106": 0,
+            "107": 0,
             "108": 0,
             "109": 0,
             "110": 0,
-            "111": 0,
+            "112": 0,
             "113": 0,
             "114": 0,
             "115": 0,
             "116": 0,
             "117": 0,
             "118": 0,
-            "119": 0,
+            "120": 0,
             "121": 0,
             "122": 0,
             "123": 0,
             "124": 0,
             "125": 0,
             "126": 0,
-            "127": 0,
-            "128": 0
+            "127": 0
           },
           "Branches": []
         }
@@ -7591,11 +7591,12 @@
       "ReservationSystem.Data.Migrations.NamesaddedtotheUser": {
         "System.Void ReservationSystem.Data.Migrations.NamesaddedtotheUser::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
@@ -7606,42 +7607,42 @@
             "24": 0,
             "25": 0,
             "26": 0,
-            "27": 0,
+            "28": 0,
             "29": 0,
             "30": 0,
             "31": 0,
             "32": 0,
             "33": 0,
             "34": 0,
-            "35": 0,
+            "36": 0,
             "37": 0,
             "38": 0,
             "39": 0,
             "40": 0,
             "41": 0,
             "42": 0,
-            "43": 0,
+            "44": 0,
             "45": 0,
             "46": 0,
             "47": 0,
-            "48": 0,
-            "49": 0
+            "48": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.NamesaddedtotheUser::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "51": 0,
             "52": 0,
             "53": 0,
             "54": 0,
             "55": 0,
-            "56": 0,
+            "57": 0,
             "58": 0,
             "59": 0,
-            "60": 0,
+            "61": 0,
             "62": 0,
             "63": 0,
-            "64": 0,
+            "65": 0,
             "66": 0,
             "67": 0,
             "68": 0,
@@ -7652,12 +7653,11 @@
             "73": 0,
             "74": 0,
             "75": 0,
-            "76": 0,
+            "77": 0,
             "78": 0,
             "79": 0,
             "80": 0,
-            "81": 0,
-            "82": 0
+            "81": 0
           },
           "Branches": []
         }
@@ -8235,11 +8235,12 @@
       "ReservationSystem.Data.Migrations.UserConfigurationFix": {
         "System.Void ReservationSystem.Data.Migrations.UserConfigurationFix::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
@@ -8250,7 +8251,7 @@
             "24": 0,
             "25": 0,
             "26": 0,
-            "27": 0,
+            "28": 0,
             "29": 0,
             "30": 0,
             "31": 0,
@@ -8260,22 +8261,22 @@
             "35": 0,
             "36": 0,
             "37": 0,
-            "38": 0,
+            "39": 0,
             "40": 0,
             "41": 0,
             "42": 0,
-            "43": 0,
-            "44": 0
+            "43": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.UserConfigurationFix::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "46": 0,
             "47": 0,
             "48": 0,
             "49": 0,
             "50": 0,
-            "51": 0,
+            "52": 0,
             "53": 0,
             "54": 0,
             "55": 0,
@@ -8286,7 +8287,7 @@
             "60": 0,
             "61": 0,
             "62": 0,
-            "63": 0,
+            "64": 0,
             "65": 0,
             "66": 0,
             "67": 0,
@@ -8296,12 +8297,11 @@
             "71": 0,
             "72": 0,
             "73": 0,
-            "74": 0,
+            "75": 0,
             "76": 0,
             "77": 0,
             "78": 0,
-            "79": 0,
-            "80": 0
+            "79": 0
           },
           "Branches": []
         }
@@ -8879,31 +8879,31 @@
       "ReservationSystem.Data.Migrations.AddUserFirstNameAndLastName": {
         "System.Void ReservationSystem.Data.Migrations.AddUserFirstNameAndLastName::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "10": 0,
             "11": 0,
             "12": 0,
             "13": 0,
             "14": 0,
-            "15": 0,
+            "16": 0,
             "17": 0,
             "18": 0,
             "19": 0,
-            "20": 0,
-            "21": 0
+            "20": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Migrations.AddUserFirstNameAndLastName::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
           "Lines": {
+            "23": 0,
             "24": 0,
             "25": 0,
             "26": 0,
             "27": 0,
-            "28": 0,
+            "29": 0,
             "30": 0,
             "31": 0,
             "32": 0,
-            "33": 0,
-            "34": 0
+            "33": 0
           },
           "Branches": []
         }
@@ -10201,36 +10201,36 @@
       "ReservationSystem.Data.Models.ApplicationUser": {
         "System.Collections.Generic.ICollection`1<ReservationSystem.Data.Models.Reservation> ReservationSystem.Data.Models.ApplicationUser::get_UserReservations()": {
           "Lines": {
-            "16": 5
+            "16": 10
           },
           "Branches": []
         },
         "System.Collections.Generic.ICollection`1<ReservationSystem.Data.Models.Review> ReservationSystem.Data.Models.ApplicationUser::get_UserReviews()": {
           "Lines": {
-            "18": 5
+            "18": 10
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.ApplicationUser::get_FirstName()": {
           "Lines": {
-            "22": 5
+            "22": 10
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.ApplicationUser::get_LastName()": {
           "Lines": {
-            "26": 5
+            "26": 10
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Models.ApplicationUser::.ctor()": {
           "Lines": {
-            "9": 5,
-            "10": 5,
-            "11": 5,
-            "13": 5,
-            "14": 5,
-            "15": 5
+            "9": 10,
+            "10": 10,
+            "11": 10,
+            "13": 10,
+            "14": 10,
+            "15": 10
           },
           "Branches": []
         }
@@ -10240,34 +10240,34 @@
       "ReservationSystem.Data.Models.Equipment": {
         "System.Int32 ReservationSystem.Data.Models.Equipment::get_Id()": {
           "Lines": {
-            "14": 3
+            "14": 6
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.Equipment::get_Name()": {
           "Lines": {
-            "18": 6
+            "18": 21
           },
           "Branches": []
         },
         "System.Collections.Generic.ICollection`1<ReservationSystem.Data.Models.EquipmentReservations> ReservationSystem.Data.Models.Equipment::get_EquipmentReservations()": {
           "Lines": {
-            "20": 3
+            "20": 9
           },
           "Branches": []
         },
         "System.Boolean ReservationSystem.Data.Models.Equipment::get_IsActive()": {
           "Lines": {
-            "23": 3
+            "23": 12
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Models.Equipment::.ctor()": {
           "Lines": {
-            "8": 3,
-            "9": 3,
-            "10": 3,
-            "11": 3
+            "8": 9,
+            "9": 9,
+            "10": 9,
+            "11": 9
           },
           "Branches": []
         }
@@ -10311,72 +10311,72 @@
       "ReservationSystem.Data.Models.Location": {
         "System.Int32 ReservationSystem.Data.Models.Location::get_Id()": {
           "Lines": {
-            "16": 9
+            "15": 26
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.Location::get_Name()": {
           "Lines": {
-            "20": 30
+            "19": 50
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.Location::get_Address()": {
           "Lines": {
-            "24": 31
+            "23": 51
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.Location::get_Description()": {
           "Lines": {
-            "28": 26
+            "27": 46
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Data.Models.Location::get_Capacity()": {
           "Lines": {
-            "31": 14
+            "30": 28
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.Location::get_ImageUrl()": {
           "Lines": {
-            "34": 27
+            "33": 47
           },
           "Branches": []
         },
         "System.Decimal ReservationSystem.Data.Models.Location::get_PricePerDay()": {
           "Lines": {
-            "37": 14
+            "36": 26
           },
           "Branches": []
         },
         "System.Collections.Generic.ICollection`1<ReservationSystem.Data.Models.Reservation> ReservationSystem.Data.Models.Location::get_Reservations()": {
           "Lines": {
-            "40": 24
+            "39": 44
           },
           "Branches": []
         },
         "System.Boolean ReservationSystem.Data.Models.Location::get_IsActive()": {
           "Lines": {
-            "42": 14
+            "41": 24
           },
           "Branches": []
         },
         "System.Collections.Generic.ICollection`1<ReservationSystem.Data.Models.Review> ReservationSystem.Data.Models.Location::get_Reviews()": {
           "Lines": {
-            "45": 12
+            "44": 22
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Models.Location::.ctor()": {
           "Lines": {
-            "8": 12,
-            "9": 12,
-            "10": 12,
-            "11": 12,
-            "12": 12,
-            "13": 12
+            "7": 22,
+            "8": 22,
+            "9": 22,
+            "10": 22,
+            "11": 22,
+            "12": 22
           },
           "Branches": []
         }
@@ -10386,34 +10386,34 @@
       "ReservationSystem.Data.Models.PromoCode": {
         "System.Guid ReservationSystem.Data.Models.PromoCode::get_Id()": {
           "Lines": {
-            "14": 12
+            "14": 18
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.PromoCode::get_Name()": {
           "Lines": {
-            "18": 21
+            "18": 32
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Data.Models.PromoCode::get_Discount()": {
           "Lines": {
-            "21": 18
+            "21": 25
           },
           "Branches": []
         },
         "System.Boolean ReservationSystem.Data.Models.PromoCode::get_IsActive()": {
           "Lines": {
-            "23": 16
+            "23": 21
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Models.PromoCode::.ctor()": {
           "Lines": {
-            "8": 9,
-            "9": 9,
-            "10": 9,
-            "11": 9
+            "8": 14,
+            "9": 14,
+            "10": 14,
+            "11": 14
           },
           "Branches": []
         }
@@ -10423,113 +10423,113 @@
       "ReservationSystem.Data.Models.Reservation": {
         "System.Guid ReservationSystem.Data.Models.Reservation::get_Id()": {
           "Lines": {
-            "16": 0
+            "15": 9
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Data.Models.Reservation::get_From()": {
           "Lines": {
-            "19": 0
+            "18": 9
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Data.Models.Reservation::get_To()": {
           "Lines": {
-            "22": 0
+            "21": 9
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Data.Models.Reservation::get_CreatedOn()": {
           "Lines": {
-            "25": 0
+            "24": 12
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Data.Models.Reservation::get_CustomersCount()": {
           "Lines": {
-            "28": 0
+            "27": 9
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.Reservation::get_AdditionalInformation()": {
           "Lines": {
-            "30": 0
+            "29": 2
           },
           "Branches": []
         },
         "System.Collections.Generic.ICollection`1<ReservationSystem.Data.Models.EquipmentReservations> ReservationSystem.Data.Models.Reservation::get_EquipmentNeeded()": {
           "Lines": {
-            "32": 0
+            "31": 7
           },
           "Branches": []
         },
         "System.Decimal ReservationSystem.Data.Models.Reservation::get_TotalPrice()": {
           "Lines": {
-            "35": 0
+            "34": 3
           },
           "Branches": []
         },
         "System.Nullable`1<System.Int32> ReservationSystem.Data.Models.Reservation::get_Discount()": {
           "Lines": {
-            "37": 0
+            "36": 5
           },
           "Branches": []
         },
         "System.Nullable`1<System.Guid> ReservationSystem.Data.Models.Reservation::get_PromoCodeId()": {
           "Lines": {
-            "40": 0
+            "39": 2
           },
           "Branches": []
         },
         "ReservationSystem.Data.Models.PromoCode ReservationSystem.Data.Models.Reservation::get_PromoCode()": {
           "Lines": {
-            "42": 0
+            "41": 0
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Data.Models.Reservation::get_LocationId()": {
           "Lines": {
-            "46": 0
+            "45": 7
           },
           "Branches": []
         },
         "ReservationSystem.Data.Models.Location ReservationSystem.Data.Models.Reservation::get_Location()": {
           "Lines": {
-            "48": 0
+            "47": 7
           },
           "Branches": []
         },
         "ReservationSystem.Data.Models.ApplicationUser ReservationSystem.Data.Models.Reservation::get_User()": {
           "Lines": {
-            "52": 0
+            "51": 7
           },
           "Branches": []
         },
         "System.Guid ReservationSystem.Data.Models.Reservation::get_UserId()": {
           "Lines": {
-            "55": 0
+            "54": 7
           },
           "Branches": []
         },
         "System.String ReservationSystem.Data.Models.Reservation::get_PhoneNumber()": {
           "Lines": {
-            "58": 0
+            "57": 14
           },
           "Branches": []
         },
         "System.Boolean ReservationSystem.Data.Models.Reservation::get_IsActive()": {
           "Lines": {
-            "60": 0
+            "59": 7
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Data.Models.Reservation::.ctor()": {
           "Lines": {
-            "9": 0,
-            "10": 0,
-            "11": 0,
-            "12": 0,
-            "13": 0
+            "8": 7,
+            "9": 7,
+            "10": 7,
+            "11": 7,
+            "12": 7
           },
           "Branches": []
         }
@@ -10581,10 +10581,10 @@
       "ReservationSystem.Services.EquipmentService": {
         "System.Void ReservationSystem.Services.EquipmentService::.ctor(ReservationSystem.Data.ReservationDbContext)": {
           "Lines": {
-            "12": 0,
-            "13": 0,
-            "14": 0,
-            "15": 0
+            "12": 4,
+            "13": 4,
+            "14": 4,
+            "15": 4
           },
           "Branches": []
         }
@@ -10592,10 +10592,10 @@
       "ReservationSystem.Services.EquipmentService/<CreateEquipmentAsync>d__2": {
         "System.Void ReservationSystem.Services.EquipmentService/<CreateEquipmentAsync>d__2::MoveNext()": {
           "Lines": {
-            "18": 0,
-            "19": 0,
-            "20": 0,
-            "21": 0
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "21": 1
           },
           "Branches": []
         }
@@ -10603,16 +10603,16 @@
       "ReservationSystem.Services.EquipmentService/<DeleteEquipmentAsync>d__5": {
         "System.Void ReservationSystem.Services.EquipmentService/<DeleteEquipmentAsync>d__5::MoveNext()": {
           "Lines": {
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0,
-            "55": 0,
-            "56": 0
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1
           },
           "Branches": [
             {
@@ -10621,7 +10621,7 @@
               "EndOffset": 380,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 51,
@@ -10629,7 +10629,7 @@
               "EndOffset": 511,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -10637,12 +10637,12 @@
       "ReservationSystem.Services.EquipmentService/<GetAllEquipmentsAsync>d__4": {
         "System.Void ReservationSystem.Services.EquipmentService/<GetAllEquipmentsAsync>d__4::MoveNext()": {
           "Lines": {
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "42": 0,
-            "43": 0
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "42": 1,
+            "43": 1
           },
           "Branches": []
         }
@@ -10650,15 +10650,15 @@
       "ReservationSystem.Services.EquipmentService/<GetEquipmentByIdAsync>d__3": {
         "System.Void ReservationSystem.Services.EquipmentService/<GetEquipmentByIdAsync>d__3::MoveNext()": {
           "Lines": {
-            "24": 0,
-            "25": 0,
-            "26": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
             "32": 0,
-            "34": 0
+            "34": 1
           },
           "Branches": [
             {
@@ -10667,7 +10667,7 @@
               "EndOffset": 367,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 28,
@@ -10685,10 +10685,10 @@
       "ReservationSystem.Services.LocationService": {
         "System.Void ReservationSystem.Services.LocationService::.ctor(ReservationSystem.Data.ReservationDbContext)": {
           "Lines": {
-            "14": 6,
-            "15": 6,
-            "16": 6,
-            "17": 6
+            "13": 11,
+            "14": 11,
+            "15": 11,
+            "16": 11
           },
           "Branches": []
         }
@@ -10696,6 +10696,7 @@
       "ReservationSystem.Services.LocationService/<AddLocationAsync>d__2": {
         "System.Void ReservationSystem.Services.LocationService/<AddLocationAsync>d__2::MoveNext()": {
           "Lines": {
+            "19": 11,
             "20": 11,
             "21": 11,
             "22": 11,
@@ -10707,8 +10708,7 @@
             "28": 11,
             "29": 11,
             "30": 11,
-            "31": 11,
-            "32": 11
+            "31": 11
           },
           "Branches": []
         }
@@ -10716,6 +10716,7 @@
       "ReservationSystem.Services.LocationService/<AddReviewAsync>d__9": {
         "System.Void ReservationSystem.Services.LocationService/<AddReviewAsync>d__9::MoveNext()": {
           "Lines": {
+            "135": 1,
             "136": 1,
             "137": 1,
             "138": 1,
@@ -10724,8 +10725,7 @@
             "141": 1,
             "142": 1,
             "143": 1,
-            "144": 1,
-            "145": 1
+            "144": 1
           },
           "Branches": []
         }
@@ -10733,6 +10733,7 @@
       "ReservationSystem.Services.LocationService/<DeleteFormByIdAsync>d__7": {
         "System.Void ReservationSystem.Services.LocationService/<DeleteFormByIdAsync>d__7::MoveNext()": {
           "Lines": {
+            "109": 1,
             "110": 1,
             "111": 1,
             "112": 1,
@@ -10745,12 +10746,11 @@
             "119": 1,
             "120": 1,
             "121": 1,
-            "122": 1,
-            "123": 1
+            "122": 1
           },
           "Branches": [
             {
-              "Line": 113,
+              "Line": 112,
               "Offset": 372,
               "EndOffset": 374,
               "Path": 0,
@@ -10758,7 +10758,7 @@
               "Hits": 1
             },
             {
-              "Line": 113,
+              "Line": 112,
               "Offset": 372,
               "EndOffset": 441,
               "Path": 1,
@@ -10771,18 +10771,18 @@
       "ReservationSystem.Services.LocationService/<DeleteLocationByIdAsync>d__8": {
         "System.Void ReservationSystem.Services.LocationService/<DeleteLocationByIdAsync>d__8::MoveNext()": {
           "Lines": {
+            "125": 1,
             "126": 1,
             "127": 1,
             "128": 1,
             "129": 1,
             "130": 1,
             "131": 1,
-            "132": 1,
-            "133": 1
+            "132": 1
           },
           "Branches": [
             {
-              "Line": 128,
+              "Line": 127,
               "Offset": 375,
               "EndOffset": 380,
               "Path": 0,
@@ -10790,7 +10790,7 @@
               "Hits": 1
             },
             {
-              "Line": 128,
+              "Line": 127,
               "Offset": 375,
               "EndOffset": 511,
               "Path": 1,
@@ -10803,6 +10803,7 @@
       "ReservationSystem.Services.LocationService/<EditFormByIdAsync>d__4": {
         "System.Void ReservationSystem.Services.LocationService/<EditFormByIdAsync>d__4::MoveNext()": {
           "Lines": {
+            "53": 1,
             "54": 1,
             "55": 1,
             "56": 1,
@@ -10818,12 +10819,11 @@
             "66": 1,
             "67": 1,
             "68": 1,
-            "69": 1,
-            "70": 1
+            "69": 1
           },
           "Branches": [
             {
-              "Line": 57,
+              "Line": 56,
               "Offset": 310,
               "EndOffset": 312,
               "Path": 0,
@@ -10831,7 +10831,7 @@
               "Hits": 1
             },
             {
-              "Line": 57,
+              "Line": 56,
               "Offset": 310,
               "EndOffset": 433,
               "Path": 1,
@@ -10844,6 +10844,7 @@
       "ReservationSystem.Services.LocationService/<EditLocationByIdAsync>d__6": {
         "System.Void ReservationSystem.Services.LocationService/<EditLocationByIdAsync>d__6::MoveNext()": {
           "Lines": {
+            "93": 1,
             "94": 1,
             "95": 1,
             "96": 1,
@@ -10856,12 +10857,11 @@
             "103": 1,
             "104": 1,
             "105": 1,
-            "106": 1,
-            "107": 1
+            "106": 1
           },
           "Branches": [
             {
-              "Line": 96,
+              "Line": 95,
               "Offset": 313,
               "EndOffset": 318,
               "Path": 0,
@@ -10869,7 +10869,7 @@
               "Hits": 1
             },
             {
-              "Line": 96,
+              "Line": 95,
               "Offset": 313,
               "EndOffset": 597,
               "Path": 1,
@@ -10882,6 +10882,7 @@
       "ReservationSystem.Services.LocationService/<GetAllLocationsAsync>d__3": {
         "System.Void ReservationSystem.Services.LocationService/<GetAllLocationsAsync>d__3::MoveNext()": {
           "Lines": {
+            "34": 0,
             "35": 0,
             "36": 0,
             "37": 0,
@@ -10895,9 +10896,8 @@
             "45": 0,
             "46": 0,
             "47": 0,
-            "48": 0,
-            "50": 0,
-            "51": 0
+            "49": 0,
+            "50": 0
           },
           "Branches": []
         }
@@ -10905,6 +10905,7 @@
       "ReservationSystem.Services.LocationService/<GetLocationDetailsAsync>d__5": {
         "System.Void ReservationSystem.Services.LocationService/<GetLocationDetailsAsync>d__5::MoveNext()": {
           "Lines": {
+            "72": 0,
             "73": 0,
             "74": 0,
             "75": 0,
@@ -10922,12 +10923,11 @@
             "87": 0,
             "88": 0,
             "89": 0,
-            "90": 0,
-            "91": 0
+            "90": 0
           },
           "Branches": [
             {
-              "Line": 76,
+              "Line": 75,
               "Offset": 331,
               "EndOffset": 333,
               "Path": 0,
@@ -10935,7 +10935,7 @@
               "Hits": 0
             },
             {
-              "Line": 76,
+              "Line": 75,
               "Offset": 331,
               "EndOffset": 346,
               "Path": 1,
@@ -10943,7 +10943,7 @@
               "Hits": 0
             },
             {
-              "Line": 76,
+              "Line": 75,
               "Offset": 351,
               "EndOffset": 356,
               "Path": 0,
@@ -10951,7 +10951,7 @@
               "Hits": 0
             },
             {
-              "Line": 76,
+              "Line": 75,
               "Offset": 351,
               "EndOffset": 906,
               "Path": 1,
@@ -10964,13 +10964,13 @@
       "ReservationSystem.Services.LocationService/<GetReviewsForLocationAsync>d__10": {
         "System.Void ReservationSystem.Services.LocationService/<GetReviewsForLocationAsync>d__10::MoveNext()": {
           "Lines": {
+            "147": 0,
             "148": 0,
             "149": 0,
             "150": 0,
             "151": 0,
-            "152": 0,
-            "154": 0,
-            "155": 0
+            "153": 0,
+            "154": 0
           },
           "Branches": []
         }
@@ -10978,9 +10978,9 @@
       "ReservationSystem.Services.LocationService/<UserHasReviewedLocationAsync>d__11": {
         "System.Void ReservationSystem.Services.LocationService/<UserHasReviewedLocationAsync>d__11::MoveNext()": {
           "Lines": {
+            "157": 0,
             "158": 0,
-            "159": 0,
-            "160": 0
+            "159": 0
           },
           "Branches": []
         }
@@ -11147,45 +11147,45 @@
       "ReservationSystem.Services.ReservationService": {
         "System.Void ReservationSystem.Services.ReservationService::AddEquipmentsToReservation(ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel,ReservationSystem.Data.Models.Reservation,ReservationSystem.Data.ReservationDbContext,ReservationSystem.Data.Models.Location)": {
           "Lines": {
-            "234": 0,
-            "236": 0,
-            "237": 0,
-            "238": 0,
-            "239": 0,
+            "232": 2,
+            "234": 2,
+            "235": 2,
+            "236": 2,
+            "237": 2,
+            "239": 6,
+            "240": 0,
             "241": 0,
-            "242": 0,
             "243": 0,
+            "244": 0,
             "245": 0,
             "246": 0,
             "247": 0,
             "248": 0,
-            "249": 0,
             "250": 0,
+            "251": 0,
             "252": 0,
             "253": 0,
             "254": 0,
             "255": 0,
             "256": 0,
             "257": 0,
-            "258": 0,
             "259": 0,
             "261": 0,
+            "262": 0,
             "263": 0,
-            "264": 0,
             "265": 0,
-            "267": 0,
+            "266": 0,
             "268": 0,
+            "269": 0,
             "270": 0,
-            "271": 0,
             "272": 0,
+            "273": 0,
             "274": 0,
-            "275": 0,
-            "276": 0,
-            "277": 0
+            "275": 2
           },
           "Branches": [
             {
-              "Line": 241,
+              "Line": 239,
               "Offset": 568,
               "EndOffset": 286,
               "Path": 1,
@@ -11193,7 +11193,7 @@
               "Hits": 0
             },
             {
-              "Line": 245,
+              "Line": 243,
               "Offset": 348,
               "EndOffset": 353,
               "Path": 0,
@@ -11201,7 +11201,7 @@
               "Hits": 0
             },
             {
-              "Line": 247,
+              "Line": 245,
               "Offset": 398,
               "EndOffset": 400,
               "Path": 0,
@@ -11209,7 +11209,7 @@
               "Hits": 0
             },
             {
-              "Line": 249,
+              "Line": 247,
               "Offset": 410,
               "EndOffset": 412,
               "Path": 0,
@@ -11217,7 +11217,7 @@
               "Hits": 0
             },
             {
-              "Line": 249,
+              "Line": 247,
               "Offset": 410,
               "EndOffset": 493,
               "Path": 1,
@@ -11225,7 +11225,7 @@
               "Hits": 0
             },
             {
-              "Line": 247,
+              "Line": 245,
               "Offset": 398,
               "EndOffset": 518,
               "Path": 1,
@@ -11233,7 +11233,7 @@
               "Hits": 0
             },
             {
-              "Line": 245,
+              "Line": 243,
               "Offset": 348,
               "EndOffset": 533,
               "Path": 1,
@@ -11241,7 +11241,7 @@
               "Hits": 0
             },
             {
-              "Line": 271,
+              "Line": 269,
               "Offset": 542,
               "EndOffset": 544,
               "Path": 0,
@@ -11249,7 +11249,7 @@
               "Hits": 0
             },
             {
-              "Line": 271,
+              "Line": 269,
               "Offset": 542,
               "EndOffset": 560,
               "Path": 1,
@@ -11257,69 +11257,69 @@
               "Hits": 0
             },
             {
-              "Line": 241,
+              "Line": 239,
               "Offset": 568,
               "EndOffset": 573,
               "Path": 0,
               "Ordinal": 8,
-              "Hits": 0
+              "Hits": 2
             }
           ]
         },
         "System.Int32 ReservationSystem.Services.ReservationService::GetReservationDays(ReservationSystem.Data.Models.Reservation)": {
           "Lines": {
-            "280": 0,
-            "281": 0,
-            "282": 0
+            "278": 2,
+            "279": 2,
+            "280": 2
           },
           "Branches": []
         },
         "System.Boolean ReservationSystem.Services.ReservationService::AreDatesValid(ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel)": {
           "Lines": {
-            "285": 0,
-            "286": 0,
-            "287": 0
+            "283": 2,
+            "284": 2,
+            "285": 2
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Services.ReservationService::.ctor(ReservationSystem.Data.ReservationDbContext)": {
           "Lines": {
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0
+            "13": 5,
+            "14": 5,
+            "15": 5,
+            "16": 5
           },
           "Branches": []
         }
       },
       "ReservationSystem.Services.ReservationService/<>c": {
-        "System.Boolean ReservationSystem.Services.ReservationService/<>c::<GetReservationModelToByIdAsync>b__4_7(ReservationSystem.Data.Models.Equipment)": {
+        "System.Boolean ReservationSystem.Services.ReservationService/<>c::<GetReservationModelByIdAsync>b__4_7(ReservationSystem.Data.Models.Equipment)": {
           "Lines": {
-            "118": 0
+            "116": 0
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Services.ReservationService/<>c::<ValidateReservation>b__7_0(ReservationSystem.Data.Models.Reservation)": {
           "Lines": {
-            "221": 0
+            "219": 4
           },
           "Branches": []
         }
       },
       "ReservationSystem.Services.ReservationService/<>c__DisplayClass4_0": {
-        "ReservationSystem.Web.ViewModels.Reservation.EquipmentViewModel ReservationSystem.Services.ReservationService/<>c__DisplayClass4_0::<GetReservationModelToByIdAsync>b__8(ReservationSystem.Data.Models.Equipment)": {
+        "ReservationSystem.Web.ViewModels.Reservation.EquipmentViewModel ReservationSystem.Services.ReservationService/<>c__DisplayClass4_0::<GetReservationModelByIdAsync>b__8(ReservationSystem.Data.Models.Equipment)": {
           "Lines": {
+            "117": 0,
+            "118": 0,
             "119": 0,
             "120": 0,
             "121": 0,
             "122": 0,
-            "123": 0,
-            "124": 0,
-            "125": 0
+            "123": 0
           },
           "Branches": [
             {
-              "Line": 119,
+              "Line": 117,
               "Offset": 83,
               "EndOffset": 85,
               "Path": 0,
@@ -11327,7 +11327,7 @@
               "Hits": 0
             },
             {
-              "Line": 119,
+              "Line": 117,
               "Offset": 83,
               "EndOffset": 88,
               "Path": 1,
@@ -11340,95 +11340,95 @@
       "ReservationSystem.Services.ReservationService/<CreateReservationAsync>d__2": {
         "System.Void ReservationSystem.Services.ReservationService/<CreateReservationAsync>d__2::MoveNext()": {
           "Lines": {
-            "21": 0,
-            "22": 0,
-            "23": 0,
-            "25": 0,
-            "27": 0,
-            "28": 0,
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "35": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0,
-            "39": 0,
-            "40": 0,
-            "41": 0,
-            "43": 0,
-            "44": 0,
-            "46": 0,
-            "48": 0,
-            "49": 0
+            "19": 3,
+            "20": 3,
+            "21": 3,
+            "23": 3,
+            "25": 2,
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "41": 2,
+            "42": 2,
+            "44": 2,
+            "46": 2,
+            "47": 2
           },
           "Branches": [
             {
-              "Line": 27,
+              "Line": 25,
               "Offset": 1063,
               "EndOffset": 1065,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 27,
+              "Line": 25,
               "Offset": 1063,
               "EndOffset": 1069,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 27,
+              "Line": 25,
               "Offset": 1076,
               "EndOffset": 1078,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 27,
+              "Line": 25,
               "Offset": 1076,
               "EndOffset": 1091,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 27,
+              "Line": 25,
               "Offset": 1111,
               "EndOffset": 1113,
               "Path": 0,
               "Ordinal": 4,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 27,
+              "Line": 25,
               "Offset": 1111,
               "EndOffset": 1126,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 40,
+              "Line": 38,
               "Offset": 1206,
               "EndOffset": 1208,
               "Path": 0,
               "Ordinal": 6,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 40,
+              "Line": 38,
               "Offset": 1206,
-              "EndOffset": 1247,
+              "EndOffset": 1257,
               "Path": 1,
               "Ordinal": 7,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -11436,20 +11436,20 @@
       "ReservationSystem.Services.ReservationService/<DeleteReservationAsync>d__6": {
         "System.Void ReservationSystem.Services.ReservationService/<DeleteReservationAsync>d__6::MoveNext()": {
           "Lines": {
+            "179": 0,
+            "180": 0,
             "181": 0,
             "182": 0,
-            "183": 0,
             "184": 0,
+            "185": 0,
             "186": 0,
-            "187": 0,
             "188": 0,
-            "190": 0,
-            "191": 0,
-            "192": 0
+            "189": 0,
+            "190": 0
           },
           "Branches": [
             {
-              "Line": 186,
+              "Line": 184,
               "Offset": 400,
               "EndOffset": 402,
               "Path": 0,
@@ -11457,7 +11457,7 @@
               "Hits": 0
             },
             {
-              "Line": 186,
+              "Line": 184,
               "Offset": 400,
               "EndOffset": 414,
               "Path": 1,
@@ -11470,15 +11470,17 @@
       "ReservationSystem.Services.ReservationService/<EditReservationAsync>d__5": {
         "System.Void ReservationSystem.Services.ReservationService/<EditReservationAsync>d__5::MoveNext()": {
           "Lines": {
+            "131": 0,
+            "132": 0,
             "133": 0,
             "134": 0,
             "135": 0,
             "136": 0,
-            "137": 0,
-            "138": 0,
-            "141": 0,
+            "139": 0,
+            "140": 0,
             "142": 0,
             "144": 0,
+            "145": 0,
             "146": 0,
             "147": 0,
             "148": 0,
@@ -11490,27 +11492,25 @@
             "154": 0,
             "155": 0,
             "156": 0,
-            "157": 0,
             "158": 0,
+            "159": 0,
             "160": 0,
             "161": 0,
-            "162": 0,
             "163": 0,
             "165": 0,
+            "166": 0,
             "167": 0,
             "168": 0,
             "169": 0,
             "170": 0,
-            "171": 0,
             "172": 0,
             "174": 0,
-            "176": 0,
-            "177": 0,
-            "178": 0
+            "175": 0,
+            "176": 0
           },
           "Branches": [
             {
-              "Line": 146,
+              "Line": 144,
               "Offset": 1376,
               "EndOffset": 1381,
               "Path": 0,
@@ -11518,7 +11518,7 @@
               "Hits": 0
             },
             {
-              "Line": 153,
+              "Line": 151,
               "Offset": 1549,
               "EndOffset": 1554,
               "Path": 0,
@@ -11526,7 +11526,7 @@
               "Hits": 0
             },
             {
-              "Line": 153,
+              "Line": 151,
               "Offset": 1549,
               "EndOffset": 1961,
               "Path": 1,
@@ -11534,7 +11534,7 @@
               "Hits": 0
             },
             {
-              "Line": 163,
+              "Line": 161,
               "Offset": 2003,
               "EndOffset": 2005,
               "Path": 0,
@@ -11542,7 +11542,7 @@
               "Hits": 0
             },
             {
-              "Line": 163,
+              "Line": 161,
               "Offset": 2003,
               "EndOffset": 2009,
               "Path": 1,
@@ -11550,7 +11550,7 @@
               "Hits": 0
             },
             {
-              "Line": 163,
+              "Line": 161,
               "Offset": 2016,
               "EndOffset": 2018,
               "Path": 0,
@@ -11558,7 +11558,7 @@
               "Hits": 0
             },
             {
-              "Line": 163,
+              "Line": 161,
               "Offset": 2016,
               "EndOffset": 2036,
               "Path": 1,
@@ -11566,7 +11566,7 @@
               "Hits": 0
             },
             {
-              "Line": 167,
+              "Line": 165,
               "Offset": 2107,
               "EndOffset": 2109,
               "Path": 0,
@@ -11574,7 +11574,7 @@
               "Hits": 0
             },
             {
-              "Line": 167,
+              "Line": 165,
               "Offset": 2107,
               "EndOffset": 2164,
               "Path": 1,
@@ -11582,7 +11582,7 @@
               "Hits": 0
             },
             {
-              "Line": 168,
+              "Line": 166,
               "Offset": 2214,
               "EndOffset": 2216,
               "Path": 0,
@@ -11590,7 +11590,7 @@
               "Hits": 0
             },
             {
-              "Line": 168,
+              "Line": 166,
               "Offset": 2214,
               "EndOffset": 2230,
               "Path": 1,
@@ -11598,7 +11598,7 @@
               "Hits": 0
             },
             {
-              "Line": 146,
+              "Line": 144,
               "Offset": 1376,
               "EndOffset": 2477,
               "Path": 1,
@@ -11611,6 +11611,8 @@
       "ReservationSystem.Services.ReservationService/<GetAllEquipmentsAsync>d__11": {
         "System.Void ReservationSystem.Services.ReservationService/<GetAllEquipmentsAsync>d__11::MoveNext()": {
           "Lines": {
+            "288": 0,
+            "289": 0,
             "290": 0,
             "291": 0,
             "292": 0,
@@ -11620,9 +11622,7 @@
             "296": 0,
             "297": 0,
             "298": 0,
-            "299": 0,
-            "300": 0,
-            "301": 0
+            "299": 0
           },
           "Branches": []
         }
@@ -11630,10 +11630,10 @@
       "ReservationSystem.Services.ReservationService/<GetAllLocationsAsync>d__14": {
         "System.Void ReservationSystem.Services.ReservationService/<GetAllLocationsAsync>d__14::MoveNext()": {
           "Lines": {
+            "355": 0,
+            "356": 0,
             "357": 0,
-            "358": 0,
-            "359": 0,
-            "360": 0
+            "358": 0
           },
           "Branches": []
         }
@@ -11641,10 +11641,12 @@
       "ReservationSystem.Services.ReservationService/<GetAllReservationsASync>d__13": {
         "System.Void ReservationSystem.Services.ReservationService/<GetAllReservationsASync>d__13::MoveNext()": {
           "Lines": {
+            "310": 0,
+            "311": 0,
             "312": 0,
             "313": 0,
-            "314": 0,
             "315": 0,
+            "316": 0,
             "317": 0,
             "318": 0,
             "319": 0,
@@ -11678,14 +11680,12 @@
             "347": 0,
             "348": 0,
             "349": 0,
-            "350": 0,
             "351": 0,
-            "353": 0,
-            "354": 0
+            "352": 0
           },
           "Branches": [
             {
-              "Line": 317,
+              "Line": 315,
               "Offset": 221,
               "EndOffset": 226,
               "Path": 0,
@@ -11693,7 +11693,7 @@
               "Hits": 0
             },
             {
-              "Line": 317,
+              "Line": 315,
               "Offset": 221,
               "EndOffset": 368,
               "Path": 1,
@@ -11706,39 +11706,39 @@
       "ReservationSystem.Services.ReservationService/<GetAllReservationsForUserASync>d__3": {
         "System.Void ReservationSystem.Services.ReservationService/<GetAllReservationsForUserASync>d__3::MoveNext()": {
           "Lines": {
-            "52": 0,
-            "53": 0,
-            "54": 0,
-            "55": 0,
-            "56": 0,
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0,
-            "62": 0,
-            "63": 0,
-            "64": 0,
-            "65": 0,
-            "66": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "70": 0,
-            "71": 0,
-            "72": 0,
-            "73": 0,
-            "74": 0,
-            "75": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0,
-            "79": 0,
-            "80": 0,
-            "81": 0,
-            "82": 0,
-            "84": 0,
-            "85": 0
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "82": 1,
+            "83": 1
           },
           "Branches": []
         }
@@ -11746,27 +11746,29 @@
       "ReservationSystem.Services.ReservationService/<GetPricePerDayByLocation>d__12": {
         "System.Void ReservationSystem.Services.ReservationService/<GetPricePerDayByLocation>d__12::MoveNext()": {
           "Lines": {
+            "302": 0,
+            "303": 0,
             "304": 0,
             "305": 0,
             "306": 0,
-            "307": 0,
-            "308": 0,
-            "309": 0
+            "307": 0
           },
           "Branches": []
         }
       },
-      "ReservationSystem.Services.ReservationService/<GetReservationModelToByIdAsync>d__4": {
-        "System.Void ReservationSystem.Services.ReservationService/<GetReservationModelToByIdAsync>d__4::MoveNext()": {
+      "ReservationSystem.Services.ReservationService/<GetReservationModelByIdAsync>d__4": {
+        "System.Void ReservationSystem.Services.ReservationService/<GetReservationModelByIdAsync>d__4::MoveNext()": {
           "Lines": {
-            "88": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0,
-            "95": 0,
-            "96": 0,
+            "86": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "93": 1,
+            "94": 1,
+            "96": 1,
+            "97": 1,
             "98": 0,
             "99": 0,
             "100": 0,
@@ -11785,16 +11787,14 @@
             "113": 0,
             "114": 0,
             "115": 0,
-            "116": 0,
-            "117": 0,
-            "126": 0,
-            "127": 0,
-            "129": 0,
-            "130": 0
+            "124": 0,
+            "125": 0,
+            "127": 1,
+            "128": 0
           },
           "Branches": [
             {
-              "Line": 99,
+              "Line": 97,
               "Offset": 870,
               "EndOffset": 875,
               "Path": 0,
@@ -11802,7 +11802,7 @@
               "Hits": 0
             },
             {
-              "Line": 101,
+              "Line": 99,
               "Offset": 1163,
               "EndOffset": 1165,
               "Path": 0,
@@ -11810,7 +11810,7 @@
               "Hits": 0
             },
             {
-              "Line": 101,
+              "Line": 99,
               "Offset": 1163,
               "EndOffset": 1169,
               "Path": 1,
@@ -11818,12 +11818,12 @@
               "Hits": 0
             },
             {
-              "Line": 99,
+              "Line": 97,
               "Offset": 870,
               "EndOffset": 1316,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -11831,65 +11831,65 @@
       "ReservationSystem.Services.ReservationService/<ValidateReservation>d__7": {
         "System.Void ReservationSystem.Services.ReservationService/<ValidateReservation>d__7::MoveNext()": {
           "Lines": {
-            "195": 0,
-            "198": 0,
-            "199": 0,
-            "200": 0,
+            "193": 3,
+            "196": 3,
+            "197": 1,
+            "198": 1,
+            "201": 2,
+            "202": 0,
             "203": 0,
-            "204": 0,
-            "205": 0,
+            "206": 2,
+            "207": 0,
             "208": 0,
-            "209": 0,
-            "210": 0,
-            "213": 0,
-            "214": 0,
-            "215": 0,
-            "216": 0,
-            "217": 0,
-            "218": 0,
+            "211": 2,
+            "212": 2,
+            "213": 2,
+            "214": 2,
+            "215": 2,
+            "216": 2,
+            "220": 2,
+            "221": 0,
             "222": 0,
-            "223": 0,
-            "224": 0,
+            "225": 2,
+            "226": 0,
             "227": 0,
-            "228": 0,
-            "229": 0,
-            "231": 0
+            "229": 2
           },
           "Branches": [
             {
-              "Line": 198,
+              "Line": 196,
               "Offset": 62,
               "EndOffset": 64,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 198,
+              "Line": 196,
               "Offset": 62,
               "EndOffset": 75,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 198,
+              "Line": 196,
               "Offset": 78,
               "EndOffset": 80,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 198,
+              "Line": 196,
               "Offset": 78,
               "EndOffset": 92,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 203,
+              "Line": 201,
               "Offset": 103,
               "EndOffset": 105,
               "Path": 0,
@@ -11897,31 +11897,31 @@
               "Hits": 0
             },
             {
-              "Line": 203,
+              "Line": 201,
               "Offset": 103,
               "EndOffset": 117,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 208,
+              "Line": 206,
               "Offset": 142,
               "EndOffset": 144,
               "Path": 0,
               "Ordinal": 6,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 208,
+              "Line": 206,
               "Offset": 187,
               "EndOffset": 189,
               "Path": 0,
               "Ordinal": 8,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 208,
+              "Line": 206,
               "Offset": 142,
               "EndOffset": 241,
               "Path": 1,
@@ -11929,7 +11929,7 @@
               "Hits": 0
             },
             {
-              "Line": 208,
+              "Line": 206,
               "Offset": 187,
               "EndOffset": 241,
               "Path": 1,
@@ -11937,7 +11937,7 @@
               "Hits": 0
             },
             {
-              "Line": 208,
+              "Line": 206,
               "Offset": 244,
               "EndOffset": 246,
               "Path": 0,
@@ -11945,15 +11945,15 @@
               "Hits": 0
             },
             {
-              "Line": 208,
+              "Line": 206,
               "Offset": 244,
               "EndOffset": 258,
               "Path": 1,
               "Ordinal": 11,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 222,
+              "Line": 220,
               "Offset": 929,
               "EndOffset": 931,
               "Path": 0,
@@ -11961,15 +11961,15 @@
               "Hits": 0
             },
             {
-              "Line": 222,
+              "Line": 220,
               "Offset": 929,
               "EndOffset": 943,
               "Path": 1,
               "Ordinal": 13,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 222,
+              "Line": 220,
               "Offset": 996,
               "EndOffset": 998,
               "Path": 0,
@@ -11977,15 +11977,15 @@
               "Hits": 0
             },
             {
-              "Line": 222,
+              "Line": 220,
               "Offset": 996,
               "EndOffset": 1010,
               "Path": 1,
               "Ordinal": 15,
-              "Hits": 0
+              "Hits": 2
             },
             {
-              "Line": 227,
+              "Line": 225,
               "Offset": 1039,
               "EndOffset": 1041,
               "Path": 0,
@@ -11993,12 +11993,12 @@
               "Hits": 0
             },
             {
-              "Line": 227,
+              "Line": 225,
               "Offset": 1039,
               "EndOffset": 1053,
               "Path": 1,
               "Ordinal": 17,
-              "Hits": 0
+              "Hits": 2
             }
           ]
         }
@@ -12086,25 +12086,25 @@
       "ReservationSystem.Web.ViewModels.User.LoginFormModel": {
         "System.String ReservationSystem.Web.ViewModels.User.LoginFormModel::get_Email()": {
           "Lines": {
-            "11": 0
+            "10": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.User.LoginFormModel::get_Password()": {
           "Lines": {
-            "15": 0
+            "14": 0
           },
           "Branches": []
         },
         "System.Boolean ReservationSystem.Web.ViewModels.User.LoginFormModel::get_RememberMe()": {
           "Lines": {
-            "18": 0
+            "17": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.User.LoginFormModel::get_ReturnUrl()": {
           "Lines": {
-            "20": 0
+            "19": 0
           },
           "Branches": []
         }
@@ -12114,31 +12114,31 @@
       "ReservationSystem.Web.ViewModels.User.RegisterFormModel": {
         "System.String ReservationSystem.Web.ViewModels.User.RegisterFormModel::get_Email()": {
           "Lines": {
-            "12": 0
+            "11": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.User.RegisterFormModel::get_Password()": {
           "Lines": {
-            "18": 0
+            "17": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.User.RegisterFormModel::get_ConfirmPassword()": {
           "Lines": {
-            "23": 0
+            "22": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.User.RegisterFormModel::get_FirstName()": {
           "Lines": {
-            "28": 0
+            "27": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.User.RegisterFormModel::get_LastName()": {
           "Lines": {
-            "32": 0
+            "31": 0
           },
           "Branches": []
         }
@@ -12148,113 +12148,113 @@
       "ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel": {
         "System.Guid ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_Id()": {
           "Lines": {
-            "14": 0
+            "13": 0
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_From()": {
           "Lines": {
-            "18": 0
+            "17": 0
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_To()": {
           "Lines": {
-            "22": 0
+            "21": 0
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_CreatedOn()": {
           "Lines": {
-            "24": 0
+            "23": 0
           },
           "Branches": []
         },
         "System.Nullable`1<System.Int32> ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_CustomersCount()": {
           "Lines": {
-            "27": 0
+            "26": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_AdditionalInformation()": {
           "Lines": {
-            "30": 0
+            "29": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_PromoCode()": {
           "Lines": {
-            "33": 0
+            "32": 0
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<ReservationSystem.Web.ViewModels.Reservation.EquipmentViewModel> ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_Equipments()": {
           "Lines": {
-            "35": 0
+            "34": 0
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_LocationId()": {
           "Lines": {
-            "37": 0
+            "36": 0
           },
           "Branches": []
         },
         "ReservationSystem.Data.Models.Location ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_Location()": {
           "Lines": {
-            "39": 0
+            "38": 0
           },
           "Branches": []
         },
         "System.Guid ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_UserId()": {
           "Lines": {
-            "41": 0
+            "40": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_PhoneNumber()": {
           "Lines": {
-            "47": 0
+            "46": 0
           },
           "Branches": []
         },
         "System.Decimal ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_PricePerDay()": {
           "Lines": {
-            "49": 0
+            "48": 0
           },
           "Branches": []
         },
         "System.Decimal ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_TotalPrice()": {
           "Lines": {
-            "51": 0
+            "50": 0
           },
           "Branches": []
         },
         "System.Nullable`1<System.Int32> ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_Discount()": {
           "Lines": {
-            "53": 0
+            "52": 0
           },
           "Branches": []
         },
         "System.Collections.Generic.ICollection`1<ReservationSystem.Data.Models.Location> ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_Locations()": {
           "Lines": {
-            "55": 0
+            "54": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::get_UserEmail()": {
           "Lines": {
-            "58": 0
+            "57": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Web.ViewModels.Reservation.AllReservationsViewModel::.ctor()": {
           "Lines": {
+            "7": 0,
             "8": 0,
             "9": 0,
             "10": 0,
-            "11": 0,
-            "12": 0
+            "11": 0
           },
           "Branches": []
         }
@@ -12280,82 +12280,82 @@
       "ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel": {
         "System.String ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_Id()": {
           "Lines": {
-            "13": 0
+            "12": 0
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_From()": {
           "Lines": {
-            "17": 0
+            "16": 0
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_To()": {
           "Lines": {
-            "21": 0
+            "20": 0
           },
           "Branches": []
         },
         "System.Nullable`1<System.Int32> ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_CustomersCount()": {
           "Lines": {
-            "24": 0
+            "23": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_AdditionalInformation()": {
           "Lines": {
-            "27": 0
+            "26": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_PromoCode()": {
           "Lines": {
-            "30": 0
+            "29": 0
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<ReservationSystem.Web.ViewModels.Reservation.EquipmentViewModel> ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_Equipments()": {
           "Lines": {
-            "32": 0
+            "31": 0
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_LocationId()": {
           "Lines": {
-            "34": 0
+            "33": 0
           },
           "Branches": []
         },
         "System.Guid ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_UserId()": {
           "Lines": {
-            "36": 0
+            "35": 0
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_PhoneNumber()": {
           "Lines": {
-            "42": 0
+            "41": 0
           },
           "Branches": []
         },
         "System.Decimal ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_PricePerDay()": {
           "Lines": {
-            "44": 0
+            "43": 0
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::get_PromoCodeVal()": {
           "Lines": {
-            "45": 0
+            "44": 0
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Web.ViewModels.Reservation.CreateReservationViewModel::.ctor()": {
           "Lines": {
+            "7": 0,
             "8": 0,
             "9": 0,
-            "10": 0,
-            "11": 0
+            "10": 0
           },
           "Branches": []
         }
@@ -12387,100 +12387,100 @@
       "ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel": {
         "System.Guid ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_Id()": {
           "Lines": {
-            "13": 0
+            "12": 1
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_From()": {
           "Lines": {
-            "17": 0
+            "16": 10
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_To()": {
           "Lines": {
-            "21": 0
+            "20": 10
           },
           "Branches": []
         },
         "System.DateTime ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_CreatedOn()": {
           "Lines": {
-            "23": 0
+            "22": 4
           },
           "Branches": []
         },
         "System.Nullable`1<System.Int32> ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_CustomersCount()": {
           "Lines": {
-            "26": 0
+            "25": 16
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_AdditionalInformation()": {
           "Lines": {
-            "29": 0
+            "28": 3
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_PromoCode()": {
           "Lines": {
-            "32": 0
+            "31": 9
           },
           "Branches": []
         },
         "System.Collections.Generic.List`1<ReservationSystem.Web.ViewModels.Reservation.EquipmentViewModel> ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_Equipments()": {
           "Lines": {
-            "34": 0
+            "33": 7
           },
           "Branches": []
         },
         "System.Int32 ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_LocationId()": {
           "Lines": {
-            "36": 0
+            "35": 11
           },
           "Branches": []
         },
         "ReservationSystem.Data.Models.Location ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_Location()": {
           "Lines": {
-            "38": 0
+            "37": 1
           },
           "Branches": []
         },
         "System.Guid ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_UserId()": {
           "Lines": {
-            "40": 0
+            "39": 5
           },
           "Branches": []
         },
         "System.String ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_PhoneNumber()": {
           "Lines": {
-            "46": 0
+            "45": 10
           },
           "Branches": []
         },
         "System.Decimal ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_PricePerDay()": {
           "Lines": {
-            "48": 0
+            "47": 1
           },
           "Branches": []
         },
         "System.Decimal ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_TotalPrice()": {
           "Lines": {
-            "50": 0
+            "49": 1
           },
           "Branches": []
         },
         "System.Nullable`1<System.Int32> ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::get_Discount()": {
           "Lines": {
-            "52": 0
+            "51": 1
           },
           "Branches": []
         },
         "System.Void ReservationSystem.Web.ViewModels.Reservation.ReservationFormViewModel::.ctor()": {
           "Lines": {
-            "8": 0,
-            "9": 0,
-            "10": 0,
-            "11": 0
+            "7": 4,
+            "8": 4,
+            "9": 4,
+            "10": 4
           },
           "Branches": []
         }

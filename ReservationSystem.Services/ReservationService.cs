@@ -35,7 +35,7 @@ public class ReservationService : IReservationService
             PromoCodeId = promoCode?.Id,
         };
         int reservationDays = GetReservationDays(reservation);
-        decimal discountToApply = reservation.Discount == 0 ? 1 : (decimal)reservation.Discount / 100;
+        decimal discountToApply = reservation.Discount == 0 ? 1 : 1 - (decimal)reservation.Discount / 100;
         reservation.TotalPrice = ((decimal)model.CustomersCount * chosenLocation.PricePerDay * reservationDays) * discountToApply;
 
         await context.Reservations.AddAsync(reservation);
@@ -82,7 +82,7 @@ public class ReservationService : IReservationService
         return reservations;
     }
 
-    public async Task<ReservationFormViewModel> GetReservationModelToByIdAsync(string Id)
+    public async Task<ReservationFormViewModel> GetReservationModelByIdAsync(string Id)
     {
         //TODO: CHECK IF ERROR SHOULD BE THROWN
         Reservation? reservation = await context.Reservations

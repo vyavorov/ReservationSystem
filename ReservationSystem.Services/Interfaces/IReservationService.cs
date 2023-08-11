@@ -19,7 +19,7 @@ public interface IReservationService
 
     public Task<List<ReservationFormViewModel>> GetAllReservationsForUserASync(string userId);
 
-    public Task<ReservationFormViewModel> GetReservationModelToByIdAsync(string Id);
+    public Task<ReservationFormViewModel> GetReservationModelByIdAsync(string Id);
 
     public Task EditReservationAsync(string Id, ReservationFormViewModel reservation);
 
