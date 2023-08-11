@@ -206,6 +206,11 @@ public class ReservationService : IReservationService
         {
             throw new ArgumentException("Please share valid desks count needed");
         }
+        //check if the reservation is in the past
+        if (model.From < DateTime.UtcNow)
+        {
+            throw new ArgumentException("Reservation dates can not be in the past");
+        }
         //check if the location is available for the dates chosen
         var existingReservations = await context.Reservations
             .Where(r => r.LocationId == model.LocationId
