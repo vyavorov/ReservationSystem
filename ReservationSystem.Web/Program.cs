@@ -88,7 +88,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseEndpoints(config =>
 {
-    //TODO: CHECK IF PARAMETER TAMPERING DEFENSE IS NEEDED
     config.MapControllerRoute(
             name: "areas",
             pattern: "/{area:exists}/{controller=Home}/{action=Index}/{id?}");

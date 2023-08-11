@@ -84,7 +84,6 @@ public class ReservationService : IReservationService
 
     public async Task<ReservationFormViewModel> GetReservationModelByIdAsync(string Id)
     {
-        //TODO: CHECK IF ERROR SHOULD BE THROWN
         Reservation? reservation = await context.Reservations
             .Where(r => r.IsActive)
             .Include(r => r.EquipmentNeeded)

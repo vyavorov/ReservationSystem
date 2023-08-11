@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static ReservationSystem.Common.EntityValidationConstants.Reservation;
 
 namespace ReservationSystem.Data.Models;
 
@@ -26,6 +27,7 @@ public class Reservation
     [Required]
     public int CustomersCount { get; set; }
 
+    [MaxLength(ReservationAdditionalInfoMaxLength)]
     public string? AdditionalInformation { get; set; }
 
     public ICollection<EquipmentReservations> EquipmentNeeded { get; set; }

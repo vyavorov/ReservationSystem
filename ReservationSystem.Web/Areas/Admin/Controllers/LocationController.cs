@@ -75,7 +75,6 @@ namespace ReservationSystem.Web.Areas.Admin.Controllers
             }
             return RedirectToAction("Index", "Home", new { Area = AdminAreaName });
         }
-        //TODO: MANIPULATE TRY/CATCH EVERYWHERE
         [HttpPost]
         public async Task<IActionResult> Delete(int id, LocationDeleteViewModel locationDeleteViewModel)
         {

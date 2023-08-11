@@ -22,19 +22,26 @@ public static class WebApplicationBuilderExtensions
 
         Task.Run(async () =>
         {
-            if (await roleManager.RoleExistsAsync(AdminRoleName))
+            // Ensure role exists
+            if (!await roleManager.RoleExistsAsync(AdminRoleName))
             {
-                return;
+                await roleManager.CreateAsync(new IdentityRole<Guid>(AdminRoleName));
             }
-            IdentityRole<Guid> role =
-                new IdentityRole<Guid>(AdminRoleName);
 
-            await roleManager.CreateAsync(role);
+            // Ensure user exists
+            ApplicationUser adminUser = await userManager.FindByEmailAsync(email);
+            if (adminUser == null)
+            {
+                // Create the user
+                adminUser = new ApplicationUser { UserName = email, Email = email };
+                await userManager.CreateAsync(adminUser, "123456"); // Consider a stronger default password logic
+            }
 
-            ApplicationUser adminUser =
-                await userManager.FindByEmailAsync(email);
-
-            await userManager.AddToRoleAsync(adminUser, AdminRoleName);
+            // Assign role to user
+            if (!await userManager.IsInRoleAsync(adminUser, AdminRoleName))
+            {
+                await userManager.AddToRoleAsync(adminUser, AdminRoleName);
+            }
 
         })
         .GetAwaiter()
@@ -42,4 +49,5 @@ public static class WebApplicationBuilderExtensions
 
         return app;
     }
+
 }

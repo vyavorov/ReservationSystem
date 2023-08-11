@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static ReservationSystem.Common.EntityValidationConstants.Reservation;
 
 namespace ReservationSystem.Web.ViewModels.Reservation;
 
@@ -25,6 +26,7 @@ public class ReservationFormViewModel
     public int? CustomersCount { get; set; }
 
     [Display(Name = "Additional information")]
+    [StringLength(ReservationAdditionalInfoMaxLength,MinimumLength =ReservationAdditionalInfoMinLength)]
     public string? AdditionalInformation { get; set; }
 
     [Display(Name = "Promo code")]

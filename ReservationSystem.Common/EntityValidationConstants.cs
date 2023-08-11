@@ -21,6 +21,9 @@ public static class EntityValidationConstants
     {
         public const int ReservationCustomersMinCount = 1;
         public const int ReservationCustomerMaxCount = 40;
+
+        public const int ReservationAdditionalInfoMinLength = 5;
+        public const int ReservationAdditionalInfoMaxLength = 150;
     }
 
     public static class PromoCode

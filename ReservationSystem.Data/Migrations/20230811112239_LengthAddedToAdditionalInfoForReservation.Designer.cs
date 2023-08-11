@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReservationSystem.Data;
 
@@ -11,9 +12,10 @@ using ReservationSystem.Data;
 namespace ReservationSystem.Data.Migrations
 {
     [DbContext(typeof(ReservationDbContext))]
-    partial class ReservationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230811112239_LengthAddedToAdditionalInfoForReservation")]
+    partial class LengthAddedToAdditionalInfoForReservation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -374,7 +376,7 @@ namespace ReservationSystem.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("79b37152-4bac-48fb-9d12-cdc6f4c694f6"),
+                            Id = new Guid("6e195895-ca57-4bcc-88d4-90ddb3b112ca"),
                             Discount = 50,
                             IsActive = true,
                             Name = "internal"
