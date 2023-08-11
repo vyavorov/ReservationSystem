@@ -11,7 +11,7 @@ public class UserController : Controller
     private readonly SignInManager<ApplicationUser> signInManager;
     private readonly UserManager<ApplicationUser> userManager;
 
-    public UserController(SignInManager<ApplicationUser> signInManager, 
+    public UserController(SignInManager<ApplicationUser> signInManager,
                             UserManager<ApplicationUser> userManager)
     {
         this.signInManager = signInManager;

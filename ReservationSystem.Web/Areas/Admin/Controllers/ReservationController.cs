@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Data.Models;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Reservation;

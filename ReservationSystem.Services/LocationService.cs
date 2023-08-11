@@ -4,7 +4,6 @@ using ReservationSystem.Data.Models;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Home;
 using ReservationSystem.Web.ViewModels.Location;
-using System.Security.Claims;
 
 namespace ReservationSystem.Services;
 
@@ -108,7 +107,7 @@ public class LocationService : ILocationService
 
     public async Task<LocationDeleteViewModel> DeleteFormByIdAsync(int id)
     {
-        Location? location = await context.Locations.Where(l => l.IsActive).FirstOrDefaultAsync(l => l.Id ==id);
+        Location? location = await context.Locations.Where(l => l.IsActive).FirstOrDefaultAsync(l => l.Id == id);
         LocationDeleteViewModel? locationDeleteViewModel = null;
         if (location != null)
         {

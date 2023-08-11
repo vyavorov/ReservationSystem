@@ -27,7 +27,7 @@ namespace ReservationSystem.Web.Areas.Admin.Controllers
                 MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions()
                     .SetAbsoluteExpiration(TimeSpan.FromMinutes(LocationsCacheDurationMinutes));
 
-                this.memoryCache.Set(LocationsCacheKey, locations,cacheOptions);
+                this.memoryCache.Set(LocationsCacheKey, locations, cacheOptions);
             }
             return View(locations);
         }

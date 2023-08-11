@@ -31,7 +31,7 @@ public static class WebApplicationBuilderExtensions
 
             await roleManager.CreateAsync(role);
 
-            ApplicationUser adminUser = 
+            ApplicationUser adminUser =
                 await userManager.FindByEmailAsync(email);
 
             await userManager.AddToRoleAsync(adminUser, AdminRoleName);

@@ -1,5 +1,4 @@
-﻿using ReservationSystem.Data.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ReservationSystem.Web.ViewModels.Reservation;
 
@@ -25,10 +24,10 @@ public class ReservationFormViewModel
     [Required(ErrorMessage = "Customer count is required.")]
     public int? CustomersCount { get; set; }
 
-    [Display(Name ="Additional information")]
+    [Display(Name = "Additional information")]
     public string? AdditionalInformation { get; set; }
 
-    [Display(Name ="Promo code")]
+    [Display(Name = "Promo code")]
     public string? PromoCode { get; set; }
 
     public List<EquipmentViewModel> Equipments { get; set; }

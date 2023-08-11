@@ -7,15 +7,15 @@ public class LocationFormViewModel
 {
 
     [Required]
-    [StringLength(LocationNameMaxLength,MinimumLength = LocationNameMinLength)]
+    [StringLength(LocationNameMaxLength, MinimumLength = LocationNameMinLength)]
     public string Name { get; set; } = null!;
 
     [Required]
-    [StringLength(LocationAddressMaxLength,MinimumLength = LocationAddressMinLength)]
+    [StringLength(LocationAddressMaxLength, MinimumLength = LocationAddressMinLength)]
     public string Address { get; set; } = null!;
 
     [Required]
-    [StringLength(LocationDescriptionMaxLength,MinimumLength = LocationDescriptionMinLength)]
+    [StringLength(LocationDescriptionMaxLength, MinimumLength = LocationDescriptionMinLength)]
     public string Description { get; set; } = null!;
 
     [Required]
@@ -26,7 +26,7 @@ public class LocationFormViewModel
     public string ImageUrl { get; set; } = null!;
 
     [Required]
-    [Range(typeof(decimal),LocationPricePerDayMinValue,LocationPricePerDayMaxValue)]
+    [Range(typeof(decimal), LocationPricePerDayMinValue, LocationPricePerDayMaxValue)]
     [Display(Name = "Price per day")]
     public decimal PricePerDay { get; set; }
 

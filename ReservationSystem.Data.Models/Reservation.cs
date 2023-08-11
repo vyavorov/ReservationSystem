@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static ReservationSystem.Common.EntityValidationConstants;
 
 namespace ReservationSystem.Data.Models;
 

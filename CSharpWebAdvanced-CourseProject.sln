@@ -3,25 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Web", "ReservationSystem.Web\ReservationSystem.Web.csproj", "{F1F71AB7-DE4A-41AC-B724-B83825511AB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservationSystem.Web", "ReservationSystem.Web\ReservationSystem.Web.csproj", "{F1F71AB7-DE4A-41AC-B724-B83825511AB7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{D87D1315-CBD6-4D71-978C-BCB54A75B6CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{CEC3210B-092A-4C5C-8506-1C725912A049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Data", "ReservationSystem.Data\ReservationSystem.Data.csproj", "{73E929B7-2917-4743-8ADE-A2E90B728FC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservationSystem.Data", "ReservationSystem.Data\ReservationSystem.Data.csproj", "{73E929B7-2917-4743-8ADE-A2E90B728FC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Data.Models", "ReservationSystem.Data.Models\ReservationSystem.Data.Models.csproj", "{E461F2D2-0925-41C1-B558-99A0243D7987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservationSystem.Data.Models", "ReservationSystem.Data.Models\ReservationSystem.Data.Models.csproj", "{E461F2D2-0925-41C1-B558-99A0243D7987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Web.ViewModels", "ReservationSystem.Web.ViewModels\ReservationSystem.Web.ViewModels.csproj", "{976BDCE5-C08F-47B1-979C-612A2E693102}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservationSystem.Web.ViewModels", "ReservationSystem.Web.ViewModels\ReservationSystem.Web.ViewModels.csproj", "{976BDCE5-C08F-47B1-979C-612A2E693102}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Common", "ReservationSystem.Common\ReservationSystem.Common.csproj", "{C8819DBE-B4B1-4E81-A593-A4BB07173BAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservationSystem.Common", "ReservationSystem.Common\ReservationSystem.Common.csproj", "{C8819DBE-B4B1-4E81-A593-A4BB07173BAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C956CEFD-5D64-4565-BFD1-11CC954E2341}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Services", "ReservationSystem.Services\ReservationSystem.Services.csproj", "{A86C0075-633A-49C9-B7F1-621B3D3EFB73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservationSystem.Services", "ReservationSystem.Services\ReservationSystem.Services.csproj", "{A86C0075-633A-49C9-B7F1-621B3D3EFB73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Web.Infrastructure", "ReservationSystem.Web.Infrastructure\ReservationSystem.Web.Infrastructure.csproj", "{549C3998-BF54-40DF-977B-D84EFA325B86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReservationSystem.Web.Infrastructure", "ReservationSystem.Web.Infrastructure\ReservationSystem.Web.Infrastructure.csproj", "{549C3998-BF54-40DF-977B-D84EFA325B86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{EEC8DDAD-AB09-4A96-BED7-9ACF854B375F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Services.Tests", "ReservationSystem.Services.Tests\ReservationSystem.Services.Tests.csproj", "{930E82D3-3492-400B-8134-B3745FF561E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,10 @@ Global
 		{549C3998-BF54-40DF-977B-D84EFA325B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{549C3998-BF54-40DF-977B-D84EFA325B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{549C3998-BF54-40DF-977B-D84EFA325B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{930E82D3-3492-400B-8134-B3745FF561E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{930E82D3-3492-400B-8134-B3745FF561E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{930E82D3-3492-400B-8134-B3745FF561E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{930E82D3-3492-400B-8134-B3745FF561E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +76,7 @@ Global
 		{976BDCE5-C08F-47B1-979C-612A2E693102} = {D87D1315-CBD6-4D71-978C-BCB54A75B6CF}
 		{A86C0075-633A-49C9-B7F1-621B3D3EFB73} = {C956CEFD-5D64-4565-BFD1-11CC954E2341}
 		{549C3998-BF54-40DF-977B-D84EFA325B86} = {D87D1315-CBD6-4D71-978C-BCB54A75B6CF}
+		{930E82D3-3492-400B-8134-B3745FF561E1} = {EEC8DDAD-AB09-4A96-BED7-9ACF854B375F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C3DD0D4-1BE8-4687-9214-D01B302D54B7}

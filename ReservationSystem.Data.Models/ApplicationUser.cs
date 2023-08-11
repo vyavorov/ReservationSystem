@@ -4,7 +4,7 @@ using static ReservationSystem.Common.EntityValidationConstants.User;
 
 namespace ReservationSystem.Data.Models;
 
-public class ApplicationUser:IdentityUser<Guid>
+public class ApplicationUser : IdentityUser<Guid>
 {
     public ApplicationUser()
     {

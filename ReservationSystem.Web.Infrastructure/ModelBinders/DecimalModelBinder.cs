@@ -12,7 +12,7 @@ public class DecimalModelBinder : IModelBinder
             throw new ArgumentNullException(nameof(bindingContext));
         }
 
-        ValueProviderResult valueResult = 
+        ValueProviderResult valueResult =
             bindingContext.ValueProvider.GetValue(bindingContext.ModelName);
         if (valueResult != ValueProviderResult.None && !string.IsNullOrWhiteSpace(valueResult.FirstValue))
         {

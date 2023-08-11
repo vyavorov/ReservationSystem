@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using ReservationSystem.Services.Interfaces;
 using ReservationSystem.Web.ViewModels.Location;
 using System.Security.Claims;
-using static ReservationSystem.Common.GeneralApplicationConstants;
 
 namespace ReservationSystem.Web.Controllers;
 

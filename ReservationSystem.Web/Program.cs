@@ -1,12 +1,12 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReservationSystem.Data;
 using ReservationSystem.Data.Models;
 using ReservationSystem.Services;
 using ReservationSystem.Services.Interfaces;
-using ReservationSystem.Web.Infrastructure.ModelBinders;
-using Microsoft.AspNetCore.Identity;
 using ReservationSystem.Web.Infrastructure.Extensions;
+using ReservationSystem.Web.Infrastructure.ModelBinders;
 using static ReservationSystem.Common.GeneralApplicationConstants;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -81,7 +81,8 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-if (app.Environment.IsDevelopment()) {
+if (app.Environment.IsDevelopment())
+{
     app.SeedAdministrator(DevelopmentAdminEmail);
 }
 

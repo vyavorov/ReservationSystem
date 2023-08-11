@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 using static ReservationSystem.Common.EntityValidationConstants.User;
 
 namespace ReservationSystem.Web.ViewModels.User;

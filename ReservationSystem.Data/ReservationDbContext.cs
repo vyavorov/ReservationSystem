@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace ReservationSystem.Data
 {
-    public class ReservationDbContext : IdentityDbContext<ApplicationUser,IdentityRole<Guid>,Guid>
+    public class ReservationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
         public ReservationDbContext(DbContextOptions<ReservationDbContext> options)
             : base(options)
